@@ -23,15 +23,14 @@ import FAQEdit from "./CustomerService/pages/FAQEdit";
 import PrivatePolicy from "./CustomerService/pages/PrivatePolicy";
 
 import MyPage from "./MyPage/pages/MyPage";
-import Navbar from "./Navigation/pages/Navbar";
+import Sidebar from "./Navigation/pages/Sidebar";
 
 import "./App.scss";
-
 function App() {
   return (
     <Router>
-      <Navbar />
-
+      {/* <Navbar /> */}
+      <Sidebar />
       <Routes>
         {/* Monitoring */}
         <Route path="/" element={<Integration />} />

@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 
-export const navbarData = [
+export const SidebarData = [
   { id: v4(), path: "/", title: "통합 모니터링" },
   { id: v4(), path: "/charging", title: "충전소 모니터링" },
   { id: v4(), path: "/chargingstationlist", title: "충전소 목록" },
