@@ -1,37 +1,36 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Integration from "./Monitoring/pages/Integration";
-import Charging from "./Monitoring/pages/Charging";
-import DetailItem from "./Monitoring/pages/DetailItem";
+import Integration from './Monitoring/pages/Integration'
+import Charging from './Monitoring/pages/Charging'
+import DetailItem from './Monitoring/pages/DetailItem'
 
-import ChargingStationEdit from "./ChargerManagement/pages/ChargingStationEdit";
-import ChargingStationList from "./ChargerManagement/pages/ChargingStationList";
-import ErrorList from "./ChargerManagement/pages/ErrorList";
-import ErrorRegist from "./ChargerManagement/pages/ErrorRegist";
+import ChargingStationEdit from './ChargerManagement/pages/ChargingStationEdit'
+import ChargingStationList from './ChargerManagement/pages/ChargingStationList'
+import ErrorList from './ChargerManagement/pages/ErrorList'
+import ErrorRegist from './ChargerManagement/pages/ErrorRegist'
 
-import StationHistory from "./ChargingHistory/pages/StationHistory";
-import MemberHistory from "./ChargingHistory/pages/MemberHistory";
+import StationHistory from './ChargingHistory/pages/StationHistory'
+import MemberHistory from './ChargingHistory/pages/MemberHistory'
 
-import MemberList from "./MemberManagement/pages/MemberList";
-import MemberCardList from "./MemberManagement/pages/MemberCardList";
-import MemberPayList from "./MemberManagement/pages/MemberPayList";
+import MemberList from './MemberManagement/pages/MemberList'
+import MemberCardList from './MemberManagement/pages/MemberCardList'
+import MemberPayList from './MemberManagement/pages/MemberPayList'
 
-import Notice from "./CustomerService/pages/Notice";
-import FAQ from "./CustomerService/pages/FAQ";
-import FAQEdit from "./CustomerService/pages/FAQEdit";
-import PrivatePolicy from "./CustomerService/pages/PrivatePolicy";
+import Notice from './CustomerService/pages/Notice'
+import FAQ from './CustomerService/pages/FAQ'
+import FAQEdit from './CustomerService/pages/FAQEdit'
+import PrivatePolicy from './CustomerService/pages/PrivatePolicy'
 
-import MyPage from "./MyPage/pages/MyPage";
-import Navbar from "./Navigation/pages/Navbar";
+import MyPage from './MyPage/pages/MyPage'
+import Sidebar from './Navigation/pages/Sidebar'
 
-import "./App.scss";
-
+import './App.scss'
 function App() {
   return (
     <Router>
-      <Navbar />
-
+      {/* <Navbar /> */}
+      <Sidebar />
       <Routes>
         {/* Monitoring */}
         <Route path="/" element={<Integration />} />
@@ -66,7 +65,7 @@ function App() {
         <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
