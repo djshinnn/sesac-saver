@@ -4,7 +4,7 @@ import MapContainer from "../container/MapContainer";
 
 const Integration = () => {
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <MapContainer />
       <ChartContainer />
     </div>

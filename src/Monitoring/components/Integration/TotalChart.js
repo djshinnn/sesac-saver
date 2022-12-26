@@ -5,9 +5,8 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const TotalChart = () => {
-  const month = useSelector((state) => state.totalChart.month);
-  const seoulData = useSelector((state) => state.totalChart.seoulData);
-  const totalData = useSelector((state) => state.totalChart.totalData);
+  const seoulData = useSelector((state) => state.totalChart.seoulAmt);
+  const totalData = useSelector((state) => state.totalChart.totalAmt);
   const filteredData = useSelector((state) => state.totalChart.filteredData);
 
   const regionCodeHandler = () => {
@@ -38,7 +37,20 @@ const TotalChart = () => {
   };
 
   const chartData = {
-    labels: month,
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
     datasets: [
       {
         type: "bar",
@@ -59,7 +71,7 @@ const TotalChart = () => {
 
   return (
     <div>
-      <Line data={chartData} />
+      <Line data={chartData} style={{ width: "900px", height: "400px" }} />
     </div>
   );
 };
