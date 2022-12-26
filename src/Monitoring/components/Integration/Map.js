@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { asyncMonthChartData } from "../../../store/totalChartSlice";
+import { asyncDateChartData } from "../../../store/dateChartSlice";
 import { totalChartActions } from "../../../store/totalChartSlice";
+import { dateChartActions } from "../../../store/dateChartSlice";
 import MapImage from "../../../assets/images/map.png";
 import MarkerRed from "../../../assets/images/marker_red.png";
 import MarkerBlack from "../../../assets/images/marker_black.png";
@@ -10,7 +12,8 @@ import MarkerBlack from "../../../assets/images/marker_black.png";
 const Map = () => {
   const dispatch = useDispatch();
 
-  const totalData = useSelector((state) => state.totalChart.row);
+  const totalData = useSelector((state) => state.totalChart.rows);
+  const dateTotalData = useSelector((state) => state.dateChart.rows);
 
   const clickHandler = (e) => {
     e.preventDefault();
@@ -18,14 +21,32 @@ const Map = () => {
     const filteredData = totalData.filter(
       (data) => data.regionCode === e.target.title
     );
+
+    // Total Chart dispatch 변수
     const regionCode = filteredData.map((amt) => amt.regionCode);
     const amt = filteredData.map((amt) => amt.chargeAmt);
 
+    // date Chart dispatch 변수
+    const filteredDateData = dateTotalData.filter(
+      (data) => data.regionCode === e.target.title
+    );
+    const chargeAmt = filteredDateData.map((item) => item.chargeAmt);
+    const fare = filteredDateData.map((item) => item.fare);
+    const yesterday = filteredDateData.map((item) => item.yesterday);
+    const today = filteredDateData.map((item) => item.today);
+
+    console.log({ chargeAmt, fare, yesterday, today });
+
+    // dispatch
     dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
+    dispatch(
+      dateChartActions.getFilteredData({ chargeAmt, fare, yesterday, today })
+    );
   };
 
   useEffect(() => {
     dispatch(asyncMonthChartData());
+    dispatch(asyncDateChartData());
   }, [dispatch]);
 
   return (

@@ -4,7 +4,7 @@ export const asyncMonthChartData = createAsyncThunk(
   "totalChartSlice/asyncMonthChartData",
   async () => {
     const res = await fetch(
-      "https://saver-practice-default-rtdb.asia-southeast1.firebasedatabase.app/monthlyTotal.json"
+      "https://saver-practice-default-rtdb.asia-southeast1.firebasedatabase.app/monitering/monthly.json"
     );
 
     if (!res.ok) {
@@ -20,10 +20,9 @@ const initialState = {
   isLoading: false,
   result: "",
   msg: "",
-  row: [],
-  month: [],
-  totalData: [],
-  seoulData: [],
+  rows: [],
+  totalAmt: [],
+  seoulAmt: [],
   filteredData: {
     amt: [],
     regionCode: [],
@@ -45,22 +44,19 @@ const totalChartSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(asyncMonthChartData.fulfilled, (state, action) => {
-        const seoulData = action.payload.row
+        const seoulAmt = action.payload.rows
           .filter((data) => data.regionCode === "su")
           .map((data) => data.chargeAmt);
-        const totalData = action.payload.row.filter(
-          (data) => data.regionCode === "ko"
-        );
-        const month = totalData.map((data) => data.month);
-        const totalAmt = totalData.map((data) => data.chargeAmt);
+        const totalAmt = action.payload.rows
+          .filter((data) => data.regionCode === "ko")
+          .map((data) => data.chargeAmt);
 
         state.isLoading = false;
         state.result = action.payload.result;
         state.msg = action.payload.msg;
-        state.row = action.payload.row;
-        state.month = month;
-        state.seoulData = seoulData;
-        state.totalData = totalAmt;
+        state.rows = action.payload.rows;
+        state.seoulAmt = seoulAmt;
+        state.totalAmt = totalAmt;
       })
       .addCase(asyncMonthChartData.rejected, (state, action) => {
         state.isLoading = true;
