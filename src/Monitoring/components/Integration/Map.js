@@ -1,7 +1,8 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { mapSliceActions } from "../../../store/mapSlice";
+import { asyncMonthChartData } from "../../../store/totalChartSlice";
+import { totalChartActions } from "../../../store/totalChartSlice";
 import MapImage from "../../../assets/images/map.png";
 import MarkerRed from "../../../assets/images/marker_red.png";
 import MarkerBlack from "../../../assets/images/marker_black.png";
@@ -9,9 +10,23 @@ import MarkerBlack from "../../../assets/images/marker_black.png";
 const Map = () => {
   const dispatch = useDispatch();
 
+  const totalData = useSelector((state) => state.totalChart.row);
+
   const clickHandler = (e) => {
-    dispatch(mapSliceActions.changeRegion(e.target.title));
+    e.preventDefault();
+
+    const filteredData = totalData.filter(
+      (data) => data.regionCode === e.target.title
+    );
+    const regionCode = filteredData.map((amt) => amt.regionCode);
+    const amt = filteredData.map((amt) => amt.chargeAmt);
+
+    dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
   };
+
+  useEffect(() => {
+    dispatch(asyncMonthChartData());
+  }, [dispatch]);
 
   return (
     <div>
