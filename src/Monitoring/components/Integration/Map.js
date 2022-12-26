@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { asyncMonthChartData } from '../../../store/totalChartSlice';
-import { asyncDateChartData } from '../../../store/dateChartSlice';
-import { asyncCurrentChartData } from '../../../store/currentChartSlice';
-import { totalChartActions } from '../../../store/totalChartSlice';
-import { dateChartActions } from '../../../store/dateChartSlice';
-import MapImage from '../../../assets/images/map.png';
-import MarkerRed from '../../../assets/images/marker_red.png';
-import MarkerBlack from '../../../assets/images/marker_black.png';
+import { asyncMonthChartData } from "../../../store/totalChartSlice";
+import { asyncDateChartData } from "../../../store/dateChartSlice";
+import { asyncCurrentChartData } from "../../../store/currentChartSlice";
+import { totalChartActions } from "../../../store/totalChartSlice";
+import { dateChartActions } from "../../../store/dateChartSlice";
+import MapImage from "../../../assets/images/map.png";
+import MarkerRed from "../../../assets/images/marker_red.png";
+import MarkerBlack from "../../../assets/images/marker_black.png";
 
 const Map = () => {
 	const dispatch = useDispatch();

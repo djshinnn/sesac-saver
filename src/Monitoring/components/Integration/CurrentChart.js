@@ -1,27 +1,27 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
 
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS } from 'chart.js/auto';
-import { useSelector } from 'react-redux';
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+import { useSelector } from "react-redux";
 
 const CurrentChart = () => {
 	const currentChartData = useSelector((state) => state.currentChart);
 	console.log(currentChartData);
 	const data = {
-		labels: ['Red', 'Blue', 'Yellow'],
+		labels: ["Red", "Blue", "Yellow"],
 		datasets: [
 			{
 				data: [currentChartData.avg, 100 - currentChartData.avg],
-				backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-				borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+				backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
 
 				borderWidth: 1,
 			},
 		],
 	};
 	const options = {
-		indexAxis: 'y',
+		indexAxis: "y",
 		elements: {
 			bar: {
 				borderWidth: 2,
@@ -40,10 +40,10 @@ const CurrentChart = () => {
 		labels,
 		datasets: [
 			{
-				label: '가동률',
+				label: "가동률",
 				data: stationRate,
-				borderColor: 'rgb(255, 99, 132)',
-				backgroundColor: 'rgba(255, 99, 132, 0.5)',
+				borderColor: "rgb(255, 99, 132)",
+				backgroundColor: "rgba(255, 99, 132, 0.5)",
 			},
 		],
 	};

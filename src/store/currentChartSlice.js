@@ -1,14 +1,14 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const asyncCurrentChartData = createAsyncThunk(
-	'currentChartSlice/asyncCurrentChartData',
+	"currentChartSlice/asyncCurrentChartData",
 	async () => {
 		const res = await fetch(
-			'https://saver-practice-default-rtdb.asia-southeast1.firebasedatabase.app/monitering/st_available.json'
+			"https://saver-practice-default-rtdb.asia-southeast1.firebasedatabase.app/monitering/st_available.json"
 		);
 
 		if (!res.ok) {
-			throw new Error('Could not fetch data!');
+			throw new Error("Could not fetch data!");
 		}
 
 		const data = await res.json();
@@ -18,14 +18,14 @@ export const asyncCurrentChartData = createAsyncThunk(
 
 const initialState = {
 	isLoading: false,
-	result: '',
-	msg: '',
+	result: "",
+	msg: "",
 	avg: 0,
 	rows: [],
 };
 
 const currentChartSlice = createSlice({
-	name: 'currentChart',
+	name: "currentChart",
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
