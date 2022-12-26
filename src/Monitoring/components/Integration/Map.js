@@ -35,8 +35,6 @@ const Map = () => {
     const yesterday = filteredDateData.map((item) => item.yesterday);
     const today = filteredDateData.map((item) => item.today);
 
-    console.log({ chargeAmt, fare, yesterday, today });
-
     // dispatch
     dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
     dispatch(

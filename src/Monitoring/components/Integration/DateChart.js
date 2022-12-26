@@ -57,6 +57,51 @@ const DateChart = () => {
   return (
     <div>
       <Line data={chartData} style={{ width: "900px", height: "400px" }} />
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>충전량</th>
+            <th>금액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.yesterday
+                : seoulData.yesterday[0]}
+            </td>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.chargeAmt[0]
+                : seoulData.chargeAmt[0]}
+            </td>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.fare[0]
+                : seoulData.fare[0]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.today
+                : seoulData.today[1]}
+            </td>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.chargeAmt[1]
+                : seoulData.chargeAmt[1]}
+            </td>
+            <td>
+              {filteredData.chargeAmt.length > 1
+                ? filteredData.fare[1]
+                : seoulData.fare[1]}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
