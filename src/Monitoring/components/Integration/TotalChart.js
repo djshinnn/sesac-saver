@@ -1,19 +1,67 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { asyncMonthChartData } from "../../../store/totalChartSlice";
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
 
 const TotalChart = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.totalChart);
+  const month = useSelector((state) => state.totalChart.month);
+  const seoulData = useSelector((state) => state.totalChart.seoulData);
+  const totalData = useSelector((state) => state.totalChart.totalData);
+  const filteredData = useSelector((state) => state.totalChart.filteredData);
 
-  useEffect(() => {
-    dispatch(asyncMonthChartData());
-  }, []);
+  const regionCodeHandler = () => {
+    switch (filteredData.regionCode[0]) {
+      case "su":
+        return "서울시";
+      case "gg":
+        return "경기도";
+      case "gw":
+        return "강원도";
+      case "cb":
+        return "충청북도";
+      case "cn":
+        return "충청남도";
+      case "jb":
+        return "전라북도";
+      case "jn":
+        return "전라남도";
+      case "gb":
+        return "경상북도";
+      case "gn":
+        return "경상남도";
+      case "jj":
+        return "제주도";
+      default:
+        return "서울시";
+    }
+  };
 
-  console.log(data);
+  const chartData = {
+    labels: month,
+    datasets: [
+      {
+        type: "bar",
+        label: "전국 누적량",
+        backgroundColor: "rgb(255, 99, 132)",
+        data: totalData,
+        borderColor: "red",
+        borderWidth: 2,
+      },
+      {
+        type: "bar",
+        label: `${regionCodeHandler()} 누적량`,
+        backgroundColor: "rgb(75, 192, 192)",
+        data: filteredData.amt.length > 1 ? filteredData.amt : seoulData,
+      },
+    ],
+  };
 
-  return <div>TotalChart</div>;
+  return (
+    <div>
+      <Line data={chartData} />
+    </div>
+  );
 };
 
 export default TotalChart;

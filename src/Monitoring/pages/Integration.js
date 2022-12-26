@@ -2,7 +2,7 @@ import React from "react";
 import ChartContainer from "../container/ChartContainer";
 import MapContainer from "../container/MapContainer";
 
-const integration = () => {
+const Integration = () => {
   return (
     <div>
       <MapContainer />
@@ -11,4 +11,4 @@ const integration = () => {
   );
 };
 
-export default integration;
+export default Integration;
