@@ -45,7 +45,7 @@ const CurrentChart = () => {
     ],
   };
   return (
-    <div>
+    <div className="current_chart">
       <Doughnut data={data} />
       <Bar options={options} data={barData} />
     </div>

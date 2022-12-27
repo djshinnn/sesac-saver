@@ -55,8 +55,8 @@ const DateChart = () => {
   };
 
   return (
-    <div>
-      <Line data={chartData} style={{ width: "900px", height: "400px" }} />
+    <div className="date_chart">
+      <Line data={chartData} />
       <table>
         <thead>
           <tr>

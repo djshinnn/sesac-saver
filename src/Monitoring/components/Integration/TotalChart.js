@@ -70,8 +70,8 @@ const TotalChart = () => {
   };
 
   return (
-    <div>
-      <Line data={chartData} style={{ width: "900px", height: "400px" }} />
+    <div className="total_chart">
+      <Line data={chartData} />
     </div>
   );
 };
