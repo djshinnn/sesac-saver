@@ -6,6 +6,7 @@ import { asyncMonthChartData } from "../../../store/totalChartSlice";
 import { asyncDateChartData } from "../../../store/dateChartSlice";
 import { asyncCurrentChartData } from "../../../store/currentChartSlice";
 import { asyncStateTableData } from "../../../store/stateTableSlice";
+import { asyncErrorFeedData } from "../../../store/errorFeedSlice";
 
 // reducers
 import { totalChartActions } from "../../../store/totalChartSlice";
@@ -19,28 +20,28 @@ import MarkerBlack from "../../../assets/images/marker_black.png";
 const Map = () => {
   const dispatch = useDispatch();
 
-  const totalData = useSelector((state) => state.totalChart.rows);
-  const dateTotalData = useSelector((state) => state.dateChart.rows);
+  const totalData = useSelector(state => state.totalChart.rows);
+  const dateTotalData = useSelector(state => state.dateChart.rows);
 
-  const clickHandler = (e) => {
+  const clickHandler = e => {
     e.preventDefault();
 
     const filteredData = totalData.filter(
-      (data) => data.regionCode === e.target.title
+      data => data.regionCode === e.target.title
     );
 
     // Total Chart dispatch 변수
-    const regionCode = filteredData.map((amt) => amt.regionCode);
-    const amt = filteredData.map((amt) => amt.chargeAmt);
+    const regionCode = filteredData.map(amt => amt.regionCode);
+    const amt = filteredData.map(amt => amt.chargeAmt);
 
     // date Chart dispatch 변수
     const filteredDateData = dateTotalData.filter(
-      (data) => data.regionCode === e.target.title
+      data => data.regionCode === e.target.title
     );
-    const chargeAmt = filteredDateData.map((item) => item.chargeAmt);
-    const fare = filteredDateData.map((item) => item.fare);
-    const yesterday = filteredDateData.map((item) => item.yesterday);
-    const today = filteredDateData.map((item) => item.today);
+    const chargeAmt = filteredDateData.map(item => item.chargeAmt);
+    const fare = filteredDateData.map(item => item.fare);
+    const yesterday = filteredDateData.map(item => item.yesterday);
+    const today = filteredDateData.map(item => item.today);
 
     // dispatch
     dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
@@ -54,6 +55,7 @@ const Map = () => {
     dispatch(asyncDateChartData());
     dispatch(asyncCurrentChartData());
     dispatch(asyncStateTableData());
+    dispatch(asyncErrorFeedData());
   }, [dispatch]);
 
   return (
