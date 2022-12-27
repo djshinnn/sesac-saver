@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+// 비동기 함수 (데이터 요청)
 import { asyncMonthChartData } from "../../../store/totalChartSlice";
 import { asyncDateChartData } from "../../../store/dateChartSlice";
 import { asyncCurrentChartData } from "../../../store/currentChartSlice";
 import { asyncStateTableData } from "../../../store/stateTableSlice";
+
+// reducers
 import { totalChartActions } from "../../../store/totalChartSlice";
 import { dateChartActions } from "../../../store/dateChartSlice";
+
+// image
 import MapImage from "../../../assets/images/map.png";
 import MarkerRed from "../../../assets/images/marker_red.png";
 import MarkerBlack from "../../../assets/images/marker_black.png";
@@ -14,28 +19,28 @@ import MarkerBlack from "../../../assets/images/marker_black.png";
 const Map = () => {
   const dispatch = useDispatch();
 
-  const totalData = useSelector(state => state.totalChart.rows);
-  const dateTotalData = useSelector(state => state.dateChart.rows);
+  const totalData = useSelector((state) => state.totalChart.rows);
+  const dateTotalData = useSelector((state) => state.dateChart.rows);
 
-  const clickHandler = e => {
+  const clickHandler = (e) => {
     e.preventDefault();
 
     const filteredData = totalData.filter(
-      data => data.regionCode === e.target.title
+      (data) => data.regionCode === e.target.title
     );
 
     // Total Chart dispatch 변수
-    const regionCode = filteredData.map(amt => amt.regionCode);
-    const amt = filteredData.map(amt => amt.chargeAmt);
+    const regionCode = filteredData.map((amt) => amt.regionCode);
+    const amt = filteredData.map((amt) => amt.chargeAmt);
 
     // date Chart dispatch 변수
     const filteredDateData = dateTotalData.filter(
-      data => data.regionCode === e.target.title
+      (data) => data.regionCode === e.target.title
     );
-    const chargeAmt = filteredDateData.map(item => item.chargeAmt);
-    const fare = filteredDateData.map(item => item.fare);
-    const yesterday = filteredDateData.map(item => item.yesterday);
-    const today = filteredDateData.map(item => item.today);
+    const chargeAmt = filteredDateData.map((item) => item.chargeAmt);
+    const fare = filteredDateData.map((item) => item.fare);
+    const yesterday = filteredDateData.map((item) => item.yesterday);
+    const today = filteredDateData.map((item) => item.today);
 
     // dispatch
     dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
