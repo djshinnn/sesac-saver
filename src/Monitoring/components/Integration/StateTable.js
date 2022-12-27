@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
 
 const StateTable = () => {
-  const stateTableData = useSelector(state => state.stateTable.rows);
+  const stateTableData = useSelector((state) => state.stateTable.rows);
   const [pageSize, setPageSize] = useState(5);
 
   const columns = [
@@ -14,7 +14,7 @@ const StateTable = () => {
     { field: "state", headerName: "(운용가능 기기) / (전체 기기)", width: 250 },
   ];
 
-  const rows = stateTableData.map(item => ({
+  const rows = stateTableData.map((item) => ({
     id: item.stationId,
     stationId: item.stationId,
     stationName: item.stationName,
@@ -24,13 +24,13 @@ const StateTable = () => {
   }));
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div className="state_table">
       <DataGrid
         rows={rows}
         columns={columns}
         pageSize={pageSize}
         rowsPerPageOptions={[1, 2, 3, 5, 10, 15, 20]}
-        onPageSizeChange={newPageSize => setPageSize(newPageSize)}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
       />
     </div>
   );

@@ -7,13 +7,12 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
 const ErrorFeed = () => {
-  const errorFeedData = useSelector(state => state.errorFeed.rows);
-  console.log(errorFeedData);
+  const errorFeedData = useSelector((state) => state.errorFeed.rows);
 
   return (
-    <div>
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {errorFeedData.map(item => (
+    <div className="error_feed">
+      <List>
+        {errorFeedData.map((item) => (
           <ListItem key={nanoid()}>
             <ListItemText primary={item.chargeName} />
             <ListItemText primary={item.time} />
