@@ -61,10 +61,12 @@ const dateChartSlice = createSlice({
         state.result = action.payload.result;
         state.msg = action.payload.msg;
         state.rows = action.payload.rows;
+
+        // filter로 뽑아낸 seoulData 데이터 정제
         state.seoulData.chargeAmt = seoulData.map((item) => item.chargeAmt);
         state.seoulData.fare = seoulData.map((item) => item.fare);
-        state.seoulData.yesterday = seoulData.map((item) => item.yesterday);
-        state.seoulData.today = seoulData.map((item) => item.today);
+        state.seoulData.yesterday = seoulData.map((item) => item.yesterday)[0];
+        state.seoulData.today = seoulData.map((item) => item.today)[1];
       })
       .addCase(asyncDateChartData.rejected, (state, action) => {
         state.isLoading = true;

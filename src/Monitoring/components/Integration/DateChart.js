@@ -40,7 +40,7 @@ const DateChart = () => {
     labels:
       filteredData.chargeAmt.length > 1
         ? [filteredData.yesterday, filteredData.today]
-        : [seoulData.yesterday[0], seoulData.today[1]],
+        : [seoulData.yesterday, seoulData.today],
     datasets: [
       {
         type: "bar",
@@ -70,7 +70,7 @@ const DateChart = () => {
             <td>
               {filteredData.chargeAmt.length > 1
                 ? filteredData.yesterday
-                : seoulData.yesterday[0]}
+                : seoulData.yesterday}
             </td>
             <td>
               {filteredData.chargeAmt.length > 1
@@ -87,7 +87,7 @@ const DateChart = () => {
             <td>
               {filteredData.chargeAmt.length > 1
                 ? filteredData.today
-                : seoulData.today[1]}
+                : seoulData.today}
             </td>
             <td>
               {filteredData.chargeAmt.length > 1

@@ -1,14 +1,15 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
-
-import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
 import { useSelector } from "react-redux";
 
+// chart
+import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+
 const CurrentChart = () => {
-  const currentChartData = useSelector(state => state.currentChart);
+  const currentChartData = useSelector((state) => state.currentChart);
   const data = {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: ["가동률 평균"],
     datasets: [
       {
         data: [currentChartData.avg, 100 - currentChartData.avg],
@@ -19,6 +20,8 @@ const CurrentChart = () => {
       },
     ],
   };
+
+  // bar chart
   const options = {
     indexAxis: "y",
     elements: {
@@ -28,16 +31,13 @@ const CurrentChart = () => {
     },
     responsive: true,
   };
-
-  const labels = currentChartData.rows.map(item => item.station);
-
-  const stationRate = currentChartData.rows.map(item => item.rate);
-
-  const data2 = {
+  const labels = currentChartData.rows.map((item) => item.station);
+  const stationRate = currentChartData.rows.map((item) => item.rate);
+  const barData = {
     labels,
     datasets: [
       {
-        label: "가동률",
+        label: "각 충전소별 가동률",
         data: stationRate,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -47,7 +47,7 @@ const CurrentChart = () => {
   return (
     <div>
       <Doughnut data={data} />
-      <Bar options={options} data={data2} />
+      <Bar options={options} data={barData} />
     </div>
   );
 };
