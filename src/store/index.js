@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // monitoring integration Reducer
-import totalChartReducer from "./totalChartSlice";
-import dateChartReducer from "./dateChartSlice";
-import currentChartReducer from "./currentChartSlice";
-import stateTableReducer from "./stateTableSlice";
-import errorFeedReducer from "./errorFeedSlice";
-import detailListReducer from "./detailListSlice";
+import totalChartReducer from "./integration/totalChartSlice";
+import dateChartReducer from "./integration/dateChartSlice";
+import currentChartReducer from "./integration/currentChartSlice";
+import stateTableReducer from "./integration/stateTableSlice";
+import errorFeedReducer from "./integration/errorFeedSlice";
+
+// monitoring charging Reducer
+import detailListReducer from "./charging/detailListSlice";
 
 // monitoring detailItem Reducer
 import itemReportReducer from "./detailItem/itemReportSlice";

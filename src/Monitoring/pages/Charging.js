@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncDetailListData } from "../../store/detailListSlice";
+import { asyncDetailListData } from "../../store/charging/detailListSlice";
 import ChargingContainer from "../container/ChargingContainer";
 import DetailContainer from "../container/DetailContainer";
 
