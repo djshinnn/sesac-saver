@@ -1,19 +1,21 @@
 .current_chart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh * 0.25);
-  padding: 3rem 0rem;
+  width: 600px;
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__doughnut {
-    width: 40%;
+    height: 150px;
     position: relative;
 
     span {
       position: absolute;
-      left: 40%;
-      bottom: 38%;
-      font-size: 1.8rem;
+      left: 38%;
+      bottom: 32%;
+      font-size: 1.2rem;
     }
   }
 

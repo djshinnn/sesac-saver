@@ -7,10 +7,10 @@ import MapContainer from "../container/MapContainer";
 const Integration = () => {
   return (
     <Grid container>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <MapContainer />
       </Grid>
-      <Grid item xs={8}>
+      <Grid item xs={9}>
         <ChartContainer />
       </Grid>
     </Grid>

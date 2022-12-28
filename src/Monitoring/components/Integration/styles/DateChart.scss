@@ -1,12 +1,15 @@
 .date_chart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: inherit;
-  height: calc(100vh * 0.3);
+  width: 600px;
+  margin-bottom: 2rem;
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+  }
 
   &__line {
-    width: 50%;
     padding-right: 1rem;
   }
 

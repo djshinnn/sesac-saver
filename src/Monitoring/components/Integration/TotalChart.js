@@ -1,40 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
+
+import { regionCodeHandler } from "../../utils/regionCodeHandler";
+import SubTitle from "../FormElements/SubTitle";
 
 const TotalChart = () => {
   const seoulData = useSelector((state) => state.totalChart.seoulAmt);
   const totalData = useSelector((state) => state.totalChart.totalAmt);
   const filteredData = useSelector((state) => state.totalChart.filteredData);
-
-  const regionCodeHandler = () => {
-    switch (filteredData.regionCode[0]) {
-      case "su":
-        return "서울시";
-      case "gg":
-        return "경기도";
-      case "gw":
-        return "강원도";
-      case "cb":
-        return "충청북도";
-      case "cn":
-        return "충청남도";
-      case "jb":
-        return "전라북도";
-      case "jn":
-        return "전라남도";
-      case "gb":
-        return "경상북도";
-      case "gn":
-        return "경상남도";
-      case "jj":
-        return "제주도";
-      default:
-        return "서울시";
-    }
-  };
 
   const chartData = {
     labels: [
@@ -61,7 +36,7 @@ const TotalChart = () => {
       },
       {
         type: "bar",
-        label: `${regionCodeHandler()} 누적량`,
+        label: `${regionCodeHandler(filteredData)} 누적량`,
         backgroundColor: "rgb(75, 192, 192)",
         data: filteredData.amt.length > 1 ? filteredData.amt : seoulData,
       },
@@ -70,7 +45,13 @@ const TotalChart = () => {
 
   return (
     <div className="total_chart">
-      <Line data={chartData} />
+      <h1 className="total_chart__title">
+        운영 현황 - {regionCodeHandler(filteredData)}
+      </h1>
+      <SubTitle name={"월별 전체 충전 누적량"} />
+      <div className="total_chart__line">
+        <Line data={chartData} />
+      </div>
     </div>
   );
 };

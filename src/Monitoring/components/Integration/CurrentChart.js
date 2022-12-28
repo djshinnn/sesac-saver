@@ -6,6 +6,8 @@ import { Doughnut } from "react-chartjs-2";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
+import SubTitle from "../FormElements/SubTitle";
+
 const CurrentChart = () => {
   const currentChartData = useSelector((state) => state.currentChart);
   const data = {
@@ -46,12 +48,16 @@ const CurrentChart = () => {
   };
   return (
     <div className="current_chart">
-      <div className="current_chart__doughnut">
-        <Doughnut data={data} />
-        <span>{currentChartData.avg}%</span>
-      </div>
-      <div className="current_chart__bar">
-        <Bar options={options} data={barData} />
+      <SubTitle name={"충전소 가동 현황"} />
+
+      <div className="current_chart__box">
+        <div className="current_chart__doughnut">
+          <Doughnut data={data} />
+          <span>{currentChartData.avg}%</span>
+        </div>
+        <div className="current_chart__bar">
+          <Bar options={options} data={barData} />
+        </div>
       </div>
     </div>
   );
