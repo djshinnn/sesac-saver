@@ -15,3 +15,8 @@
 .log_container {
   @include flexCenter();
 }
+
+.detail_container {
+  @include flexCenter();
+  margin: 100px auto;
+}
