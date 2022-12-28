@@ -59,7 +59,7 @@ const Map = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="map">
       <img src={MapImage} useMap="#image-map" alt="" />
 
       <map name="image-map">

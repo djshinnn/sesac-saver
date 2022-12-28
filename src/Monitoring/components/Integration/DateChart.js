@@ -56,8 +56,10 @@ const DateChart = () => {
 
   return (
     <div className="date_chart">
-      <Line data={chartData} />
-      <table>
+      <div className="date_chart__line">
+        <Line data={chartData} />
+      </div>
+      <table className="date_chart__table">
         <thead>
           <tr>
             <th></th>
@@ -75,9 +77,11 @@ const DateChart = () => {
             <td>
               {filteredData.chargeAmt.length > 1
                 ? filteredData.chargeAmt[0]
-                : seoulData.chargeAmt[0]}
+                : seoulData.chargeAmt[0]}{" "}
+              KW
             </td>
             <td>
+              &#8361;{" "}
               {filteredData.chargeAmt.length > 1
                 ? filteredData.fare[0]
                 : seoulData.fare[0]}
@@ -92,9 +96,11 @@ const DateChart = () => {
             <td>
               {filteredData.chargeAmt.length > 1
                 ? filteredData.chargeAmt[1]
-                : seoulData.chargeAmt[1]}
+                : seoulData.chargeAmt[1]}{" "}
+              KW
             </td>
             <td>
+              &#8361;{" "}
               {filteredData.chargeAmt.length > 1
                 ? filteredData.fare[1]
                 : seoulData.fare[1]}

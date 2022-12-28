@@ -1,3 +1,26 @@
 .date_chart {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: calc(100vh * 0.3);
+
+  &__line {
+    width: 50%;
+    padding-right: 1rem;
+  }
+
+  &__table {
+    width: 50%;
+
+    th {
+      border-bottom: 1px solid black;
+      padding: 1rem;
+    }
+
+    tr td {
+      text-align: center;
+      padding: 1rem;
+    }
+  }
 }

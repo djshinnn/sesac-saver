@@ -31,6 +31,7 @@ const StateTable = () => {
         pageSize={pageSize}
         rowsPerPageOptions={[1, 2, 3, 5, 10, 15, 20]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        style={{ display: "flex", justifyContent: "center" }}
       />
     </div>
   );

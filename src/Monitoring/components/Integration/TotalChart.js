@@ -55,9 +55,8 @@ const TotalChart = () => {
       {
         type: "bar",
         label: "전국 누적량",
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(0, 0, 81)",
         data: totalData,
-        borderColor: "red",
         borderWidth: 2,
       },
       {

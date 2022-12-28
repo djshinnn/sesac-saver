@@ -13,8 +13,8 @@ const CurrentChart = () => {
     datasets: [
       {
         data: [currentChartData.avg, 100 - currentChartData.avg],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+        backgroundColor: ["rgba(26, 35, 126, 0.8)", "rgba(226, 226, 226, 0.2)"],
+        borderColor: ["rgba(26, 35, 126, 1)", "rgba(226, 226, 226, 1)"],
 
         borderWidth: 1,
       },
@@ -39,15 +39,20 @@ const CurrentChart = () => {
       {
         label: "각 충전소별 가동률",
         data: stationRate,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgb(83, 75, 174)",
+        backgroundColor: "rgba(83, 75, 174, 0.8)",
       },
     ],
   };
   return (
     <div className="current_chart">
-      <Doughnut data={data} />
-      <Bar options={options} data={barData} />
+      <div className="current_chart__doughnut">
+        <Doughnut data={data} />
+        <span>{currentChartData.avg}%</span>
+      </div>
+      <div className="current_chart__bar">
+        <Bar options={options} data={barData} />
+      </div>
     </div>
   );
 };
