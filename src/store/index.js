@@ -1,19 +1,38 @@
 import { configureStore } from "@reduxjs/toolkit";
-import totalChartReducer from "./totalChartSlice";
-import dateChartReducer from "./dateChartSlice";
-import currentChartReducer from "./currentChartSlice";
-import stateTableReducer from "./stateTableSlice";
-import errorFeedReducer from "./errorFeedSlice";
-import specChartReducer from "./specChartSlice";
+
+// monitoring integration Reducer
+import totalChartReducer from "./integration/totalChartSlice";
+import dateChartReducer from "./integration/dateChartSlice";
+import currentChartReducer from "./integration/currentChartSlice";
+import stateTableReducer from "./integration/stateTableSlice";
+import errorFeedReducer from "./integration/errorFeedSlice";
+import specChartReducer from "./charging/specChartSlice";
+
+// monitoring charging Reducer
+import detailListReducer from "./charging/detailListSlice";
+
+// monitoring detailItem Reducer
+import itemReportReducer from "./detailItem/itemReportSlice";
+import itemSpecReducer from "./detailItem/itemSpecSlice";
+import usingLogReducer from "./detailItem/usingLogSlice";
 
 const store = configureStore({
 	reducer: {
+		// monitoring charging
+		specChart: specChartReducer,
+		detailList: detailListReducer,
+
+		// monitoring integration
 		totalChart: totalChartReducer,
 		dateChart: dateChartReducer,
 		currentChart: currentChartReducer,
 		stateTable: stateTableReducer,
 		errorFeed: errorFeedReducer,
-		specChart: specChartReducer,
+
+		// monitoring detailitem
+		itemReport: itemReportReducer,
+		itemSpec: itemSpecReducer,
+		usingLog: usingLogReducer,
 	},
 });
 

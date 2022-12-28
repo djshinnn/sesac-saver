@@ -4,7 +4,7 @@ import Report from "../components/Charging/Report";
 
 const DetailContainer = () => {
   return (
-    <div>
+    <div className="detail_container">
       <DetailList />
       <Report />
     </div>
