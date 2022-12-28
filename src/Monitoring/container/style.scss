@@ -9,11 +9,11 @@
 }
 
 .timeline_container {
-  @include flexCenter();
+  @include flexBetween();
 }
 
 .log_container {
-  @include flexCenter();
+  @include flexBetween();
 }
 
 .detail_container {
