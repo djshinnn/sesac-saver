@@ -1,3 +1,30 @@
+.error_title {
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  div {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+}
+
 .error_feed {
-  padding: 1rem;
+  width: 100%;
+  z-index: -1;
+
+  &__item {
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+  }
 }

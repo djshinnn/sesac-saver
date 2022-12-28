@@ -1,5 +1,15 @@
 .total_chart {
-  display: flex;
-  justify-content: center;
-  height: calc(100vh * 0.45);
+  width: 800px;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  &__line {
+    display: flex;
+    justify-content: center;
+  }
 }

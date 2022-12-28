@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
 
+import SubTitle from "../FormElements/SubTitle";
+
 const StateTable = () => {
   const stateTableData = useSelector((state) => state.stateTable.rows);
   const [pageSize, setPageSize] = useState(5);
 
   const columns = [
-    { field: "stationId", headerName: "No.", width: 70 },
-    { field: "stationName", headerName: "충전소 명", width: 130 },
-    { field: "totalChargeAmt", headerName: "누적 충전량", width: 130 },
-    { field: "totalFare", headerName: "누적 충전 금액", width: 130 },
-    { field: "state", headerName: "(운용가능 기기) / (전체 기기)", width: 250 },
+    { field: "stationId", headerName: "No.", width: 140 },
+    { field: "stationName", headerName: "충전소 명", width: 190 },
+    { field: "totalChargeAmt", headerName: "누적 충전량", width: 190 },
+    { field: "totalFare", headerName: "누적 충전 금액", width: 190 },
+    { field: "state", headerName: "(운용가능 기기) / (전체 기기)", width: 280 },
   ];
 
   const rows = stateTableData.map((item) => ({
@@ -25,6 +27,8 @@ const StateTable = () => {
 
   return (
     <div className="state_table">
+      <SubTitle name={"충전소별 상태 및 월 충전 누적량"} />
+
       <DataGrid
         rows={rows}
         columns={columns}
