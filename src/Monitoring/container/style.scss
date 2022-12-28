@@ -1,13 +1,17 @@
 .map_container {
-  display: flex;
+  @include flexCenter();
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .chart_container {
-  display: flex;
+  @include flexCenter();
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.timeline_container {
+  @include flexCenter();
+}
+
+.log_container {
+  @include flexCenter();
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import ChargingChart from "../components/DetailItem/ChargingChart";
-import ChargingState from "../components/DetailItem/ChargingState";
-import Spec from "../components/DetailItem/Spec";
-import Total from "../components/DetailItem/Total";
+import ChargingChart from "../components/Charging/ChargingChart";
+import ChargingState from "../components/Charging/ChargingState";
+import Spec from "../components/Charging/Spec";
+import Total from "../components/Charging/Total";
 
 const ChargingContainer = () => {
   return (

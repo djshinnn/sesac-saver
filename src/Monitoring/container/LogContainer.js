@@ -1,10 +1,10 @@
 import React from "react";
-import ItemReport from "../components/Charging/ItemReport";
-import UsingLog from "../components/Charging/UsingLog";
+import ItemReport from "../components/DetailItem/ItemReport";
+import UsingLog from "../components/DetailItem/UsingLog";
 
 const LogContainer = () => {
   return (
-    <div>
+    <div className="log_container">
       <UsingLog />
       <ItemReport />
     </div>

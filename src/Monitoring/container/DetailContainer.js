@@ -1,6 +1,6 @@
 import React from "react";
-import DetailList from "../components/DetailItem/DetailList";
-import Report from "../components/DetailItem/Report";
+import DetailList from "../components/Charging/DetailList";
+import Report from "../components/Charging/Report";
 
 const DetailContainer = () => {
   return (

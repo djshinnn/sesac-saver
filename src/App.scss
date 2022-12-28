@@ -1,3 +1,6 @@
+// mixin
+@import "./mixin.scss";
+
 // ChargerManageMent/ChargingStationEdit
 @import "./ChargerManagement/components/ChargingStationEdit/styles/ChargerEdit.scss";
 @import "./ChargerManagement/components/ChargingStationEdit/styles/StationEdit.scss";
@@ -23,18 +26,18 @@
 @import "./MemberManagement/pages/style.scss";
 
 // Monitoring/Charging
-@import "./Monitoring/components/Charging/styles/ItemReport.scss";
-@import "./Monitoring/components/Charging/styles/ItemSpec.scss";
-@import "./Monitoring/components/Charging/styles/TimeLine.scss";
-@import "./Monitoring/components/Charging/styles/UsingLog.scss";
+@import "./Monitoring/components/DetailItem/styles/ItemReport.scss";
+@import "./Monitoring/components/DetailItem/styles/ItemSpec.scss";
+@import "./Monitoring/components/DetailItem/styles/TimeLine.scss";
+@import "./Monitoring/components/DetailItem/styles/UsingLog.scss";
 
 // Monitoring/DetailItem
-@import "./Monitoring/components/DetailItem/styles/ChargingChart.scss";
-@import "./Monitoring/components/DetailItem/styles/ChargingState.scss";
-@import "./Monitoring/components/DetailItem/styles/DetailList.scss";
-@import "./Monitoring/components/DetailItem/styles/Report.scss";
-@import "./Monitoring/components/DetailItem/styles/Spec.scss";
-@import "./Monitoring/components/DetailItem/styles/Total.scss";
+@import "./Monitoring/components/Charging/styles/ChargingChart.scss";
+@import "./Monitoring/components/Charging/styles/ChargingState.scss";
+@import "./Monitoring/components/Charging/styles/DetailList.scss";
+@import "./Monitoring/components/Charging/styles/Report.scss";
+@import "./Monitoring/components/Charging/styles/Spec.scss";
+@import "./Monitoring/components/Charging/styles/Total.scss";
 
 // Monitoring/Integration
 @import "./Monitoring/components/Integration/styles/CurrentChart.scss";
