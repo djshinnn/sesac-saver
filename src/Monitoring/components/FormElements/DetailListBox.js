@@ -2,7 +2,7 @@ import React from "react";
 
 const DetailListBox = ({ data }) => {
   return (
-    <div className="detailList__box" key={data.chargeId}>
+    <div className="detailList__box">
       <h2>{data.chargerName}</h2>
       <div>
         <div>ChargeId</div>
