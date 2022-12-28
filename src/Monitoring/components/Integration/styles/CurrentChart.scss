@@ -1,5 +1,7 @@
 .current_chart {
-  width: 600px;
+  width: 500px;
+  margin: 0 auto 2rem auto;
+  padding-right: 2rem;
 
   &__box {
     display: flex;
@@ -13,8 +15,8 @@
 
     span {
       position: absolute;
-      left: 38%;
-      bottom: 32%;
+      left: 65px;
+      bottom: 55px;
       font-size: 1.2rem;
     }
   }

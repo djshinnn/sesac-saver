@@ -21,10 +21,12 @@
 
 .error_feed {
   width: 100%;
-  z-index: -1;
+  height: calc(100vh - 700px);
+  overflow: auto;
 
   &__item {
     border: 1px solid #ccc;
     margin-bottom: 0.5rem;
+    z-index: -1;
   }
 }
