@@ -4,6 +4,8 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+// ChartJS.register(ChartDataLabels);
+
 const ChargingState = () => {
 	const specChartStatus = useSelector((state) => state.specChart.status);
 	console.log(specChartStatus);
@@ -37,12 +39,18 @@ const ChargingState = () => {
 			legend: {
 				position: "right",
 			},
+			datalabels: {
+				display: true,
+				color: "#000",
+				anchor: "center",
+				align: "center",
+			},
 		},
 	};
 
 	return (
 		<div style={{ width: "500px" }}>
-			<Doughnut data={data} options={options} />
+			<Doughnut data={data} options={options} plugins={[ChartDataLabels]} />
 		</div>
 	);
 };
