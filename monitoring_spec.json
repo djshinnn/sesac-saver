@@ -1,0 +1,186 @@
+{
+  "result": "success",
+  "msg": "success",
+  "info": [
+    {
+      "stationName": "BC충전소",
+      "address": "경기도 고양시 덕양구 하신로 106 2403 동 옆 지하주차장",
+      "manager": "AC경비",
+      "contact": "1688-1532",
+      "runningTime": "24 시간",
+      "install": "2020-12-11",
+      "stationNum": "BFT32"
+    },
+    {
+      "stationName": "AC충전소",
+      "address": "경기도 고양시 덕양구 하신로 106 2403 동 옆 지하주차장",
+      "manager": "AC경비",
+      "contact": "1688-1532",
+      "runningTime": "24 시간",
+      "install": "2020-12-11",
+      "stationNum": "BFT33"
+    }
+  ],
+  "status": [
+    {
+      "stationNum": "BFT32",
+      "total": "20",
+      "avail": "10",
+      "using": "7",
+      "broken": "3"
+    },
+    {
+      "stationNum": "BFT33",
+      "total": "20",
+      "avail": "10",
+      "using": "7",
+      "broken": "3"
+    }
+  ],
+  "rows": [
+    {
+      "stationNum": "BFT32",
+      "month": "01",
+      "chargeAmt": "242",
+      "fare": "4253"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "02",
+      "chargeAmt": "142",
+      "fare": "3253"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "03",
+      "chargeAmt": "112",
+      "fare": "2253"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "04",
+      "chargeAmt": "202",
+      "fare": "1253"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "05",
+      "chargeAmt": "142",
+      "fare": "2353"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "06",
+      "chargeAmt": "122",
+      "fare": "2353"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "07",
+      "chargeAmt": "272",
+      "fare": "2463"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "08",
+      "chargeAmt": "202",
+      "fare": "5763"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "09",
+      "chargeAmt": "102",
+      "fare": "3565"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "10",
+      "chargeAmt": "42",
+      "fare": "4657"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "11",
+      "chargeAmt": "122",
+      "fare": "4532"
+    },
+    {
+      "stationNum": "BFT32",
+      "month": "12",
+      "chargeAmt": "52",
+      "fare": "4563"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "01",
+      "chargeAmt": "242",
+      "fare": "4253"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "02",
+      "chargeAmt": "142",
+      "fare": "3253"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "03",
+      "chargeAmt": "112",
+      "fare": "2253"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "04",
+      "chargeAmt": "202",
+      "fare": "1253"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "05",
+      "chargeAmt": "142",
+      "fare": "2353"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "06",
+      "chargeAmt": "122",
+      "fare": "2353"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "07",
+      "chargeAmt": "272",
+      "fare": "2463"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "08",
+      "chargeAmt": "202",
+      "fare": "5763"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "09",
+      "chargeAmt": "102",
+      "fare": "3565"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "10",
+      "chargeAmt": "42",
+      "fare": "4657"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "11",
+      "chargeAmt": "122",
+      "fare": "4532"
+    },
+    {
+      "stationNum": "BFT33",
+      "month": "12",
+      "chargeAmt": "52",
+      "fare": "4563"
+    }
+  ]
+}
