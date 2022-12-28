@@ -1,13 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-// 비동기 함수 (데이터 요청)
-import { asyncMonthChartData } from "../../../store/totalChartSlice";
-import { asyncDateChartData } from "../../../store/dateChartSlice";
-import { asyncCurrentChartData } from "../../../store/currentChartSlice";
-import { asyncStateTableData } from "../../../store/stateTableSlice";
-import { asyncErrorFeedData } from "../../../store/errorFeedSlice";
-
 // reducers
 import { totalChartActions } from "../../../store/totalChartSlice";
 import { dateChartActions } from "../../../store/dateChartSlice";
@@ -49,14 +42,6 @@ const Map = () => {
       dateChartActions.getFilteredData({ chargeAmt, fare, yesterday, today })
     );
   };
-
-  useEffect(() => {
-    dispatch(asyncMonthChartData());
-    dispatch(asyncDateChartData());
-    dispatch(asyncCurrentChartData());
-    dispatch(asyncStateTableData());
-    dispatch(asyncErrorFeedData());
-  }, [dispatch]);
 
   return (
     <div className="map">

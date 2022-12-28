@@ -6,6 +6,7 @@ import dateChartReducer from "./dateChartSlice";
 import currentChartReducer from "./currentChartSlice";
 import stateTableReducer from "./stateTableSlice";
 import errorFeedReducer from "./errorFeedSlice";
+import detailListReducer from "./detailListSlice";
 
 // monitoring detailItem Reducer
 import itemReportReducer from "./detailItem/itemReportSlice";
@@ -20,6 +21,7 @@ const store = configureStore({
     currentChart: currentChartReducer,
     stateTable: stateTableReducer,
     errorFeed: errorFeedReducer,
+    detailList: detailListReducer,
 
     // monitoring detailitem
     itemReport: itemReportReducer,
