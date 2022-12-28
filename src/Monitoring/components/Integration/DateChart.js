@@ -4,6 +4,7 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 import { regionCodeHandler } from "../../utils/regionCodeHandler";
+import { currencyFormatter } from "../../utils/formatter";
 import SubTitle from "../FormElements/SubTitle";
 
 const DateChart = () => {
@@ -60,10 +61,9 @@ const DateChart = () => {
                 KW
               </td>
               <td>
-                &#8361;{" "}
                 {filteredData.chargeAmt.length > 1
-                  ? filteredData.fare[0]
-                  : seoulData.fare[0]}
+                  ? currencyFormatter(filteredData.fare[0])
+                  : currencyFormatter(seoulData.fare[0])}
               </td>
             </tr>
             <tr>
@@ -79,10 +79,9 @@ const DateChart = () => {
                 KW
               </td>
               <td>
-                &#8361;{" "}
                 {filteredData.chargeAmt.length > 1
-                  ? filteredData.fare[1]
-                  : seoulData.fare[1]}
+                  ? currencyFormatter(filteredData.fare[1])
+                  : currencyFormatter(seoulData.fare[1])}
               </td>
             </tr>
           </tbody>
