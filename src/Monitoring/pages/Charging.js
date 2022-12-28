@@ -1,23 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncDetailListData } from "../../store/charging/detailListSlice";
 import ChargingContainer from "../container/ChargingContainer";
 import DetailContainer from "../container/DetailContainer";
+import { asyncSpecChartData } from "../../store/charging/specChartSlice";
+import { asyncDetailListData } from "../../store/charging/detailListSlice";
 
 const Charging = () => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(asyncDetailListData());
-  });
+	useEffect(() => {
+		dispatch(asyncDetailListData());
+		dispatch(asyncSpecChartData());
+	});
 
-  return (
-    <div>
-      <ChargingContainer />
-      <DetailContainer />
-    </div>
-  );
+	return (
+		<div>
+			<ChargingContainer />
+			<DetailContainer />
+		</div>
+	);
 };
 
 export default Charging;
