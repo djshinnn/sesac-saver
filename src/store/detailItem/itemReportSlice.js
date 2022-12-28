@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 export const asyncItemReport = createAsyncThunk(
   "itemReportSlice/asyncItemReport",
   async () => {
-    const { itemId } = useParams();
+    // const { itemId } = useParams();
     const res = await fetch(
       `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/chargers/3/reports.json`
     );

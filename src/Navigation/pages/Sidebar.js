@@ -6,7 +6,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Navbar = () => {
@@ -30,10 +29,10 @@ const Navbar = () => {
             </li>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅모니터링</Typography>
+                <div className="menu-bars__title">✅모니터링</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/">통합 모니터링</Link>
                   </li>
@@ -45,10 +44,10 @@ const Navbar = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅충전기 관리</Typography>
+                <div className="menu-bars__title">✅충전기 관리</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/chargingstationlist">충전소 목록</Link>
                   </li>
@@ -63,10 +62,10 @@ const Navbar = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅충전 내역</Typography>
+                <div className="menu-bars__title">✅충전 내역</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/stationhistory">충전소 기간별 내역</Link>
                   </li>
@@ -78,10 +77,10 @@ const Navbar = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅회원 관리</Typography>
+                <div className="menu-bars__title">✅회원 관리</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/memberlist">회원 목록</Link>
                   </li>
@@ -96,10 +95,10 @@ const Navbar = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅고객관리</Typography>
+                <div className="menu-bars__title">✅고객관리</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/notice">공지사항</Link>
                   </li>
@@ -117,10 +116,10 @@ const Navbar = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>✅마이페이지</Typography>
+                <div className="menu-bars__title">✅마이페이지</div>
               </AccordionSummary>
               <AccordionDetails>
-                <div onClick={showSidebar}>
+                <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/mypage">비밀번호 수정</Link>
                   </li>
