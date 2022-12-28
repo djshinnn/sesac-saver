@@ -15,3 +15,8 @@
 .log_container {
   @include flexBetween();
 }
+
+.detail_container {
+  @include flexCenter();
+  margin: 100px auto;
+}
