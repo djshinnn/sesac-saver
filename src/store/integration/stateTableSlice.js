@@ -12,8 +12,6 @@ export const asyncStateTableData = createAsyncThunk(
     }
 
     const data = await res.json();
-
-    console.log(data);
     return data;
   }
 );

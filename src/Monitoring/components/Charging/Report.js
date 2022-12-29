@@ -1,7 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+
+import SubTitle from "../FormElements/SubTitle";
+import ReportComponent from "../FormElements/ReportComponent";
 
 const Report = () => {
-  return <div className="report">Report</div>;
+  const stationReport = useSelector((state) => state.stationReport);
+
+  return (
+    <div className="report">
+      <SubTitle name={"Report"} width={"300px"} />
+
+      {stationReport.rows.map((data) => (
+        <ReportComponent key={nanoid()} data={data} />
+      ))}
+    </div>
+  );
 };
 
 export default Report;

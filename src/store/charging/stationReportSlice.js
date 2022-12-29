@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const asyncDetailListData = createAsyncThunk(
-  "dataListSlice/asyncDetailListData",
+export const asyncStationReportData = createAsyncThunk(
+  "stationReportSlice/asyncStationReportData",
   async (stationId) => {
     const res = await fetch(
-      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/stations/${stationId}/chargers.json`
+      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/stations/${stationId}/reports.json`
     );
 
     if (!res.ok) {
@@ -23,27 +23,27 @@ const initialState = {
   rows: [],
 };
 
-const detailListSlice = createSlice({
-  name: "detailList",
+const stationReportSlice = createSlice({
+  name: "stationReport",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(asyncDetailListData.pending, (state, action) => {
+      .addCase(asyncStationReportData.pending, (state, action) => {
         state.isLoading = true;
       })
-      .addCase(asyncDetailListData.fulfilled, (state, action) => {
+      .addCase(asyncStationReportData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.result = action.payload.result;
         state.msg = action.payload.msg;
         state.rows = action.payload.rows;
       })
-      .addCase(asyncDetailListData.rejected, (state, action) => {
+      .addCase(asyncStationReportData.rejected, (state, action) => {
         state.isLoading = true;
       });
   },
 });
 
-export const detailListActions = detailListSlice.actions;
+export const stationReportActions = stationReportSlice.actions;
 
-export default detailListSlice.reducer;
+export default stationReportSlice.reducer;

@@ -5,8 +5,7 @@ import { Chart as ChartJS } from "chart.js";
 import { Line } from "react-chartjs-2";
 
 const TimeLine = () => {
-  const usingLogData = useSelector(state => state.usingLog.rows);
-  console.log(usingLogData);
+  const usingLogData = useSelector((state) => state.usingLog.rows);
 
   const options = {
     responsive: true,

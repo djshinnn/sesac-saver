@@ -12,7 +12,7 @@ const DetailList = () => {
       <SubTitle name={"충전소 상세"} width={"752px"} />
       <div className="detailList__container">
         {detailList.rows.map((data) => (
-          <DetailListBox key={data.chargeId} data={data} />
+          <DetailListBox key={data.chargerId} data={data} />
         ))}
       </div>
     </div>
