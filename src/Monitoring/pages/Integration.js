@@ -9,14 +9,13 @@ import { asyncCurrentChartData } from "../../store/integration/currentChartSlice
 import { asyncStateTableData } from "../../store/integration/stateTableSlice";
 import { asyncErrorFeedData } from "../../store/integration/errorFeedSlice";
 
-import { asyncSpecChartData } from "../../store/charging/specChartSlice";
-
 import ChartContainer from "../container/ChartContainer";
 import MapContainer from "../container/MapContainer";
 
 const Integration = () => {
 	const dispatch = useDispatch();
 
+<<<<<<< HEAD
 	useEffect(() => {
 		dispatch(asyncMonthChartData());
 		dispatch(asyncDateChartData());
@@ -25,6 +24,15 @@ const Integration = () => {
 		dispatch(asyncErrorFeedData());
 		dispatch(asyncSpecChartData());
 	}, [dispatch]);
+=======
+  useEffect(() => {
+    dispatch(asyncMonthChartData());
+    dispatch(asyncDateChartData());
+    dispatch(asyncCurrentChartData());
+    dispatch(asyncStateTableData());
+    dispatch(asyncErrorFeedData());
+  }, [dispatch]);
+>>>>>>> 154934df7ec03ce746984e7c78c9b64307260c79
 
 	return (
 		<Grid container>

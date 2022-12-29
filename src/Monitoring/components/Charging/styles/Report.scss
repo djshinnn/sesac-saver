@@ -1,3 +1,45 @@
 .report {
-  flex: 1;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+  }
+
+  &_time__box {
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 150px;
+    height: 100px;
+  }
+
+  &_time {
+    margin-bottom: 0.7rem;
+  }
+
+  &_timeLeft {
+  }
+
+  &_box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 150px;
+    height: 100px;
+
+    &__charger {
+      margin-bottom: 1rem;
+    }
+
+    &__content {
+      font-size: 1.5rem;
+    }
+  }
 }

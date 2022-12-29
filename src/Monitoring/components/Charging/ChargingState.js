@@ -8,10 +8,8 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 // ChartJS.register(ChartDataLabels);
 
 const ChargingState = () => {
-	const location = useLocation();
-	const specChartStatus = location.state.specChartData;
+	const specChartStatus = useSelector((state) => state.specChart.status);
 
-	console.log(specChartStatus);
 	const data = {
 		labels: ["사용가능", "고장", "사용중"],
 		datasets: [

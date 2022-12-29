@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,8 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const Spec = () => {
-	const location = useLocation();
-	const specChartInfo = location.state.specTableData;
+	const specChartInfo = useSelector((state) => state.specChart.info);
 
 	return (
 		//

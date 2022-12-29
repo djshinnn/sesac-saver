@@ -11,7 +11,6 @@ import Paper from "@mui/material/Paper";
 
 const UsingLog = () => {
   const usingLogData = useSelector(state => state.usingLog.rows);
-  console.log(usingLogData);
 
   return (
     <TableContainer component={Paper}>
