@@ -6,11 +6,7 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "react-chartjs-2";
 
 const ChargingChart = () => {
-  const location = useLocation();
-  const specChartData = location.state.specMixChartData;
-
-  // const specChartData = useSelector((state) => state.specChart.rows);
-  // console.log(specChartData);
+  const specChartData = useSelector((state) => state.specChart.rows);
 
   const month = specChartData.map((item) => `${item.month} 월`);
   const specChargeAmt = specChartData.map((item) => item.chargeAmt);

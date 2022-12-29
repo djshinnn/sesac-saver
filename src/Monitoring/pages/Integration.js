@@ -9,8 +9,6 @@ import { asyncCurrentChartData } from "../../store/integration/currentChartSlice
 import { asyncStateTableData } from "../../store/integration/stateTableSlice";
 import { asyncErrorFeedData } from "../../store/integration/errorFeedSlice";
 
-import { asyncSpecChartData } from "../../store/charging/specChartSlice";
-
 import ChartContainer from "../container/ChartContainer";
 import MapContainer from "../container/MapContainer";
 
@@ -23,7 +21,6 @@ const Integration = () => {
     dispatch(asyncCurrentChartData());
     dispatch(asyncStateTableData());
     dispatch(asyncErrorFeedData());
-    dispatch(asyncSpecChartData());
   }, [dispatch]);
 
   return (
