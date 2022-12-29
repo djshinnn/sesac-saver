@@ -1,35 +1,51 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const Spec = () => {
-  const specChartInfo = useSelector((state) => state.specChart.info);
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
-  return (
-    <table>
-      <tbody>
-        <tr>
-          <th>충전소명</th>
-          <td>{specChartInfo.stationName}</td>
-        </tr>
-        <tr>
-          <th>주소</th>
-          <td>{specChartInfo.address}</td>
-        </tr>
-        <tr>
-          <th>충전사업자</th>
-          <td>한국전력공사</td>
-        </tr>
-        <tr>
-          <th>연락처</th>
-          <td>{specChartInfo.contact}</td>
-        </tr>
-        <tr>
-          <th>설치날짜</th>
-          <td>{specChartInfo.install}</td>
-        </tr>
-      </tbody>
-    </table>
-  );
+const Spec = () => {
+	const specChartInfo = useSelector((state) => state.specChart.info);
+
+	return (
+		//
+		<div className='spec_table'>
+			<TableContainer component={Paper}>
+				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
+					<TableBody>
+						<TableRow>
+							<TableCell>충전소명</TableCell>
+							<TableCell>{specChartInfo.stationName}</TableCell>
+						</TableRow>
+
+						<TableRow>
+							<TableCell>주소</TableCell>
+							<TableCell>{specChartInfo.address}kW</TableCell>
+						</TableRow>
+
+						<TableRow>
+							<TableCell>충전사업자</TableCell>
+							<TableCell>한국전력공사</TableCell>
+						</TableRow>
+
+						<TableRow>
+							<TableCell>연락처</TableCell>
+							<TableCell>{specChartInfo.contact}</TableCell>
+						</TableRow>
+
+						<TableRow>
+							<TableCell>설치날짜</TableCell>
+							<TableCell>{specChartInfo.install}</TableCell>
+						</TableRow>
+					</TableBody>
+				</Table>
+			</TableContainer>
+		</div>
+	);
 };
 
 export default Spec;
