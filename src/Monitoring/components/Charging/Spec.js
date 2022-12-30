@@ -9,43 +9,43 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const Spec = () => {
-	const specChartInfo = useSelector((state) => state.specChart.info);
+  const specChartInfo = useSelector((state) => state.specChart.info);
 
-	return (
-		//
-		<div className='spec_table'>
-			<TableContainer component={Paper}>
-				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
-					<TableBody>
-						<TableRow>
-							<TableCell>충전소명</TableCell>
-							<TableCell>{specChartInfo.stationName}</TableCell>
-						</TableRow>
+  return (
+    <div className="spec_table">
+      <h1>Specification</h1>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableBody>
+            <TableRow>
+              <TableCell sx={{ fontSize: "1.5rem" }}>충전소명</TableCell>
+              <TableCell sx={{ fontSize: "1.5rem" }}>{specChartInfo.stationName}</TableCell>
+            </TableRow>
 
-						<TableRow>
-							<TableCell>주소</TableCell>
-							<TableCell>{specChartInfo.address}kW</TableCell>
-						</TableRow>
+            <TableRow>
+              <TableCell sx={{ fontSize: "1.5rem" }}>주소</TableCell>
+              <TableCell sx={{ fontSize: "1.5rem" }}>{specChartInfo.address}kW</TableCell>
+            </TableRow>
 
-						<TableRow>
-							<TableCell>충전사업자</TableCell>
-							<TableCell>한국전력공사</TableCell>
-						</TableRow>
+            <TableRow>
+              <TableCell sx={{ fontSize: "1.5rem" }}>충전사업자</TableCell>
+              <TableCell sx={{ fontSize: "1.5rem" }}>한국전력공사</TableCell>
+            </TableRow>
 
-						<TableRow>
-							<TableCell>연락처</TableCell>
-							<TableCell>{specChartInfo.contact}</TableCell>
-						</TableRow>
+            <TableRow>
+              <TableCell sx={{ fontSize: "1.5rem" }}>연락처</TableCell>
+              <TableCell sx={{ fontSize: "1.5rem" }}>{specChartInfo.contact}</TableCell>
+            </TableRow>
 
-						<TableRow>
-							<TableCell>설치날짜</TableCell>
-							<TableCell>{specChartInfo.install}</TableCell>
-						</TableRow>
-					</TableBody>
-				</Table>
-			</TableContainer>
-		</div>
-	);
+            <TableRow>
+              <TableCell sx={{ fontSize: "1.5rem" }}>설치날짜</TableCell>
+              <TableCell sx={{ fontSize: "1.5rem" }}>{specChartInfo.install}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
 };
 
 export default Spec;

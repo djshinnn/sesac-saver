@@ -1,0 +1,17 @@
+.charging_state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+
+  h1 {
+    padding: 2rem;
+    font-size: 20px;
+  }
+
+  &_chart {
+    width: 280px;
+    height: 180px;
+  }
+}

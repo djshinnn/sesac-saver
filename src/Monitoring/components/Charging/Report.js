@@ -10,11 +10,13 @@ const Report = () => {
 
   return (
     <div className="report">
-      <SubTitle name={"Report"} width={"300px"} />
+      <SubTitle name={"Report"} width={"500px"} />
 
-      {stationReport.rows.map((data) => (
-        <ReportComponent key={nanoid()} data={data} />
-      ))}
+      <div>
+        {stationReport.rows.map((data) => (
+          <ReportComponent key={nanoid()} data={data} />
+        ))}
+      </div>
     </div>
   );
 };

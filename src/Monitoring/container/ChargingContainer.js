@@ -6,11 +6,15 @@ import Total from "../components/Charging/Total";
 
 const ChargingContainer = () => {
   return (
-    <div>
-      <Spec />
-      <ChargingState />
-      <ChargingChart />
-      <Total />
+    <div className="charging_container">
+      <div className="charging_container__top">
+        <Spec />
+        <ChargingState />
+      </div>
+      <div className="charging_container__bottom">
+        <ChargingChart />
+        <Total />
+      </div>
     </div>
   );
 };
