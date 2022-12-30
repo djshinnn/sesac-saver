@@ -47,7 +47,7 @@ const StateTable = () => {
         pageSize={pageSize}
         rowsPerPageOptions={[1, 2, 3, 5, 10, 15, 20]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{ display: "flex", justifyContent: "center", fontSize: "1.5rem" }}
         onCellClick={clickHandler}
       />
     </div>

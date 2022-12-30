@@ -12,20 +12,7 @@ const TotalChart = () => {
   const filteredData = useSelector((state) => state.totalChart.filteredData);
 
   const chartData = {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [
       {
         type: "bar",
@@ -43,14 +30,16 @@ const TotalChart = () => {
     ],
   };
 
+  const options = {
+    maintainAspectRatio: false,
+  };
+
   return (
     <div className="total_chart">
-      <h1 className="total_chart__title">
-        운영 현황 - {regionCodeHandler(filteredData)}
-      </h1>
+      <h1 className="total_chart__title">운영 현황 - {regionCodeHandler(filteredData)}</h1>
       <SubTitle name={"월별 전체 충전 누적량"} />
       <div className="total_chart__line">
-        <Line data={chartData} />
+        <Line options={options} data={chartData} />
       </div>
     </div>
   );

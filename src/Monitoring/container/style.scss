@@ -1,19 +1,27 @@
 .map_container {
   @include flexCenter();
   flex-direction: column;
+  width: 500px;
 }
 
 .chart_container {
   @include flexCenter();
   flex-direction: column;
+  width: 1000px;
+  height: 100vh;
+  margin-left: 2rem;
+}
+
+.chart_container__middlechart {
+  display: flex;
 }
 
 .timeline_container {
-  @include flexBetween();
+  @include flexSpaceBetween();
 }
 
 .log_container {
-  @include flexBetween();
+  @include flexSpaceBetween();
 }
 
 .detail_container {
