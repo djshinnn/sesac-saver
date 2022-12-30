@@ -4,7 +4,7 @@ import StationEdit from "../components/ChargingStation/StationEdit";
 
 const StationContainer = () => {
   return (
-    <div>
+    <div className="station_container">
       <StationList />
       <StationEdit />
     </div>

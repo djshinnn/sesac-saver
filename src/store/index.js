@@ -17,6 +17,13 @@ import itemReportReducer from "./detailItem/itemReportSlice";
 import itemSpecReducer from "./detailItem/itemSpecSlice";
 import usingLogReducer from "./detailItem/usingLogSlice";
 
+// chargerManagement companies Reducer
+import companiesListReducer from "./companies/companiesListSlice";
+
+// chargerManagement chargingStation Reducer
+import stationListReducer from "./chargingStation/stationListSlice";
+import chargerListReducer from "./chargingStation/chargerListSlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -35,6 +42,13 @@ const store = configureStore({
     itemReport: itemReportReducer,
     itemSpec: itemSpecReducer,
     usingLog: usingLogReducer,
+
+    // chargerManagement companies
+    companiesList: companiesListReducer,
+
+    // chargerManagement chargingStation Reducer
+    stationList: stationListReducer,
+    chargerList: chargerListReducer,
   },
 });
 

@@ -1,0 +1,19 @@
+.companies_edit {
+  flex: 1;
+  padding: 0 2rem;
+
+  &__container {
+    padding: 6rem;
+  }
+
+  &__box {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+    div {
+      margin-right: 2rem;
+      width: 10rem;
+    }
+  }
+}

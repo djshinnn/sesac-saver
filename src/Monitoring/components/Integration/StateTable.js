@@ -15,9 +15,6 @@ const StateTable = () => {
   const [pageSize, setPageSize] = useState(5);
 
   const clickHandler = (e) => {
-    // const station = stateTableData.find(
-    //   (station) => station.stationId === e.row.id
-    // );
     dispatch(asyncSpecChartData(e.row.id));
 
     navigate(`/charging/${e.row.id}`);
