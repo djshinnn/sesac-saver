@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useParams } from "react-router-dom";
 
 export const asyncUsingLog = createAsyncThunk(
   "usingLogSlice/asyncUsingLog",
-  async () => {
-    // const { itemId } = useParams();
+  async (chargerId) => {
     const res = await fetch(
-      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/chargers/3/logs.json`
+      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/chargers/${chargerId}/logs.json`
     );
 
     if (!res.ok) {
@@ -29,7 +27,7 @@ const usingLogSlice = createSlice({
   name: "itemReport",
   initialState,
   reducers: {},
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(asyncUsingLog.pending, (state, action) => {
         state.isLoading = true;
