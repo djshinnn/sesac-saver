@@ -36,9 +36,6 @@ const Navbar = () => {
                   <li>
                     <Link to="/">통합 모니터링</Link>
                   </li>
-                  <li>
-                    <Link to="charging">충전소 모니터링</Link>
-                  </li>
                 </div>
               </AccordionDetails>
             </Accordion>
@@ -49,7 +46,10 @@ const Navbar = () => {
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
-                    <Link to="/chargingstationlist">충전소 목록</Link>
+                    <Link to="/companies">충전소 사업자 목록</Link>
+                  </li>
+                  <li>
+                    <Link to="/chargingstation">충전소 목록</Link>
                   </li>
                   <li>
                     <Link to="/errorlist">충전기 장애 목록</Link>
@@ -101,6 +101,9 @@ const Navbar = () => {
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
                   <li>
                     <Link to="/notice">공지사항</Link>
+                  </li>
+                  <li>
+                    <Link to="/noticeedit">공지사항 등록/변경</Link>
                   </li>
                   <li>
                     <Link to="/faq">FAQ</Link>

@@ -1,10 +1,15 @@
 // mixin
 @import "./mixin.scss";
 
-// ChargerManageMent/ChargingStationEdit
-@import "./ChargerManagement/components/ChargingStationEdit/styles/ChargerEdit.scss";
-@import "./ChargerManagement/components/ChargingStationEdit/styles/StationEdit.scss";
-@import "./ChargerManagement/components/ChargingStationEdit/styles/StationMap.scss";
+// ChargerManagement/Companies
+@import "./ChargerManagement/components/Companies/styles/CompaniesList.scss";
+@import "./ChargerManagement/components/Companies/styles/CompaniesEdit.scss";
+
+// ChargerManagement/ChargingStation
+@import "./ChargerManagement/components/ChargingStation/styles/ChargerEdit.scss";
+@import "./ChargerManagement/components/ChargingStation/styles/ChargerList.scss";
+@import "./ChargerManagement/components/ChargingStation/styles/StationEdit.scss";
+@import "./ChargerManagement/components/ChargingStation/styles/StationList.scss";
 
 // ChargerManagement/ErrorList
 @import "./ChargerManagement/components/ErrorList/styles/ErrorDetailList.scss";
