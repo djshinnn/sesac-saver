@@ -10,7 +10,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-import SubTitle from "../FormElements/SubTitle";
 
 const ItemReport = () => {
   const itemReportData = useSelector(state => state.itemReport.rows);

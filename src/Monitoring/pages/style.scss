@@ -1,4 +1,9 @@
 .detailItem {
   display: flex;
   flex-direction: column;
-}
+};
+  
+.integration {
+  @include flexBetween();
+  font-size: 1.5rem;
+};
