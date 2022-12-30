@@ -17,9 +17,9 @@ const ChargingChart = () => {
       {
         type: "bar",
         label: "충전량",
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: "#46649B",
         data: specChargeAmt,
-        borderColor: "red",
+        borderColor: "#46649B",
         borderWidth: 2,
       },
       {
@@ -35,6 +35,7 @@ const ChargingChart = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
 
     plugins: {
       legend: {
@@ -43,7 +44,7 @@ const ChargingChart = () => {
     },
   };
   return (
-    <div style={{ width: "800px" }}>
+    <div className="charging_chart">
       <Chart data={data} options={options} />;
     </div>
   );
