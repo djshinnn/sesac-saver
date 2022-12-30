@@ -13,7 +13,6 @@ const DetailItem = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const pathName = location.pathname.split("/").slice(-1).join("");
-  console.log(pathName);
 
   useEffect(() => {
     dispatch(asyncItemSpec(pathName));

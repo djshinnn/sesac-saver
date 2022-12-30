@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
+import SubTitle from "../FormElements/SubTitle";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,9 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-
 const ItemReport = () => {
-  const itemReportData = useSelector(state => state.itemReport.rows);
+  const itemReportData = useSelector((state) => state.itemReport.rows);
   return (
     <div className="itemReport">
       <SubTitle name="Report" />
@@ -25,21 +25,12 @@ const ItemReport = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {itemReportData.map(item => (
-              <TableRow
-                key={nanoid()}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell
-                  component="th"
-                  scope="row"
-                  style={{ fontSize: "1.5rem" }}
-                >
+            {itemReportData.map((item) => (
+              <TableRow key={nanoid()} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                <TableCell component="th" scope="row" style={{ fontSize: "1.5rem" }}>
                   {item.createdAt}
                 </TableCell>
-                <TableCell style={{ fontSize: "1.5rem" }}>
-                  {item.content}
-                </TableCell>
+                <TableCell style={{ fontSize: "1.5rem" }}>{item.content}</TableCell>
               </TableRow>
             ))}
           </TableBody>
