@@ -1,21 +1,21 @@
 .date_chart {
   width: 500px;
-  margin: 0 auto 2rem auto;
-  padding-left: 2rem;
+  padding-right: 1rem;
 
   &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: inherit;
+    @include flexCenter();
+    padding: 1rem;
   }
 
   &__line {
-    padding-right: 1rem;
+    width: 200px;
+    height: calc(100vh * 0.2);
   }
 
   &__table {
-    width: 50%;
+    width: 300px;
+    margin-left: 2rem;
+    margin-right: 1rem;
 
     th {
       border-bottom: 1px solid black;
@@ -23,6 +23,7 @@
     }
 
     tr td {
+      border-bottom: 1px solid lightgray;
       text-align: center;
       padding: 1rem;
     }

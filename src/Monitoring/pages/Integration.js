@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Grid from "@mui/material/Grid";
 
 // 비동기 함수 (데이터 요청)
 import { asyncMonthChartData } from "../../store/integration/totalChartSlice";
@@ -24,14 +23,10 @@ const Integration = () => {
   }, [dispatch]);
 
   return (
-    <Grid container>
-      <Grid item xs={3}>
-        <MapContainer />
-      </Grid>
-      <Grid item xs={9}>
-        <ChartContainer />
-      </Grid>
-    </Grid>
+    <div className="integration">
+      <MapContainer />
+      <ChartContainer />
+    </div>
   );
 };
 

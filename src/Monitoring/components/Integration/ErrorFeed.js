@@ -18,8 +18,15 @@ const ErrorFeed = () => {
       <List className="error_feed" sx={{ padding: "0 1rem" }}>
         {errorFeedData.map((item) => (
           <ListItem className="error_feed__item" key={nanoid()}>
-            <ListItemText primary={item.chargeName} />
-            <ListItemText primary={item.time} sx={{ textAlign: "right" }} />
+            <ListItemText
+              primary={item.chargeName}
+              primaryTypographyProps={{ fontSize: "1.5rem" }}
+            />
+            <ListItemText
+              primary={item.time}
+              sx={{ textAlign: "right" }}
+              primaryTypographyProps={{ fontSize: "1.5rem" }}
+            />
           </ListItem>
         ))}
       </List>

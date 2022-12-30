@@ -1,16 +1,26 @@
+@font-face {
+  font-family: "KorailRoundGothicBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KorailRoundGothicBold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
 .total_chart {
-  width: 800px;
-  margin: 0 0 2rem 7rem;
-  // margin: 0 auto 2rem auto;
+  width: 1000px;
 
   &__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
+    font-family: "KorailRoundGothicBold";
   }
 
   &__line {
+    width: inherit;
+    height: calc(100vh * 0.35);
     display: flex;
     justify-content: center;
+    padding: 1rem;
   }
 }

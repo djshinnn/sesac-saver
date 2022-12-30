@@ -23,12 +23,13 @@ const DateChart = () => {
         label: `${regionCodeHandler(regionPickData)}`,
         barThickness: 30,
         backgroundColor: "blue",
-        data:
-          filteredData.chargeAmt.length > 1
-            ? filteredData.chargeAmt
-            : seoulData.chargeAmt,
+        data: filteredData.chargeAmt.length > 1 ? filteredData.chargeAmt : seoulData.chargeAmt,
       },
     ],
+  };
+
+  const options = {
+    maintainAspectRatio: false,
   };
 
   return (
@@ -37,7 +38,7 @@ const DateChart = () => {
 
       <div className="date_chart__box">
         <div className="date_chart__line">
-          <Line data={chartData} />
+          <Line options={options} data={chartData} />
         </div>
         <table className="date_chart__table">
           <thead>
@@ -50,9 +51,7 @@ const DateChart = () => {
           <tbody>
             <tr>
               <td>
-                {filteredData.chargeAmt.length > 1
-                  ? filteredData.yesterday
-                  : seoulData.yesterday}
+                {filteredData.chargeAmt.length > 1 ? filteredData.yesterday : seoulData.yesterday}
               </td>
               <td>
                 {filteredData.chargeAmt.length > 1
@@ -67,11 +66,7 @@ const DateChart = () => {
               </td>
             </tr>
             <tr>
-              <td>
-                {filteredData.chargeAmt.length > 1
-                  ? filteredData.today
-                  : seoulData.today}
-              </td>
+              <td>{filteredData.chargeAmt.length > 1 ? filteredData.today : seoulData.today}</td>
               <td>
                 {filteredData.chargeAmt.length > 1
                   ? filteredData.chargeAmt[1]

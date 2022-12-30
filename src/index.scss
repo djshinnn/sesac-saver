@@ -136,3 +136,19 @@ html {
   width: 1600px;
   margin: 0 auto;
 }
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  height: 5px; /* 스크롤바의 너비 */
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 30%; /* 스크롤바의 길이 */
+  background: #000051; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgray; /*스크롤바 뒷 배경 색상*/
+}
