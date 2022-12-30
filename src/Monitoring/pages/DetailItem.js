@@ -22,7 +22,7 @@ const DetailItem = () => {
   }, [dispatch, pathName]);
 
   return (
-    <div>
+    <div className="detailItem">
       <TimeLineContainer />
       <LogContainer />
     </div>

@@ -17,11 +17,11 @@
 }
 
 .timeline_container {
-  @include flexBetween();
+  @include flexSpaceBetween();
 }
 
 .log_container {
-  @include flexBetween();
+  @include flexSpaceBetween();
 }
 
 .detail_container {
