@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useParams } from "react-router-dom";
 
 export const asyncItemSpec = createAsyncThunk(
   "itemSpecSlice/asyncItemSpec",
-  async () => {
-    // const { itemId } = useParams();
+  async (chargerId) => {
     const res = await fetch(
-      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/chargers/3.json`
+      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/monitoring/chargers/${chargerId}.json`
     );
 
     if (!res.ok) {
