@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 
 import { Chart as ChartJS } from "chart.js";
 import { Line } from "react-chartjs-2";
+import SubTitle from "./../FormElements/SubTitle";
 
 const TimeLine = () => {
-  const usingLogData = useSelector((state) => state.usingLog.rows);
+  const usingLogData = useSelector(state => state.usingLog.rows);
 
   const options = {
     responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         position: "top",
@@ -55,7 +57,12 @@ const TimeLine = () => {
       },
     ],
   };
-  return <Line options={options} data={data} />;
+  return (
+    <div className="timeLine">
+      <SubTitle name="타임라인 그래프" />
+      <Line options={options} data={data} />
+    </div>
+  );
 };
 
 export default TimeLine;

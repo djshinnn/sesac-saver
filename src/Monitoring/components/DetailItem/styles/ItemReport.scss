@@ -1,0 +1,8 @@
+.itemReport {
+  width: 500px;
+}
+
+.reportRow {
+  @include flexBetween;
+  padding: 1rem;
+}

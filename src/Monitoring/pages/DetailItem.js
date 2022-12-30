@@ -18,7 +18,7 @@ const DetailItem = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="detailItem">
       <TimeLineContainer />
       <LogContainer />
     </div>
