@@ -1,6 +1,6 @@
 import React from "react";
 
-import Title from "../FormElements/Title";
+import Title from "../../../common/FormElements/Title";
 
 const StationEdit = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncChargerListData } from "../../../store/chargingStation/chargerListSlice";
+import { asyncChargerListData } from "../../store/chargingStation/chargerListSlice";
 
 import { DataGrid } from "@mui/x-data-grid";
 
