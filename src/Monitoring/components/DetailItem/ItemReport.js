@@ -13,7 +13,7 @@ import Paper from "@mui/material/Paper";
 import SubTitle from "../FormElements/SubTitle";
 
 const ItemReport = () => {
-  const itemReportData = useSelector((state) => state.itemReport.rows);
+  const itemReportData = useSelector((state) => state.itemReport);
   return (
     <div className="itemReport">
       <SubTitle name="Report" />
@@ -26,7 +26,7 @@ const ItemReport = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {itemReportData.map((item) => (
+            {itemReportData.rows.map((item) => (
               <TableRow key={nanoid()} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell component="th" scope="row" style={{ fontSize: "1.5rem" }}>
                   {item.createdAt}
