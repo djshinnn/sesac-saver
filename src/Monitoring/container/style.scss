@@ -1,15 +1,17 @@
-.map_container {
-  @include flexCenter();
-  flex-direction: column;
-  width: 500px;
-}
-
 .chart_container {
   @include flexCenter();
   flex-direction: column;
   width: 1000px;
   height: 100vh;
+  margin-top: 0;
   margin-left: 2rem;
+}
+
+.map_container {
+  @include flexCenter();
+  flex-direction: column;
+  width: 500px;
+  margin-top: 5rem;
 }
 
 .chart_container__middlechart {

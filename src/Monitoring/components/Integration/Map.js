@@ -13,34 +13,28 @@ import MarkerBlack from "../../../assets/images/marker_black.png";
 const Map = () => {
   const dispatch = useDispatch();
 
-  const totalData = useSelector(state => state.totalChart.rows);
-  const dateTotalData = useSelector(state => state.dateChart.rows);
+  const totalData = useSelector((state) => state.totalChart.rows);
+  const dateTotalData = useSelector((state) => state.dateChart.rows);
 
-  const clickHandler = e => {
+  const clickHandler = (e) => {
     e.preventDefault();
 
-    const filteredData = totalData.filter(
-      data => data.regionCode === e.target.title
-    );
+    const filteredData = totalData.filter((data) => data.regionCode === e.target.title);
 
     // Total Chart dispatch 변수
-    const regionCode = filteredData.map(amt => amt.regionCode);
-    const amt = filteredData.map(amt => amt.chargeAmt);
+    const regionCode = filteredData.map((amt) => amt.regionCode);
+    const amt = filteredData.map((amt) => amt.chargeAmt);
 
     // date Chart dispatch 변수
-    const filteredDateData = dateTotalData.filter(
-      data => data.regionCode === e.target.title
-    );
-    const chargeAmt = filteredDateData.map(item => item.chargeAmt);
-    const fare = filteredDateData.map(item => item.fare);
-    const yesterday = filteredDateData.map(item => item.yesterday);
-    const today = filteredDateData.map(item => item.today);
+    const filteredDateData = dateTotalData.filter((data) => data.regionCode === e.target.title);
+    const chargeAmt = filteredDateData.map((item) => item.chargeAmt);
+    const fare = filteredDateData.map((item) => item.fare);
+    const yesterday = filteredDateData.map((item) => item.yesterday);
+    const today = filteredDateData.map((item) => item.today);
 
     // dispatch
     dispatch(totalChartActions.getFilteredData({ regionCode, amt }));
-    dispatch(
-      dateChartActions.getFilteredData({ chargeAmt, fare, yesterday, today })
-    );
+    dispatch(dateChartActions.getFilteredData({ chargeAmt, fare, yesterday, today }));
   };
 
   return (

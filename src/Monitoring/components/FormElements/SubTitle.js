@@ -3,7 +3,7 @@ import React from "react";
 const SubTitle = (props) => {
   const style = {
     width: props.width || "100%",
-    borderRadius: "0.5rem",
+    borderRadius: "0.5rem 0.5rem 0 0",
     backgroundColor: "#000051",
     color: "white",
     padding: "1rem",
