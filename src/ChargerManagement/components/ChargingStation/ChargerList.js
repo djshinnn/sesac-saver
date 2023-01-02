@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import List from "../FormElements/List";
+import List from "../../../common/FormElements/List";
 import { nanoid } from "@reduxjs/toolkit";
 
 const ChargerList = () => {

@@ -24,6 +24,9 @@ import companiesListReducer from "./companies/companiesListSlice";
 import stationListReducer from "./chargingStation/stationListSlice";
 import chargerListReducer from "./chargingStation/chargerListSlice";
 
+// chargerManagement errorList
+import errorListReducer from "./errorList/errorListSlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -46,9 +49,12 @@ const store = configureStore({
     // chargerManagement companies
     companiesList: companiesListReducer,
 
-    // chargerManagement chargingStation Reducer
+    // chargerManagement chargingStation
     stationList: stationListReducer,
     chargerList: chargerListReducer,
+
+    // chargerManagement errorList
+    errorList: errorListReducer,
   },
 });
 

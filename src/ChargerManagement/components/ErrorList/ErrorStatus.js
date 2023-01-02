@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+
+// import { nanoid } from "@reduxjs/toolkit";
 
 const ErrorStatus = () => {
-  return <div>ErrorStatus</div>
-}
+  const errorStatusData = useSelector((state) => state.errorList);
+  console.log(errorStatusData);
 
-export default ErrorStatus
+  return <div>ErrorStatus</div>;
+};
+
+export default ErrorStatus;

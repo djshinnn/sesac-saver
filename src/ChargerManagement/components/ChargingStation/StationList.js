@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
-import List from "../FormElements/List";
+import List from "../../../common/FormElements/List";
 
 const StationList = () => {
   const stationList = useSelector((state) => state.stationList);
