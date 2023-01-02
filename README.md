@@ -33,7 +33,7 @@
 <div align="center">
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbADxJ0%2FbtrU9dDotWK%2Fpjxds44hhbwvqSn0NDFYL1%2Fimg.png" alt="logo" width="300">
 
-<br><br>
+<br>
 
 <p>
   <b>청년취업사관학교 새싹(SeSAC) 기업연계형 프론트엔드 실무 프로젝트 과정 2기</b>에서
