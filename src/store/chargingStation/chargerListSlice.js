@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const asyncChargerListData = createAsyncThunk(
   "chargerListSlice/asyncChargerListData",
-  async (chargerId) => {
+  async (stationId) => {
     const res = await fetch(
-      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/stations/${chargerId}/chargers.json`,
+      `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/stations/${stationId}/chargers.json`,
     );
 
     if (!res.ok) {

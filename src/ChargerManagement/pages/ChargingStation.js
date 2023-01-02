@@ -11,7 +11,7 @@ const ChargingStation = () => {
 
   useEffect(() => {
     dispatch(asyncStationListData());
-    dispatch(asyncChargerListData("BFT32"));
+    // dispatch(asyncChargerListData("101-101"));
   }, [dispatch]);
 
   return (
