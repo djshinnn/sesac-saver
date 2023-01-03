@@ -32,6 +32,9 @@ import memberListReducer from "./memberManagement/memberListSlice";
 import memberCardListReducer from "./memberManagement/memberCardListSlice";
 import memberPayListReducer from "./memberManagement/memberPayListSlice";
 
+//chargingHistory stationHistory
+import stationHistoryReducer from "./stationHistory/stationHistorySlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -65,6 +68,9 @@ const store = configureStore({
     memberList: memberListReducer,
     memberCardList: memberCardListReducer,
     memberPayList: memberPayListReducer,
+    
+    //chargingHistory stationHistory
+    stationHistory: stationHistoryReducer,
   },
 });
 

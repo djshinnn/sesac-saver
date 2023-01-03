@@ -6,7 +6,6 @@ import { nanoid } from "@reduxjs/toolkit";
 
 const ChargerList = () => {
   const chargerList = useSelector((state) => state.chargerList);
-  console.log(chargerList);
 
   const columns = [
     { field: "chargeId", headerName: "ID", width: 150 },
