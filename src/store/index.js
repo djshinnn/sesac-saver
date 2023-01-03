@@ -27,6 +27,11 @@ import chargerListReducer from "./chargingStation/chargerListSlice";
 // chargerManagement errorList
 import errorListReducer from "./errorList/errorListSlice";
 
+// memberManagement
+import memberListReducer from "./memberManagement/memberListSlice";
+import memberCardListReducer from "./memberManagement/memberCardListSlice";
+import memberPayListReducer from "./memberManagement/memberPayListSlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -55,6 +60,11 @@ const store = configureStore({
 
     // chargerManagement errorList
     errorList: errorListReducer,
+
+    // memberManagement
+    memberList: memberListReducer,
+    memberCardList: memberCardListReducer,
+    memberPayList: memberPayListReducer,
   },
 });
 
