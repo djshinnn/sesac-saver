@@ -38,7 +38,14 @@ const StationList = () => {
 
   return (
     <div className="station_list">
-      <List columns={columns} rows={rows} height={"500px"} page={10} title={"충전소 목록"} />
+      <List
+        columns={columns}
+        rows={rows}
+        height={"600px"}
+        page={10}
+        title={"충전소 목록"}
+        station
+      />
     </div>
   );
 };

@@ -1,4 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+
+import Title from "../../../common/FormElements/Title";
+import Edit from "./FormElements/Edit";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -11,51 +16,32 @@ import Select from "@mui/material/Select";
 import Title from "../../../common/FormElements/Title";
 
 const ChargerEdit = () => {
-  // function BasicSelect() {
-  // //   const [age, setAge] = React.useState("");
+  const chargerEdit = useSelector((state) => state.stationList.chargerEdit);
+  console.log(chargerEdit);
 
-  // //   const handleChange = (event) => {
-  // //     setAge(event.target.value);
-  // //   };
-  // // }
+  const chargerEditData = [
+    { leftText: "ID", rightText: chargerEdit.chargeId },
+    { leftText: "충전기명", rightText: chargerEdit.chargerName },
+    { leftText: "타입", option: [chargerEdit.chargerType, "벽부형", "DC콤보"] },
+    { leftText: "최대 전력", rightText: chargerEdit.chargerPower },
+    { leftText: "요금", rightText: chargerEdit.chargerFee },
+    { leftText: "상태", rightText: chargerEdit.chargerStatus },
+  ];
+
   return (
-    <div className="charger_edit">
+    <div className="station_edit">
       <Title title={"충전기"} />
 
-      <Box
-        component="form"
-        sx={{
-          "& .MuiTextField-root": { m: 1, width: "100%" },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField id="outlined-textarea" label="ID" placeholder="입력" multiline />
-        <TextField id="outlined-textarea" label="충전기 명" placeholder="입력" multiline />
-        {/* select */}
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">타입</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            // value={age}
-            label="타입"
-            // onChange={handleChange}
-          >
-            <MenuItem value={10}>DC콤보</MenuItem>
-            <MenuItem value={20}>스토퍼</MenuItem>
-            <MenuItem value={30}>벽부형</MenuItem>
-          </Select>
-        </FormControl>
-        <TextField id="outlined-textarea" label="최대전력" placeholder="입력" multiline />
-        <TextField id="outlined-textarea" label="요금" placeholder="입력" multiline />
-        <TextField id="outlined-textarea" label="설치 날짜" placeholder="입력" multiline />
-        <TextField id="outlined-textarea" label="상태" placeholder="입력" multiline />
-      </Box>
-      <Button variant="outlined">삭제</Button>
-      <Button variant="outlined">신규</Button>
-      <Button variant="outlined">저장</Button>
+      {chargerEditData.map((data) => (
+        <Edit
+          key={nanoid()}
+          leftText={data.leftText}
+          rightText={data.rightText}
+          option={data.option}
+        />
+      ))}
     </div>
   );
 };
+
 export default ChargerEdit;

@@ -1,4 +1,19 @@
 .station_edit {
   flex: 1;
   padding: 0 2rem;
+  font-size: 1.8rem;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &--left {
+      flex: 1;
+    }
+
+    &--right {
+      flex: 3;
+    }
+  }
 }
