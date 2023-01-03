@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const asyncErrorList = createAsyncThunk("errorListSlice/asyncErrorList", async () => {
-  const res = await fetch(`https://sesac-saver-default-rtdb.firebaseio.com/charger-errors.json`);
+  const res = await fetch(
+    `https://sesac-827ad-default-rtdb.asia-southeast1.firebasedatabase.app/charger-errors.json`,
+  );
 
   if (!res.ok) {
     throw new Error("Could not fetch data!");

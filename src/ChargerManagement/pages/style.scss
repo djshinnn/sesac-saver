@@ -5,3 +5,11 @@
   display: flex;
   padding-top: 100px;
 }
+
+.error-regist {
+  &__input {
+    @include flexCenter();
+    flex-direction: column;
+    font-weight: 1.5rem;
+  }
+}
