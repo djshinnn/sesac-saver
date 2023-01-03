@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -11,14 +11,33 @@ const theme = createTheme({
   components: {
     MuiDataGrid: {
       styleOverrides: {
-        cell: {
-          fontSize: "1.6rem",
-        },
+        // table header
         columnHeaderTitle: {
           fontSize: "1.8rem",
         },
+        // table cell
+        cell: {
+          fontSize: "1.6rem",
+        },
       },
     },
+    // filter header
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem",
+        },
+      },
+    },
+    // filter input
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem",
+        },
+      },
+    },
+    // toggle text color
     MuiButtonBase: {
       styleOverrides: {
         root: {
@@ -26,6 +45,7 @@ const theme = createTheme({
         },
       },
     },
+    // toggle text size
     MuiMenuItem: {
       styleOverrides: {
         root: {
@@ -33,6 +53,7 @@ const theme = createTheme({
         },
       },
     },
+    // table pagination
     MuiTablePagination: {
       styleOverrides: {
         selectLabel: {
