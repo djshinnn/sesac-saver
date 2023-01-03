@@ -27,6 +27,11 @@ import chargerListReducer from "./chargingStation/chargerListSlice";
 // chargerManagement errorList
 import errorListReducer from "./errorList/errorListSlice";
 
+// memberManagement
+import memberListReducer from "./memberManagement/memberListSlice";
+import memberCardListReducer from "./memberManagement/memberCardListSlice";
+import memberPayListReducer from "./memberManagement/memberPayListSlice";
+
 //chargingHistory stationHistory
 import stationHistoryReducer from "./stationHistory/stationHistorySlice";
 
@@ -59,6 +64,11 @@ const store = configureStore({
     // chargerManagement errorList
     errorList: errorListReducer,
 
+    // memberManagement
+    memberList: memberListReducer,
+    memberCardList: memberCardListReducer,
+    memberPayList: memberPayListReducer,
+    
     //chargingHistory stationHistory
     stationHistory: stationHistoryReducer,
   },
