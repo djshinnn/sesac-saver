@@ -1,0 +1,6 @@
+.mypage {
+  &_input {
+    @include flexCenter();
+    flex-direction: column;
+  }
+}

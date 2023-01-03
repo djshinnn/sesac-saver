@@ -62,9 +62,9 @@ const ErrorRegist = () => {
   console.log(errorInput);
 
   return (
-    <div className="error-regist">
+    <div className="error_regist">
       <Title title={"충전기 고장 등록"} />
-      <div className="error-regist__input">
+      <div className="error_regist__input">
         <Autocomplete
           disablePortal
           disableClearable
