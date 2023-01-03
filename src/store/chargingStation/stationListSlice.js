@@ -21,12 +21,21 @@ const initialState = {
   result: "",
   msg: "",
   rows: [],
+  stationEdit: [],
+  chargerEdit: [],
 };
 
 const stationListSlice = createSlice({
   name: "stationList",
   initialState,
-  reducers: {},
+  reducers: {
+    getStationEdit(state, action) {
+      state.stationEdit = action.payload;
+    },
+    getChargerEdit(state, action) {
+      state.chargerEdit = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(asyncStationListData.pending, (state, action) => {
