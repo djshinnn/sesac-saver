@@ -27,6 +27,9 @@ import chargerListReducer from "./chargingStation/chargerListSlice";
 // chargerManagement errorList
 import errorListReducer from "./errorList/errorListSlice";
 
+//chargingHistory stationHistory
+import stationHistoryReducer from "./stationHistory/stationHistorySlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -55,6 +58,9 @@ const store = configureStore({
 
     // chargerManagement errorList
     errorList: errorListReducer,
+
+    //chargingHistory stationHistory
+    stationHistory: stationHistoryReducer,
   },
 });
 
