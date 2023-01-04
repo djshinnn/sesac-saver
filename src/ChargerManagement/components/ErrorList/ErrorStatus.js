@@ -21,11 +21,13 @@ const ErrorStatus = () => {
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: "#000051",
       color: theme.palette.common.white,
+      textAlign: "center",
       fontSize: "1.8rem",
     },
     [`&.${tableCellClasses.body}`]: {
       backgroundColor: "white",
       fontSize: "2.5rem",
+      textAlign: "center",
       fontWeight: "bold",
     },
   }));
@@ -53,25 +55,19 @@ const ErrorStatus = () => {
           <Table aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell align="center">전체 건수</StyledTableCell>
-                <StyledTableCell align="center">신고 건수</StyledTableCell>
-                <StyledTableCell align="center">접수 건수</StyledTableCell>
-                <StyledTableCell align="center">완료 건수</StyledTableCell>
+                <StyledTableCell>전체 건수</StyledTableCell>
+                <StyledTableCell>신고 건수</StyledTableCell>
+                <StyledTableCell>접수 건수</StyledTableCell>
+                <StyledTableCell>완료 건수</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows.map((row) => (
                 <TableRow key={row.id}>
-                  <StyledTableCell align="center">{row.total}</StyledTableCell>
-                  <StyledTableCell align="center" sx={{ color: "red" }}>
-                    {row.reported}
-                  </StyledTableCell>
-                  <StyledTableCell align="center" sx={{ color: "orange" }}>
-                    {row.received}
-                  </StyledTableCell>
-                  <StyledTableCell align="center" sx={{ color: "green" }}>
-                    {row.completed}
-                  </StyledTableCell>
+                  <StyledTableCell>{row.total}</StyledTableCell>
+                  <StyledTableCell sx={{ color: "red" }}>{row.reported}</StyledTableCell>
+                  <StyledTableCell sx={{ color: "orange" }}>{row.received}</StyledTableCell>
+                  <StyledTableCell sx={{ color: "green" }}>{row.completed}</StyledTableCell>
                 </TableRow>
               ))}
             </TableBody>
