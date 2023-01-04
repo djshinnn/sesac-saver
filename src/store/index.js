@@ -33,7 +33,10 @@ import memberCardListReducer from "./memberManagement/memberCardListSlice";
 import memberPayListReducer from "./memberManagement/memberPayListSlice";
 
 //chargingHistory stationHistory
-import stationHistoryReducer from "./stationHistory/stationHistorySlice";
+import stationHistoryReducer from "./chargingHistory/stationHistorySlice";
+import stationHistoryMonthlyReducer from "./chargingHistory/stationHistoryMonthlySlice";
+import memberHistoryReducer from "./chargingHistory/memberHistorySlice";
+import memberHistoryMonthlyReducer from "./chargingHistory/memberHistoryMonthlySlice";
 
 const store = configureStore({
   reducer: {
@@ -68,9 +71,12 @@ const store = configureStore({
     memberList: memberListReducer,
     memberCardList: memberCardListReducer,
     memberPayList: memberPayListReducer,
-    
+
     //chargingHistory stationHistory
     stationHistory: stationHistoryReducer,
+    stationHistoryMonthly: stationHistoryMonthlyReducer,
+    memberHistory: memberHistoryReducer,
+    memberHistoryMonthly: memberHistoryMonthlyReducer,
   },
 });
 

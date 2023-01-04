@@ -7,9 +7,9 @@ import Edit from "./FormElements/Edit";
 
 const ChargerEdit = () => {
   const chargerEdit = useSelector((state) => state.stationList.chargerEdit);
-  console.log(chargerEdit);
+  console.log();
 
-  const chargerEditData = [
+  const Data = [
     { leftText: "ID", rightText: chargerEdit.chargeId },
     { leftText: "충전기명", rightText: chargerEdit.chargerName },
     { leftText: "타입", option: [chargerEdit.chargerType, "벽부형", "DC콤보"] },
@@ -22,7 +22,7 @@ const ChargerEdit = () => {
     <div className="station_edit">
       <Title title={"충전기"} />
 
-      {chargerEditData.map((data) => (
+      {Data.map((data) => (
         <Edit
           key={nanoid()}
           leftText={data.leftText}
