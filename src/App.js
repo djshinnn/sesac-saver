@@ -28,6 +28,7 @@ import FAQEdit from "./CustomerService/pages/FAQEdit";
 import PrivatePolicy from "./CustomerService/pages/PrivatePolicy";
 
 import MyPage from "./MyPage/pages/MyPage";
+import Login from "./Login/pages/Login";
 import Sidebar from "./Navigation/pages/Sidebar";
 
 import "./App.scss";
@@ -71,6 +72,7 @@ function App() {
 
         {/* MyPage */}
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
