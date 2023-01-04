@@ -70,7 +70,13 @@ const Navbar = () => {
                     <Link to="/stationhistory">충전소 기간별 내역</Link>
                   </li>
                   <li>
+                    <Link to="/stationhistory/monthly">충전소 월별 내역</Link>
+                  </li>
+                  <li>
                     <Link to="/memberhistory">회원 기간별 내역</Link>
+                  </li>
+                  <li>
+                    <Link to="/memberhistory/monthly">회원 월별 내역</Link>
                   </li>
                 </div>
               </AccordionDetails>

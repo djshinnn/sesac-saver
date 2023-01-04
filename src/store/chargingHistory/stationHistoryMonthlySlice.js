@@ -1,12 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const asyncStationHistoryData = createAsyncThunk(
-  "stationHistorySlice/asyncStationHistoryData",
+export const asyncStationHistoryMonthlyData = createAsyncThunk(
+  "stationHistoryMonthlyMonthlySlice/asyncStationHistoryMonthlyMonthlyData",
   async () => {
     const res = await fetch(
-      "https://sesac-saver-25d05-default-rtdb.asia-southeast1.firebasedatabase.app/stations/usages.json",
+      "https://sesac-saver-25d05-default-rtdb.asia-southeast1.firebasedatabase.app/stations/usages/monthly.json",
     );
-    console.log(res);
 
     if (!res.ok) {
       throw new Error("Could not fetch data!");
@@ -27,16 +26,16 @@ const initialState = {
   total: {},
 };
 
-const stationHistorySlice = createSlice({
-  name: "stationHistory",
+const stationHistoryMonthlySlice = createSlice({
+  name: "stationHistoryMonthly",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(asyncStationHistoryData.pending, (state, action) => {
+      .addCase(asyncStationHistoryMonthlyData.pending, (state, action) => {
         state.isLoading = true;
       })
-      .addCase(asyncStationHistoryData.fulfilled, (state, action) => {
+      .addCase(asyncStationHistoryMonthlyData.fulfilled, (state, action) => {
         console.log(action.payload);
         state.isLoading = false;
         state.result = action.payload.result;
@@ -46,12 +45,12 @@ const stationHistorySlice = createSlice({
         state.rows = action.payload.rows;
         state.total = action.payload.total;
       })
-      .addCase(asyncStationHistoryData.rejected, (state, action) => {
+      .addCase(asyncStationHistoryMonthlyData.rejected, (state, action) => {
         state.isLoading = true;
       });
   },
 });
 
-export const stationHistoryActions = stationHistorySlice.actions;
+export const stationHistoryMonthlyActions = stationHistoryMonthlySlice.actions;
 
-export default stationHistorySlice.reducer;
+export default stationHistoryMonthlySlice.reducer;

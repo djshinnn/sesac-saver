@@ -13,7 +13,9 @@ import ErrorList from "./ChargerManagement/pages/ErrorList";
 import ErrorRegist from "./ChargerManagement/pages/ErrorRegist";
 
 import StationHistory from "./ChargingHistory/pages/StationHistory";
+import StationHistoryMonthly from "./ChargingHistory/pages/StationHistoryMonthly";
 import MemberHistory from "./ChargingHistory/pages/MemberHistory";
+import MemberHistoryMonthly from "./ChargingHistory/pages/MemberHistoryMonthly";
 
 import MemberList from "./MemberManagement/pages/MemberList";
 import MemberCardList from "./MemberManagement/pages/MemberCardList";
@@ -51,7 +53,9 @@ function App() {
 
         {/* ChargingHistory */}
         <Route path="/stationhistory" element={<StationHistory />} />
+        <Route path="/stationhistory/monthly" element={<StationHistoryMonthly />} />
         <Route path="/memberhistory" element={<MemberHistory />} />
+        <Route path="/memberhistory/monthly" element={<MemberHistoryMonthly />} />
 
         {/* MemberManageMent */}
         <Route path="/memberlist" element={<MemberList />} />
