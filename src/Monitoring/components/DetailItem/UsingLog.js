@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 import SubTitle from "./../FormElements/SubTitle";
 
 const UsingLog = () => {
-  const usingLogData = useSelector(state => state.usingLog.rows);
+  const usingLogData = useSelector((state) => state.usingLog.rows);
 
   return (
     <div className="usingLog">
@@ -28,7 +28,7 @@ const UsingLog = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {usingLogData.map(item => (
+            {usingLogData.map((item) => (
               <TableRow
                 key={item.userId}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -36,18 +36,10 @@ const UsingLog = () => {
                 <TableCell component="th" scope="row">
                   {item.userId}
                 </TableCell>
-                <TableCell style={{ fontSize: "1.5rem" }}>
-                  {item.startDate}
-                </TableCell>
-                <TableCell style={{ fontSize: "1.5rem" }}>
-                  {item.finish}
-                </TableCell>
-                <TableCell style={{ fontSize: "1.5rem" }}>
-                  {item.fare}
-                </TableCell>
-                <TableCell style={{ fontSize: "1.5rem" }}>
-                  {item.chargeAmt}%
-                </TableCell>
+                <TableCell style={{ fontSize: "1.5rem" }}>{item.startDate}</TableCell>
+                <TableCell style={{ fontSize: "1.5rem" }}>{item.finish}</TableCell>
+                <TableCell style={{ fontSize: "1.5rem" }}>{item.fare}</TableCell>
+                <TableCell style={{ fontSize: "1.5rem" }}>{item.chargeAmt}%</TableCell>
               </TableRow>
             ))}
           </TableBody>

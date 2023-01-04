@@ -22,7 +22,7 @@ const MemberPayList = () => {
     { field: "chargerId", headerName: "충전기ID", width: 200 },
     { field: "cardNum", headerName: "카드 번호", width: 250 },
     { field: "startTime", headerName: "시작 시간", width: 200 },
-    { field: "finishTime", headerName: "종료 시간", width: 150 },
+    { field: "finishTime", headerName: "종료 시간", width: 200 },
     { field: "chargeAmt", headerName: "충전량", width: 150 },
     { field: "fare", headerName: "금액", width: 150 },
     { field: "createdAt", headerName: "결제 일자", width: 200 },
