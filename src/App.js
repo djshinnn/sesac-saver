@@ -27,7 +27,7 @@ import FAQ from "./CustomerService/pages/FAQ";
 import FAQEdit from "./CustomerService/pages/FAQEdit";
 import PrivatePolicy from "./CustomerService/pages/PrivatePolicy";
 
-import MyPage from "./MyPage/pages/EditPassword";
+import EditPassword from "./EditPassword/pages/MyPage";
 import Login from "./Login/pages/Login";
 import Sidebar from "./Navigation/pages/Sidebar";
 
@@ -71,7 +71,7 @@ function App() {
         <Route path="/privatepolicy" element={<PrivatePolicy />} />
 
         {/* MyPage */}
-        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage" element={<EditPassword />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
