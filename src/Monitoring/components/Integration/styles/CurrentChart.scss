@@ -8,13 +8,13 @@
 
   &__doughnut {
     width: 150px;
-    height: calc(100vh * 0.2);
+    height: 200px;
     position: relative;
 
     span {
       position: absolute;
       left: 60px;
-      bottom: 120px;
+      bottom: 75px;
       font-size: 1.8rem;
       font-weight: bold;
     }
