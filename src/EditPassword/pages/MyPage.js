@@ -10,7 +10,6 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const EditPassword = () => {
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const myPageTheme = createTheme({
@@ -30,7 +29,6 @@ const myPageTheme = createTheme({
 });
 
 const MyPage = () => {
-
   const [showCurrentPassword, setShowCurrentPassword] = React.useState(false);
   const [showNewPassword, setShowNewPassword] = React.useState(false);
   const [showCheckPassword, setShowCheckPassword] = React.useState(false);
@@ -40,34 +38,9 @@ const MyPage = () => {
   };
 
   return (
-      <ThemeProvider theme={myPageTheme}>
-    
-    <div className="edit_password">
+    <div className="mypage">
       <Title title={"비밀번호 수정"} />
-        
-      <div className="edit_password__input">
-        <FormControl variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">현재 비밀번호</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={showCurrentPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showCurrentPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-            error={false}
-          />
-        </FormControl>
-
+      <ThemeProvider theme={myPageTheme}>
         <div className="mypage_input">
           <FormControl variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">현재 비밀번호</InputLabel>
@@ -135,9 +108,9 @@ const MyPage = () => {
             />
           </FormControl>
         </div>
+      </ThemeProvider>
     </div>
-  </ThemeProvider>
   );
 };
 
-export default EditPassword;
+export default MyPage;

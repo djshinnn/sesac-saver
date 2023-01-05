@@ -1,7 +1,6 @@
+.mypage {
+  padding-top: 10rem;
 
-.edit_password {
-    padding-top: 10rem;
-  
   &__input {
     @include flexCenter();
     flex-direction: column;

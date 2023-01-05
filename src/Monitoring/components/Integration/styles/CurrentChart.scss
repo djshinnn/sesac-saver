@@ -2,19 +2,21 @@
   width: 500px;
 
   &__box {
-    @include flexCenter();
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     padding: 1rem;
   }
 
   &__doughnut {
     width: 150px;
-    height: 200px;
+    height: 150px;
     position: relative;
 
     span {
       position: absolute;
       left: 60px;
-      bottom: 75px;
+      bottom: 50px;
       font-size: 1.8rem;
       font-weight: bold;
     }
