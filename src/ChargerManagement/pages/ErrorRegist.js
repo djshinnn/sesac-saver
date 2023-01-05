@@ -7,17 +7,28 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
 
 import Title from "../../common/FormElements/Title";
 
-export const theme = createTheme({
+const errorRegistTheme = createTheme({
+  typography: {
+    fontSize: 20,
+  },
   components: {
-    MuiCssBaseline: {
+    MuiInputBase: {
       styleOverrides: {
-        html: {
-          fontSize: "16px",
+        root: {
+          width: "500px !important",
+          margin: "0 0 3rem 0",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        hasPopupIcon: {
+          padding: "0",
         },
       },
     },
@@ -77,8 +88,7 @@ const ErrorRegist = () => {
     <div className="error_regist">
       <Title title={"충전기 고장 등록"} />
       <div className="error_regist__input">
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        <ThemeProvider theme={errorRegistTheme}>
           <Autocomplete
             disablePortal
             disableClearable

@@ -1,6 +1,9 @@
 .mypage {
+  padding-top: 10rem;
+
   &_input {
     @include flexCenter();
     flex-direction: column;
+    padding-top: 2rem;
   }
 }
