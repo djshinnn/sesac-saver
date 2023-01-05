@@ -7,16 +7,47 @@
 }
 
 .error_regist {
+  padding-top: 10rem;
   &__input {
     @include flexCenter();
     flex-direction: column;
+    padding-top: 2rem;
   }
 }
 
-.MuiInputBase {
-  //autocomplete의 기본 width를 무시하고 input 값 조절
-  &-root {
-    width: 500px !important;
-    margin: 0 0 1.5rem 0;
-  }
-}
+// .MuiAutocomplete {
+//   &-option {
+//     font-size: 1.6rem;
+//   }
+// }
+
+//autocomplete의 기본 width를 무시하고 input 값 조절
+// .MuiOutlinedInput {
+// &-root {
+//   width: 500px !important;
+//   margin: 0 0 1rem 0;
+
+// input,
+// textarea {
+//   font-size: 1.6rem;
+// }
+// }
+
+// &-input {
+//   font-size: 1.6rem;
+// }
+// }
+
+// .MuiFormControl {
+//   &-root {
+//     label {
+//       font-size: 1.6rem;
+//     }
+//   }
+// }
+
+// .MuiIconButton {
+//   &-root {
+//     font-size: 3rem;
+//   }
+// }
