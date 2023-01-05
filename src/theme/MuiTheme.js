@@ -5,7 +5,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          fontSize: "16px",
+          fontSize: 16,
         },
       },
     },
