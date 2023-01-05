@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 import Title from "../../../common/FormElements/Title";
+import BasicButton from "../../../common/FormElements/BasicButton";
 
 const CompaniesEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -40,11 +42,12 @@ const CompaniesEdit = () => {
           style={{ display: "none" }}
           onChange={(e) => setSelectedImage(e.target.files[0])}
         />
-        <label htmlFor="select-image">
-          <Button variant="contained" color="primary" component="span">
-            Upload Image
-          </Button>
-        </label>
+
+        <Box sx={{ width: "100%" }}>
+          <label htmlFor="select-image">
+            <BasicButton text={"Upload Image"} color={"store"} component="span" />
+          </label>
+        </Box>
         {imageUrl && selectedImage && (
           <Box mt={2} textAlign="center">
             <div>Image Preview:</div>
@@ -52,6 +55,15 @@ const CompaniesEdit = () => {
           </Box>
         )}
         {/* input Img 끝 */}
+
+        <Box sx={{ width: "100%" }} mt={3}>
+          <Stack spacing={5} direction="row">
+            <BasicButton text={"삭제"} color={"delete"} />
+            <BasicButton text={"신규"} color={"new"} />
+            <BasicButton text={"수정"} color={"edit"} />
+            <BasicButton text={"저장"} color={"store"} />
+          </Stack>
+        </Box>
       </Box>
     </div>
   );
