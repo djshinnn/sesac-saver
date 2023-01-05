@@ -30,7 +30,14 @@ const ChargerList = () => {
 
   return (
     <div className="charger_list">
-      <List columns={columns} rows={rows} height={"500px"} page={10} title={"충전기 목록"} />
+      <List
+        columns={columns}
+        rows={rows}
+        height={"500px"}
+        page={10}
+        title={"충전기 목록"}
+        charger
+      />
     </div>
   );
 };

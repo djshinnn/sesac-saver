@@ -1,6 +1,5 @@
-.mypage {
-  background-color: orange;
-  &_input {
+.edit_password {
+  &__input {
     @include flexCenter();
     flex-direction: column;
   }

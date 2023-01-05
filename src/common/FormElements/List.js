@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import { chargingStationActions } from "../../store/chargingStation/stationListSlice";
+import { asyncSpecChartData } from "../../store/charging/specChartSlice";
 import { asyncChargerListData } from "../../store/chargingStation/chargerListSlice";
 import Title from "./Title";
 
@@ -73,21 +75,29 @@ const theme = createTheme({
   },
 });
 
-const List = ({ rows, columns, height, page, title, station }) => {
+const List = ({ rows, columns, height, page, title, status, station, charger }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [pageSize, setPageSize] = useState(page);
 
   const clickHandler = (e) => {
-    station
-      ? dispatch(chargingStationActions.getStationEdit(e.row))
-      : dispatch(chargingStationActions.getChargerEdit(e.row));
-    station && dispatch(asyncChargerListData(e.row.stationId));
+    // StateTable onClick 이벤트
+    status && dispatch(asyncSpecChartData(e.row.id)) && navigate(`/charging/${e.row.id}`);
+
+    // StationList onClick 이벤트
+    station &&
+      dispatch(chargingStationActions.getStationEdit(e.row)) &&
+      dispatch(asyncChargerListData(e.row.stationId));
+
+    // ChargerList onClick 이벤트
+    charger && dispatch(chargingStationActions.getChargerEdit(e.row));
   };
 
   return (
     <div className="list">
-      <Title title={title} />
+      {title && <Title title={title} />}
+
       <ThemeProvider theme={theme}>
         <DataGrid
           rows={rows}

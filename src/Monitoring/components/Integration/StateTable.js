@@ -1,24 +1,11 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { DataGrid } from "@mui/x-data-grid";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { asyncSpecChartData } from "../../../store/charging/specChartSlice";
 import SubTitle from "../FormElements/SubTitle";
+import List from "../../../common/FormElements/List";
 
 const StateTable = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   const stateTableData = useSelector((state) => state.stateTable.rows);
-
-  const [pageSize, setPageSize] = useState(5);
-
-  const clickHandler = (e) => {
-    dispatch(asyncSpecChartData(e.row.id));
-
-    navigate(`/charging/${e.row.id}`);
-  };
 
   const columns = [
     { field: "stationId", headerName: "No.", width: 140 },
@@ -41,15 +28,7 @@ const StateTable = () => {
     <div className="state_table">
       <SubTitle name={"충전소별 상태 및 월 충전 누적량"} />
 
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={pageSize}
-        rowsPerPageOptions={[1, 2, 3, 5, 10, 15, 20]}
-        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        style={{ display: "flex", justifyContent: "center", fontSize: "1.5rem" }}
-        onCellClick={clickHandler}
-      />
+      <List rows={rows} columns={columns} page={5} height={"290px"} status />
     </div>
   );
 };

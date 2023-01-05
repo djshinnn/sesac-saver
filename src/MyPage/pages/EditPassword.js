@@ -10,7 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const MyPage = () => {
+const EditPassword = () => {
   const [showCurrentPassword, setShowCurrentPassword] = React.useState(false);
   const [showNewPassword, setShowNewPassword] = React.useState(false);
   const [showCheckPassword, setShowCheckPassword] = React.useState(false);
@@ -20,9 +20,9 @@ const MyPage = () => {
   };
 
   return (
-    <div className="mypage">
+    <div className="edit_password">
       <Title title={"비밀번호 수정"} />
-      <div className="mypage_input">
+      <div className="edit_password__input">
         <FormControl variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">현재 비밀번호</InputLabel>
           <OutlinedInput
@@ -93,4 +93,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default EditPassword;
