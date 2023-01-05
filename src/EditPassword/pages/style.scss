@@ -1,6 +1,10 @@
 .mypage {
+  padding-top: 10rem;
+
+  background-color: orange;
   &_input {
     @include flexCenter();
     flex-direction: column;
+    padding-top: 2rem;
   }
 }
