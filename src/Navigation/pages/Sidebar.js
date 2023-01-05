@@ -13,6 +13,35 @@ const Navbar = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const titleHoverStyle = {
+    backgroundColor: "#191c29",
+    color: "white",
+
+    "&:hover": {
+      // backgroundColor: "white",
+      color: "#1E73BE",
+
+      // borderRadius: "0.5rem",
+    },
+  };
+
+  // const subHoverStyle = {
+  //   // backgroundColor: "#191c29",
+  //   color: "white",
+  //   "&:hover": {
+  //     // backgroundColor: "white",
+  //     color: "#1E73BE",
+  //     // borderRadius: "0.5rem",
+  //   },
+  // };
+
+  const subHoverStyle = {
+    backgroundColor: "#2c3045",
+    verticalAlign: "middle",
+    "&:hover": {
+      backgroundColor: "#1E73BE",
+    },
+  };
   return (
     <>
       <div className="navbar">
@@ -23,115 +52,153 @@ const Navbar = () => {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">
             <li className="navbar-toggle" onClick={showSidebar}>
-              <Link to="#" className="menu-bars">
+              <Link to="#" className="menu-bars" style={{ color: sidebar ? "white" : "black" }}>
                 <AiOutlineClose />
               </Link>
             </li>
-            <Accordion>
+
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅모니터링</div>
+                <div className="menu-bars__title">모니터링</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/">통합 모니터링</Link>
-                  </li>
+                  <Link to="/">
+                    <div className="sub_active">
+                      <li>통합 모니터링</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅충전기 관리</div>
+                <div className="menu-bars__title">충전기 관리</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/companies">충전소 사업자 목록</Link>
-                  </li>
-                  <li>
-                    <Link to="/chargingstation">충전소 목록</Link>
-                  </li>
-                  <li>
-                    <Link to="/errorlist">충전기 장애 목록</Link>
-                  </li>
-                  <li>
-                    <Link to="/errorregist">충전기 장애 등록</Link>
-                  </li>
+                  <Link to="/companies">
+                    <div className="sub_active">
+                      <li>충전소 사업자 목록</li>
+                    </div>
+                  </Link>
+                  <Link to="/chargingstation">
+                    <div className="sub_active">
+                      <li>충전소 목록</li>
+                    </div>
+                  </Link>
+                  <Link to="/errorlist">
+                    <div className="sub_active">
+                      <li>충전기 장애 목록</li>
+                    </div>
+                  </Link>
+                  <Link to="/errorregist">
+                    <div className="sub_active">
+                      <li>충전기 장애 등록</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅충전 내역</div>
+                <div className="menu-bars__title">충전 내역</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/stationhistory">충전소 기간별 내역</Link>
-                  </li>
-                  <li>
-                    <Link to="/stationhistory/monthly">충전소 월별 내역</Link>
-                  </li>
-                  <li>
-                    <Link to="/memberhistory">회원 기간별 내역</Link>
-                  </li>
-                  <li>
-                    <Link to="/memberhistory/monthly">회원 월별 내역</Link>
-                  </li>
+                  <Link to="/stationhistory">
+                    <div className="sub_active">
+                      <li>충전소 기간별 내역</li>
+                    </div>
+                  </Link>
+                  <Link to="/stationhistory/monthly">
+                    <div className="sub_active">
+                      <li>충전소 월별 내역</li>
+                    </div>
+                  </Link>
+                  <Link to="/memberhistory">
+                    <div className="sub_active">
+                      <li>회원 기간별 내역</li>
+                    </div>
+                  </Link>
+                  <Link to="/memberhistory/monthly">
+                    <div className="sub_active">
+                      <li>회원 월별 내역</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅회원 관리</div>
+                <div className="menu-bars__title">회원 관리</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/memberlist">회원 목록</Link>
-                  </li>
-                  <li>
-                    <Link to="/membercardlist">회원 결제 카드 목록</Link>
-                  </li>
-                  <li>
-                    <Link to="/memberpaylist">회원 결제 내역</Link>
-                  </li>
+                  <Link to="/memberlist">
+                    <div className="sub_active">
+                      <li>회원 목록</li>
+                    </div>
+                  </Link>
+                  <Link to="/membercardlist">
+                    <div className="sub_active">
+                      <li>회원 결제 카드 목록</li>
+                    </div>
+                  </Link>
+                  <Link to="/memberpaylist">
+                    <div className="sub_active">
+                      <li>회원 결제 내역</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅고객관리</div>
+                <div className="menu-bars__title">고객관리</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/notice">공지사항</Link>
-                  </li>
-                  <li>
-                    <Link to="/noticeedit">공지사항 등록/변경</Link>
-                  </li>
-                  <li>
-                    <Link to="/faq">FAQ</Link>
-                  </li>
-                  <li>
-                    <Link to="/faqedit">FAQ 등록/변경</Link>
-                  </li>
-                  <li>
-                    <Link to="/privatepolicy">개인정보 방침</Link>
-                  </li>
+                  <Link to="/notice">
+                    <div className="sub_active">
+                      <li>공지사항</li>
+                    </div>
+                  </Link>
+                  <Link to="/noticeedit">
+                    <div className="sub_active">
+                      <li>공지사항 등록/변경</li>
+                    </div>
+                  </Link>
+                  <Link to="/faq">
+                    <div className="sub_active">
+                      <li>FAQ</li>
+                    </div>
+                  </Link>
+                  <Link to="/faqedit">
+                    <div className="sub_active">
+                      <li>FAQ 등록/변경</li>
+                    </div>
+                  </Link>
+                  <Link to="/privatepolicy">
+                    <div className="sub_active">
+                      <li>개인정보 방침</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">✅마이페이지</div>
+                <div className="menu-bars__title">마이페이지</div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
-                  <li>
-                    <Link to="/mypage">비밀번호 수정</Link>
-                  </li>
+                  <Link to="/mypage">
+                    <div className="sub_active">
+                      <li>비밀번호 수정</li>
+                    </div>
+                  </Link>
                 </div>
               </AccordionDetails>
             </Accordion>
