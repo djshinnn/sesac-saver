@@ -8,7 +8,32 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 import Title from "../../common/FormElements/Title";
+
+const errorRegistTheme = createTheme({
+  typography: {
+    fontSize: 20,
+  },
+  components: {
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          width: "500px !important",
+          margin: "0 0 3rem 0",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        hasPopupIcon: {
+          padding: "0",
+        },
+      },
+    },
+  },
+});
 
 const ErrorRegist = () => {
   // 권역
@@ -59,76 +84,72 @@ const ErrorRegist = () => {
     setErrorInput({ ...errorInput, ["createdAt"]: e.format("YYYY-MM-DD") });
   };
 
-  console.log(errorInput);
-
   return (
     <div className="error_regist">
       <Title title={"충전기 고장 등록"} />
       <div className="error_regist__input">
-        <Autocomplete
-          disablePortal
-          disableClearable
-          id="region"
-          options={regionRows}
-          sx={{ width: 300 }}
-          onChange={innerHandler}
-          isOptionEqualToValue={(option, value) => option.id === value.id}
-          renderInput={(params) => <TextField {...params} label="권역" />}
-        />
-
-        <Autocomplete
-          disablePortal
-          disableClearable
-          id="stationId"
-          options={stationIdRows}
-          sx={{ width: 300 }}
-          onChange={innerHandler}
-          isOptionEqualToValue={(option, value) => option.id === value.id}
-          renderInput={(params) => <TextField {...params} label="충전소" />}
-        />
-
-        <Autocomplete
-          disablePortal
-          disableClearable
-          id="chargerId"
-          options={chargerIdRows}
-          sx={{ width: 300 }}
-          onChange={innerHandler}
-          isOptionEqualToValue={(option, value) => option.id === value.id}
-          renderInput={(params) => <TextField {...params} label="충전기" />}
-        />
-
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DesktopDatePicker
-            id="createdAt"
-            label="Date desktop"
-            inputFormat="YYYY/MM/DD"
-            value={createdAt}
-            onChange={dateHandler}
+        <ThemeProvider theme={errorRegistTheme}>
+          <Autocomplete
+            disablePortal
+            disableClearable
+            id="region"
+            options={regionRows}
+            onChange={innerHandler}
             isOptionEqualToValue={(option, value) => option.id === value.id}
-            renderInput={(params) => <TextField {...params} label="고장 발생일" />}
+            renderInput={(params) => <TextField {...params} label="권역" />}
           />
-        </LocalizationProvider>
 
-        <Autocomplete
-          disablePortal
-          disableClearable
-          id="errorStatus"
-          options={errorStatusRows}
-          sx={{ width: 300 }}
-          onChange={innerHandler}
-          isOptionEqualToValue={(option, value) => option.id === value.id}
-          renderInput={(params) => <TextField {...params} label="상태" />}
-        />
+          <Autocomplete
+            disablePortal
+            disableClearable
+            id="stationId"
+            options={stationIdRows}
+            onChange={innerHandler}
+            isOptionEqualToValue={(option, value) => option.id === value.id}
+            renderInput={(params) => <TextField {...params} label="충전소" />}
+          />
 
-        <TextField
-          id="content"
-          label="상세내역"
-          multiline
-          rows={4}
-          placeholder="상세내역 입력"
-          onChange={innerHandler}
-        />
+          <Autocomplete
+            disablePortal
+            disableClearable
+            id="chargerId"
+            options={chargerIdRows}
+            onChange={innerHandler}
+            isOptionEqualToValue={(option, value) => option.id === value.id}
+            renderInput={(params) => <TextField {...params} label="충전기" />}
+          />
+
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DesktopDatePicker
+              id="createdAt"
+              label="Date desktop"
+              inputFormat="YYYY/MM/DD"
+              value={createdAt}
+              onChange={dateHandler}
+              isOptionEqualToValue={(option, value) => option.id === value.id}
+              renderInput={(params) => <TextField {...params} label="고장 발생일" />}
+            />
+          </LocalizationProvider>
+
+          <Autocomplete
+            disablePortal
+            disableClearable
+            id="errorStatus"
+            options={errorStatusRows}
+            onChange={innerHandler}
+            isOptionEqualToValue={(option, value) => option.id === value.id}
+            renderInput={(params) => <TextField {...params} label="상태" />}
+          />
+
+          <TextField
+            id="content"
+            label="상세내역"
+            multiline
+            rows={4}
+            placeholder="상세내역 입력"
+            onChange={innerHandler}
+          />
+        </ThemeProvider>
       </div>
     </div>
   );

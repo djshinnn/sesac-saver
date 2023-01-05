@@ -14,12 +14,29 @@ const theme = createTheme({
     MuiDataGrid: {
       styleOverrides: {
         // table header
+        columnHeaders: {
+          backgroundColor: "#000051",
+          padding: "1rem",
+        },
+        columnHeader: {},
         columnHeaderTitle: {
-          fontSize: "1.8rem",
+          fontSize: "2rem",
+          color: "white",
+          fontWeight: "bold",
+        },
+        // table row
+        row: {
+          // Tabe row when Selected
+          "&.Mui-selected": {
+            backgroundColor: "#d1c8ec",
+          },
         },
         // table cell
         cell: {
-          fontSize: "1.6rem",
+          fontSize: "1.8rem",
+          minWidth: "200px",
+          minHeight: "52px",
+          padding: "2rem",
         },
       },
     },
