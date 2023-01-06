@@ -7,6 +7,12 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { AiOutlineLineChart } from "react-icons/ai";
+import { TbRecharging } from "react-icons/tb";
+import { AiOutlineCalendar } from "react-icons/ai";
+import { AiOutlineAudit } from "react-icons/ai";
+import { AiOutlineNotification } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -53,13 +59,18 @@ const Navbar = () => {
           <ul className="nav-menu-items">
             <li className="navbar-toggle" onClick={showSidebar}>
               <Link to="#" className="menu-bars" style={{ color: sidebar ? "white" : "black" }}>
-                <AiOutlineClose />
+                <AiOutlineClose className="menu-bars__close" />
               </Link>
             </li>
 
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">모니터링</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <AiOutlineLineChart />
+                  </span>
+                  <span>모니터링</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
@@ -74,7 +85,12 @@ const Navbar = () => {
 
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">충전기 관리</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <TbRecharging />
+                  </span>
+                  <span>충전기 관리</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
@@ -103,7 +119,12 @@ const Navbar = () => {
             </Accordion>
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">충전 내역</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <AiOutlineCalendar />
+                  </span>
+                  <span>충전 내역</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
@@ -132,7 +153,12 @@ const Navbar = () => {
             </Accordion>
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">회원 관리</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <AiOutlineAudit />
+                  </span>
+                  <span>회원 관리</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
@@ -156,7 +182,12 @@ const Navbar = () => {
             </Accordion>
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">고객관리</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <AiOutlineNotification />
+                  </span>
+                  <span>고객관리</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>
@@ -190,7 +221,12 @@ const Navbar = () => {
             </Accordion>
             <Accordion sx={titleHoverStyle}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <div className="menu-bars__title">마이페이지</div>
+                <div className="menu-bars__title">
+                  <span>
+                    <CgProfile />
+                  </span>
+                  <span>마이페이지</span>
+                </div>
               </AccordionSummary>
               <AccordionDetails>
                 <div className="menu-bars__subtitle" onClick={showSidebar}>

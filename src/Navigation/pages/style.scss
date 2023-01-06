@@ -15,18 +15,24 @@ a {
   justify-content: flex-start;
   align-items: center;
   position: fixed;
+  top: 2rem;
   z-index: 100;
   font-weight: bold;
 }
 
 .menu-bars {
-  font-size: 2rem;
+  font-size: 3rem;
   background: none;
   color: black;
+
+  .left-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .nav-menu {
-  width: 300px;
+  width: 400px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -60,9 +66,25 @@ a {
 }
 
 .menu-bars {
+  &__close {
+    position: relative;
+
+    right: 2rem;
+  }
   &__title {
+    display: flex;
+
     font-size: 1.8rem;
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    span {
+      display: inline-block;
+      font-size: 2rem;
+    }
+    & span:first-child {
+      margin-right: 1rem;
+    }
   }
 
   &__subtitle li {
