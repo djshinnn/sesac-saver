@@ -1,7 +1,8 @@
 // title
 .title {
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-family: "KIMM_Bold";
+  font-size: 2.5rem;
   font-weight: bold;
 
   &__line {
@@ -10,9 +11,3 @@
     margin-bottom: 2rem;
   }
 }
-
-// list
-.list {
-}
-
-// edit

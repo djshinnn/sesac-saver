@@ -21,11 +21,11 @@ const MemberPayList = () => {
     { field: "userId", headerName: "회원번호", width: 150 },
     { field: "chargerId", headerName: "충전기ID", width: 200 },
     { field: "cardNum", headerName: "카드 번호", width: 250 },
-    { field: "startTime", headerName: "시작 시간", width: 200 },
-    { field: "finishTime", headerName: "종료 시간", width: 200 },
+    { field: "startTime", headerName: "시작 시간", width: 230 },
+    { field: "finishTime", headerName: "종료 시간", width: 230 },
     { field: "chargeAmt", headerName: "충전량", width: 150 },
     { field: "fare", headerName: "금액", width: 150 },
-    { field: "createdAt", headerName: "결제 일자", width: 200 },
+    { field: "createdAt", headerName: "결제 일자", width: 230 },
   ];
 
   const rows = memberPayList.map((item) => ({
@@ -41,8 +41,8 @@ const MemberPayList = () => {
   }));
 
   return (
-    <div>
-      <List columns={columns} rows={rows} height={400} page={5} title={"회원 결제 내역"} />
+    <div className="member_paylist">
+      <List columns={columns} rows={rows} height={700} page={5} title={"회원 결제 내역"} />
     </div>
   );
 };

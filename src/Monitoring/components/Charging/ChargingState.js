@@ -1,11 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-
-// ChartJS.register(ChartDataLabels);
 
 const ChargingState = () => {
   const specChartStatus = useSelector((state) => state.specChart.status);
