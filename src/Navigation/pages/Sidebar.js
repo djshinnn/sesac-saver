@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <ClickAwayListener onClickAway={showSidebar}>
+    <ClickAwayListener onClickAway={() => setSidebar(false)}>
       <div className="navbar">
         <Link to="#" className="menu-bars">
           <FaBars onClick={showSidebar} />
