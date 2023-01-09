@@ -51,6 +51,7 @@ const Navbar = () => {
 
             {sidebarTitleData.map((item) => (
               <Accordion
+                key={item.id}
                 sx={titleHoverStyle}
                 expanded={expanded === item.expandedName}
                 onChange={handleChange(item.expandedName)}
@@ -65,7 +66,7 @@ const Navbar = () => {
                 {sidebarSubTitleData.map(
                   (subItem) =>
                     item.name === subItem.name && (
-                      <AccordionDetails sx={{ padding: "0 2rem" }}>
+                      <AccordionDetails sx={{ padding: "0 2rem" }} key={subItem.id}>
                         <div className="menu-bars__subtitle" onClick={showSidebar}>
                           <Link to={subItem.path}>
                             <div
@@ -75,7 +76,7 @@ const Navbar = () => {
                                   : "sub_active"
                               }
                               name={subItem.subName}
-                              onClick={(e) => setIsSelected(subItem.subName)}
+                              onClick={() => setIsSelected(subItem.subName)}
                             >
                               <li>{subItem.subTitle}</li>
                             </div>
