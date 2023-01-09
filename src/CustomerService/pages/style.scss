@@ -1,0 +1,14 @@
+.box_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  .imgBox {
+    margin-left: 40rem;
+  }
+  .buttonBox {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
