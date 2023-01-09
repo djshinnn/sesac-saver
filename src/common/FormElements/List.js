@@ -16,9 +16,8 @@ const theme = createTheme({
           backgroundColor: "#000051",
           padding: "1rem",
         },
-        columnHeader: {},
         columnHeaderTitle: {
-          fontSize: "2rem",
+          fontSize: "1.8rem",
           color: "white",
           fontWeight: "bold",
         },
@@ -31,10 +30,23 @@ const theme = createTheme({
         },
         // table cell
         cell: {
-          fontSize: "1.8rem",
+          fontSize: "1.6rem",
           minWidth: "200px",
           minHeight: "52px",
           padding: "2rem",
+        },
+        // sort
+        sortIcon: {
+          fontSize: "2.5rem",
+        },
+      },
+    },
+    // sort icon
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: "#d1c8ec",
+          fontSize: "2.5rem",
         },
       },
     },
@@ -116,7 +128,7 @@ const List = ({ rows, columns, height, page, title, station, charger }) => {
           pageSize={pageSize}
           rowsPerPageOptions={[5, 10, 15, 20]}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-          sx={{ fontSize: "1.7rem", height }}
+          sx={{ height }}
           onCellClick={clickHandler}
         />
       </ThemeProvider>

@@ -6,11 +6,10 @@ import { Line } from "react-chartjs-2";
 import SubTitle from "./../FormElements/SubTitle";
 
 const TimeLine = () => {
-  const usingLogData = useSelector(state => state.usingLog.rows);
+  const usingLogData = useSelector((state) => state.usingLog.rows);
 
   const options = {
-    responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",

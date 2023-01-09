@@ -1,31 +1,22 @@
+// Integration
 .chart_container {
   @include flexCenter();
   flex-direction: column;
   width: 1000px;
   height: 100vh;
-  margin-top: 0;
-  margin-left: 2rem;
 }
 
 .map_container {
   @include flexCenter();
   flex-direction: column;
   width: 500px;
-  margin-top: 5rem;
 }
 
 .chart_container__middlechart {
   display: flex;
 }
 
-.timeline_container {
-  @include flexSpaceBetween();
-}
-
-.log_container {
-  @include flexSpaceBetween();
-}
-
+// Charging
 .charging_container {
   padding: 3rem;
   &__top {
@@ -41,5 +32,16 @@
 
 .detail_container {
   display: flex;
-  // margin: 100px auto;
+  padding: 0 3rem 0 0;
+}
+
+// DetailItem
+.timeline_container {
+  @include flexSpaceBetween();
+  margin-top: 3rem;
+}
+
+.log_container {
+  @include flexSpaceBetween();
+  margin-top: 6rem;
 }

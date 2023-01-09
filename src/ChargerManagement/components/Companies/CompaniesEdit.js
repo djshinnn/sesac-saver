@@ -3,14 +3,30 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 import Title from "../../../common/FormElements/Title";
 import BasicButton from "../../../common/FormElements/BasicButton";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 const CompaniesEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
+
+  const companiesEditTheme = createTheme({
+    typography: {
+      fontSize: 18,
+    },
+    components: {
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            margin: "0 0 1rem 0",
+          },
+        },
+      },
+    },
+  });
 
   useEffect(() => {
     if (selectedImage) {
@@ -21,8 +37,6 @@ const CompaniesEdit = () => {
   return (
     <div className="companies_edit">
       <Title title={"충전 사업자"} />
-
-      {/* <div className="companies_edit__container"> */}
       <Box
         component="form"
         sx={{
@@ -31,8 +45,10 @@ const CompaniesEdit = () => {
         noValidate
         autoComplete="off"
       >
-        <TextField id="outlined-textarea" label="충전 사업자" placeholder="입력" multiline />
-        <TextField id="outlined-textarea" label="연락처" placeholder="입력" multiline />
+        <ThemeProvider theme={companiesEditTheme}>
+          <TextField id="outlined-textarea" label="충전 사업자" placeholder="입력" multiline />
+          <TextField id="outlined-textarea" label="연락처" placeholder="입력" multiline />
+        </ThemeProvider>
 
         {/* input Img 시작 */}
         <input
@@ -43,20 +59,21 @@ const CompaniesEdit = () => {
           onChange={(e) => setSelectedImage(e.target.files[0])}
         />
 
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "flex-end", margin: "1rem 0" }}>
           <label htmlFor="select-image">
-            <BasicButton text={"Upload Image"} color={"store"} component="span" />
+            <BasicButton text={"Upload Image"} color={"upload"} component="span" />
           </label>
         </Box>
         {imageUrl && selectedImage && (
           <Box mt={2} textAlign="center">
-            <div>Image Preview</div>
-            <img src={imageUrl} alt={selectedImage.name} height="100px" />
+            <div className="companies_edit__imgpreview">Image Preview</div>
+            <img src={imageUrl} alt={selectedImage.name} width="90%" />
           </Box>
         )}
         {/* input Img 끝 */}
 
-        <Box sx={{ width: "100%" }} mt={3}>
+        {/* 삭제, 신규, 수정, 저장 버튼  */}
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "flex-end" }} mt={3}>
           <Stack spacing={5} direction="row">
             <BasicButton text={"삭제"} color={"delete"} />
             <BasicButton text={"신규"} color={"new"} />

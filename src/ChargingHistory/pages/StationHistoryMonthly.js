@@ -17,10 +17,10 @@ const StationHistoryMonthly = () => {
   }, [dispatch]);
 
   const columns = [
-    { field: "stationName", headerName: "충전소명", width: 300 },
-    { field: "month", headerName: "월", width: 150 },
-    { field: "chargeAmt", headerName: "충전(kw)", width: 150 },
-    { field: "fare", headerName: "금액", width: 150 },
+    { field: "stationName", headerName: "충전소명", width: 690 },
+    { field: "month", headerName: "월", width: 300 },
+    { field: "chargeAmt", headerName: "충전(kw)", width: 300 },
+    { field: "fare", headerName: "금액", width: 300 },
   ];
 
   const rows = stationHistoryMonthlyData.rows.map((item) => ({
@@ -33,7 +33,6 @@ const StationHistoryMonthly = () => {
   const newObject = {
     id: nanoid(),
     stationName: "합계",
-    // chargerName: "",
     chargeAmt: stationHistoryMonthlyData.total.totalChargeAmt,
     fare: stationHistoryMonthlyData.total.totalFare,
   };
@@ -42,13 +41,7 @@ const StationHistoryMonthly = () => {
 
   return (
     <div className="station_history__monthly">
-      <List
-        columns={columns}
-        rows={newRows}
-        height={"550px"}
-        page={10}
-        title={"충전소 월별 목록"}
-      />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"충전소 월별 목록"} />
     </div>
   );
 };
