@@ -9,7 +9,7 @@ const ErrorDetailList = () => {
 
   const columns = [
     { field: "region", headerName: "권역", width: 200 },
-    { field: "stationName", headerName: "충전소 명", width: 300 },
+    { field: "stationName", headerName: "충전소 명", width: 390 },
     { field: "chargerName", headerName: "충전기 명", width: 200 },
     { field: "errorStatus", headerName: "조치 상황", width: 200 },
     { field: "createdAt", headerName: "신고", width: 200 },

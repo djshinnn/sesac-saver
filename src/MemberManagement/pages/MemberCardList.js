@@ -21,7 +21,7 @@ const MemberCardList = () => {
     { field: "userId", headerName: "회원번호", width: 150 },
     { field: "userName", headerName: "소유자", width: 150 },
     { field: "ownerBirth", headerName: "생년월일", width: 150 },
-    { field: "cardName", headerName: "카드명", width: 150 },
+    { field: "cardName", headerName: "카드명", width: 190 },
     { field: "corp", headerName: "카드사", width: 150 },
     { field: "cardNum", headerName: "카드번호", width: 300 },
     { field: "cvc", headerName: "CVC", width: 100 },
@@ -43,8 +43,8 @@ const MemberCardList = () => {
   }));
 
   return (
-    <div>
-      <List columns={columns} rows={rows} height={400} page={5} title={"결제 카드 목록"} />
+    <div className="member_cardlist">
+      <List columns={columns} rows={rows} height={700} page={5} title={"결제 카드 목록"} />
     </div>
   );
 };

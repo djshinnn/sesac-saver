@@ -18,10 +18,10 @@ const MemberList = () => {
   // console.log(memberList);
 
   const columns = [
-    { field: "userId", headerName: "회원번호", width: 150 },
-    { field: "userName", headerName: "이름", width: 150 },
-    { field: "email", headerName: "이메일", width: 300 },
-    { field: "createdAt", headerName: "가입일", width: 150 },
+    { field: "userId", headerName: "회원번호", width: 200 },
+    { field: "userName", headerName: "이름", width: 200 },
+    { field: "email", headerName: "이메일", width: 890 },
+    { field: "createdAt", headerName: "가입일", width: 300 },
   ];
 
   const rows = memberList.map((item) => ({
@@ -33,8 +33,8 @@ const MemberList = () => {
   }));
 
   return (
-    <div>
-      <List columns={columns} rows={rows} height={400} page={5} title={"회원 목록"} />
+    <div className="member_list">
+      <List columns={columns} rows={rows} height={700} page={5} title={"회원 목록"} />
     </div>
   );
 };

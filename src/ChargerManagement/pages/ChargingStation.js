@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { asyncStationListData } from "../../store/chargingStation/stationListSlice";
-import { asyncChargerListData } from "../../store/chargingStation/chargerListSlice";
 import ChargerContainer from "../container/ChargerContainer";
 import StationContainer from "./../container/StationContainer";
 
@@ -11,7 +10,7 @@ const ChargingStation = () => {
 
   useEffect(() => {
     dispatch(asyncStationListData());
-    // dispatch(asyncChargerListData("101-101"));
+    // asyncChargerListData의 경우 station이 선택될 때 부르기 위해 common 폴더의 List 컴포넌트에서 처리
   }, [dispatch]);
 
   return (

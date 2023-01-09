@@ -17,7 +17,6 @@ const StateTable = () => {
 
   const clickHandler = (e) => {
     dispatch(asyncSpecChartData(e.row.id));
-
     navigate(`/charging/${e.row.id}`);
   };
 
@@ -71,7 +70,7 @@ const StateTable = () => {
           pageSize={pageSize}
           rowsPerPageOptions={[1, 2, 3, 5, 10, 15, 20]}
           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-          style={{ display: "flex", justifyContent: "center", fontSize: "1.5rem", height: "295px" }}
+          style={{ display: "flex", justifyContent: "center", fontSize: "1.5rem", height: "300px" }}
           onCellClick={clickHandler}
         />
       </ThemeProvider>
