@@ -11,3 +11,37 @@
     margin-bottom: 2rem;
   }
 }
+
+// list
+.list {
+}
+
+// edit
+.edit {
+  flex: 1;
+  font-size: 1.6rem;
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    &--left {
+      flex: 1;
+    }
+
+    &--right {
+      flex: 3;
+    }
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  &_left {
+    flex: 1;
+  }
+  &_right {
+    flex: 3;
+  }
+}
