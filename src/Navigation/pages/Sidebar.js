@@ -6,19 +6,25 @@ import { AiOutlineClose } from "react-icons/ai";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { AiOutlineLineChart } from "react-icons/ai";
-import { TbRecharging } from "react-icons/tb";
-import { AiOutlineCalendar } from "react-icons/ai";
-import { AiOutlineAudit } from "react-icons/ai";
-import { AiOutlineNotification } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
+
+import { sidebarTitleData } from "./SidebarData";
+import { sidebarSubTitleData } from "./SidebarData";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+<<<<<<< HEAD
   const showSidebar = () => setSidebar(!sidebar);
 
   const [expanded, setExpanded] = React.useState(false);
+=======
+  const [expanded, setExpanded] = useState(false);
+  const [isSelected, setIsSelected] = useState("");
+
+  const showSidebar = () => setSidebar(!sidebar);
+
+>>>>>>> 92c89a22178a8bcc98b6b754457a0e2e3cbd3f32
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -30,30 +36,12 @@ const Navbar = () => {
     "&:hover": {
       // backgroundColor: "white",
       color: "#1E73BE",
-
       // borderRadius: "0.5rem",
     },
   };
 
-  // const subHoverStyle = {
-  //   // backgroundColor: "#191c29",
-  //   color: "white",
-  //   "&:hover": {
-  //     // backgroundColor: "white",
-  //     color: "#1E73BE",
-  //     // borderRadius: "0.5rem",
-  //   },
-  // };
-
-  const subHoverStyle = {
-    backgroundColor: "#2c3045",
-    verticalAlign: "middle",
-    "&:hover": {
-      backgroundColor: "#1E73BE",
-    },
-  };
   return (
-    <>
+    <ClickAwayListener onClickAway={() => setSidebar(false)}>
       <div className="navbar">
         <Link to="#" className="menu-bars">
           <FaBars onClick={showSidebar} />
@@ -67,6 +55,7 @@ const Navbar = () => {
               </Link>
             </li>
 
+<<<<<<< HEAD
             <Accordion
               sx={titleHoverStyle}
               expanded={expanded === "panel1"}
@@ -270,10 +259,50 @@ const Navbar = () => {
                 </div>
               </AccordionDetails>
             </Accordion>
+=======
+            {sidebarTitleData.map((item) => (
+              <Accordion
+                key={item.id}
+                sx={titleHoverStyle}
+                expanded={expanded === item.expandedName}
+                onChange={handleChange(item.expandedName)}
+              >
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <div className="menu-bars__title">
+                    <span>{item.icon}</span>
+                    <span>{item.title}</span>
+                  </div>
+                </AccordionSummary>
+
+                {sidebarSubTitleData.map(
+                  (subItem) =>
+                    item.name === subItem.name && (
+                      <AccordionDetails sx={{ padding: "0 2rem" }} key={subItem.id}>
+                        <div className="menu-bars__subtitle" onClick={showSidebar}>
+                          <Link to={subItem.path}>
+                            <div
+                              className={
+                                isSelected === subItem.subName
+                                  ? "sub_active sub_active__focus"
+                                  : "sub_active"
+                              }
+                              name={subItem.subName}
+                              onClick={() => setIsSelected(subItem.subName)}
+                            >
+                              <li>{subItem.subTitle}</li>
+                            </div>
+                          </Link>
+                        </div>
+                      </AccordionDetails>
+                    ),
+                )}
+              </Accordion>
+            ))}
+>>>>>>> 92c89a22178a8bcc98b6b754457a0e2e3cbd3f32
           </ul>
         </nav>
       </div>
-    </>
+    </ClickAwayListener>
   );
 };
 

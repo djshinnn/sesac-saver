@@ -38,6 +38,10 @@ import stationHistoryMonthlyReducer from "./chargingHistory/stationHistoryMonthl
 import memberHistoryReducer from "./chargingHistory/memberHistorySlice";
 import memberHistoryMonthlyReducer from "./chargingHistory/memberHistoryMonthlySlice";
 
+// customerService
+import noticeReducer from "./customerService/noticeSlice";
+import faqReducer from "./customerService/faqSlice";
+
 const store = configureStore({
   reducer: {
     // monitoring charging
@@ -77,6 +81,10 @@ const store = configureStore({
     stationHistoryMonthly: stationHistoryMonthlyReducer,
     memberHistory: memberHistoryReducer,
     memberHistoryMonthly: memberHistoryMonthlyReducer,
+
+    // customerService
+    notice: noticeReducer,
+    faq: faqReducer,
   },
 });
 
