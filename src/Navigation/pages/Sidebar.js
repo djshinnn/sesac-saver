@@ -16,8 +16,12 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
+
+  const [expanded, setExpanded] = React.useState(false);
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   const titleHoverStyle = {
     backgroundColor: "#191c29",
@@ -63,7 +67,11 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <Accordion sx={titleHoverStyle}>
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel1"}
+              onChange={handleChange("panel1")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>
@@ -83,7 +91,11 @@ const Navbar = () => {
               </AccordionDetails>
             </Accordion>
 
-            <Accordion sx={titleHoverStyle}>
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel2"}
+              onChange={handleChange("panel2")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>
@@ -117,7 +129,12 @@ const Navbar = () => {
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion sx={titleHoverStyle}>
+
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel3"}
+              onChange={handleChange("panel3")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>
@@ -151,7 +168,12 @@ const Navbar = () => {
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion sx={titleHoverStyle}>
+
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel4"}
+              onChange={handleChange("panel4")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>
@@ -180,7 +202,12 @@ const Navbar = () => {
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion sx={titleHoverStyle}>
+
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel5"}
+              onChange={handleChange("panel5")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>
@@ -219,7 +246,12 @@ const Navbar = () => {
                 </div>
               </AccordionDetails>
             </Accordion>
-            <Accordion sx={titleHoverStyle}>
+
+            <Accordion
+              sx={titleHoverStyle}
+              expanded={expanded === "panel6"}
+              onChange={handleChange("panel6")}
+            >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <div className="menu-bars__title">
                   <span>

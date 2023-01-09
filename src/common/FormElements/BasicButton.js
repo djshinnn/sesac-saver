@@ -19,13 +19,22 @@ const theme = createTheme({
       main: "#000051",
       contrastText: "#fff",
     },
+    upload: {
+      main: "#1e73be",
+      contrastText: "#fff",
+    },
   },
 });
 
 export default function BasicButton({ text, color, component }) {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained" color={color} component={component}>
+      <Button
+        variant="contained"
+        color={color}
+        component={component}
+        sx={{ fontSize: "1.3rem", fontWeight: "bold" }}
+      >
         {text}
       </Button>
     </ThemeProvider>

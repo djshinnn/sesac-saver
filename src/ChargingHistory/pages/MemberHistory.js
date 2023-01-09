@@ -17,10 +17,10 @@ const MemberHistory = () => {
   }, [dispatch]);
 
   const columns = [
-    { field: "stationName", headerName: "충전소명", width: 300 },
-    { field: "chargerName", headerName: "충전기", width: 150 },
-    { field: "chargeAmt", headerName: "충전(kw)", width: 150 },
-    { field: "fare", headerName: "금액", width: 150 },
+    { field: "stationName", headerName: "충전소명", width: 690 },
+    { field: "chargerName", headerName: "충전기", width: 300 },
+    { field: "chargeAmt", headerName: "충전(kw)", width: 300 },
+    { field: "fare", headerName: "금액", width: 300 },
   ];
 
   const rows = memberHistoryData.rows.map((item) => ({
@@ -41,13 +41,7 @@ const MemberHistory = () => {
   const newRows = rows.concat(newObject);
   return (
     <div className="member_history">
-      <List
-        columns={columns}
-        rows={newRows}
-        height={"550px"}
-        page={10}
-        title={"회원 기간별 목록"}
-      />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"회원 기간별 목록"} />
     </div>
   );
 };
