@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { v4 } from "uuid";
 
 // reducers
 import { totalChartActions } from "../../../store/integration/totalChartSlice";
@@ -43,6 +44,7 @@ const Map = () => {
       <map name="image-map">
         {mapData.map((item) => (
           <area
+            key={v4()}
             target=""
             alt={item.alt}
             title={item.title}
