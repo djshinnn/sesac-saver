@@ -74,13 +74,12 @@ a {
   &__title {
     display: flex;
 
-    font-size: 1.8rem;
     padding: 1rem;
     justify-content: center;
     align-items: center;
     span {
       display: inline-block;
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
     & span:first-child {
       margin-right: 1rem;
@@ -88,7 +87,7 @@ a {
   }
 
   &__subtitle li {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 
     margin: 1rem 0 1rem 2.5rem;
   }
@@ -129,6 +128,10 @@ a {
       width: 1.5vh;
       margin-left: 2rem;
     }
+  }
+
+  &__focus {
+    background-color: #1e73be;
   }
 }
 
