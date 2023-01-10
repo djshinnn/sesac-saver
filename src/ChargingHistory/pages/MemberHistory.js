@@ -10,7 +10,6 @@ const MemberHistory = () => {
   const dispatch = useDispatch();
 
   const memberHistoryData = useSelector((state) => state.memberHistory);
-  // console.log(memberHistoryData);
 
   useEffect(() => {
     dispatch(asyncMemberHistoryData());
@@ -41,7 +40,7 @@ const MemberHistory = () => {
   const newRows = rows.concat(newObject);
   return (
     <div className="member_history">
-      <List columns={columns} rows={newRows} height={700} page={10} title={"회원 기간별 목록"} />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"회원 기간별 내역"} />
     </div>
   );
 };

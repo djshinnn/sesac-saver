@@ -40,7 +40,7 @@ const MemberHistoryMonthly = () => {
   const newRows = rows.concat(newObject);
   return (
     <div className="member_history__monthly">
-      <List columns={columns} rows={newRows} height={700} page={10} title={"회원 월별 목록"} />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"회원 월별 내역"} />
     </div>
   );
 };

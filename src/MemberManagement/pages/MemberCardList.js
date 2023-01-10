@@ -15,7 +15,6 @@ const MemberCardList = () => {
   }, [dispatch]);
 
   const memberCardList = useSelector((state) => state.memberCardList.rows);
-  // console.log(memberCardList);
 
   const columns = [
     { field: "userId", headerName: "회원번호", width: 150 },
@@ -44,7 +43,7 @@ const MemberCardList = () => {
 
   return (
     <div className="member_cardlist">
-      <List columns={columns} rows={rows} height={700} page={5} title={"결제 카드 목록"} />
+      <List columns={columns} rows={rows} height={700} page={5} title={"회원 결제 카드 목록"} />
     </div>
   );
 };

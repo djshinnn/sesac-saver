@@ -15,7 +15,6 @@ const MemberPayList = () => {
   }, [dispatch]);
 
   const memberPayList = useSelector((state) => state.memberPayList.rows);
-  console.log(memberPayList);
 
   const columns = [
     { field: "userId", headerName: "회원번호", width: 150 },
