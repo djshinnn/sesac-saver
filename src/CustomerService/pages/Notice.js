@@ -30,7 +30,7 @@ const Notice = () => {
 
   return (
     <div className="notice">
-      <List columns={columns} rows={rows} height={800} page={20} title={"공지사항"} />
+      <List columns={columns} rows={rows} height={700} page={20} title={"공지사항"} />
     </div>
   );
 };

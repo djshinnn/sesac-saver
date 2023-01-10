@@ -11,12 +11,10 @@
     display: flex;
     justify-content: space-between;
   }
+}
 
-  .notice {
-    margin-top: 3rem;
-  }
-
-  .faq {
-    margin-top: 3rem;
-  }
+.faq,
+.notice,
+.edit {
+  margin-top: 3rem;
 }

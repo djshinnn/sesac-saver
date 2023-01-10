@@ -4,7 +4,8 @@
 }
 
 .error_regist {
-  padding-top: 10rem;
+  margin-top: 3rem;
+
   &__input {
     @include flexCenter();
     flex-direction: column;

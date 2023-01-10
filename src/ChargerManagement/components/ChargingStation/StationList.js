@@ -9,13 +9,13 @@ const StationList = () => {
 
   const columns = [
     { field: "stationId", headerName: "ID", width: 150 },
-    { field: "companyName", headerName: "충전 사업자", width: 150 },
-    { field: "region", headerName: "연혁", width: 150 },
-    { field: "stationName", headerName: "충전소명", width: 150 },
-    { field: "address", headerName: "주소", width: 150 },
-    { field: "contact", headerName: "연락처", width: 150 },
-    { field: "runningTime", headerName: "운영 시간", width: 150 },
-    { field: "parkingFee", headerName: "주차 요금", width: 150 },
+    { field: "companyName", headerName: "충전 사업자", width: 200 },
+    { field: "region", headerName: "권역", width: 150 },
+    { field: "stationName", headerName: "충전소명", width: 200 },
+    { field: "address", headerName: "주소", width: 300 },
+    { field: "contact", headerName: "연락처", width: 200 },
+    { field: "runningTime", headerName: "운영 시간", width: 200 },
+    { field: "parkingFee", headerName: "주차 요금", width: 200 },
     { field: "stationStatus", headerName: "운영 여부", width: 150 },
     { field: "chargerAvail", headerName: "사용 가능", width: 150 },
     { field: "chargerTotal", headerName: "전체", width: 150 },
@@ -38,14 +38,7 @@ const StationList = () => {
 
   return (
     <div className="station_list">
-      <List
-        columns={columns}
-        rows={rows}
-        height={"600px"}
-        page={10}
-        title={"충전소 목록"}
-        station
-      />
+      <List columns={columns} rows={rows} height={600} page={10} title={"충전소 목록"} station />
     </div>
   );
 };
