@@ -28,7 +28,7 @@ const FAQ = () => {
 
   return (
     <div className="faq">
-      <List columns={columns} rows={rows} height={800} page={10} title={"FAQ"} />
+      <List columns={columns} rows={rows} height={700} page={10} title={"FAQ"} />
     </div>
   );
 };

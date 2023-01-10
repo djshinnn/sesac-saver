@@ -11,7 +11,7 @@ const ChargerList = () => {
     { field: "chargeId", headerName: "ID", width: 150 },
     { field: "chargerName", headerName: "충전기명", width: 150 },
     { field: "chargerType", headerName: "타입", width: 150 },
-    { field: "chargerPower", headerName: "최대 전력", width: 150 },
+    { field: "chargerPower", headerName: "최대 전력", width: 130 },
     { field: "chargerFee", headerName: "요금", width: 150 },
     { field: "install", headerName: "설치날짜", width: 150 },
     { field: "chargerStatus", headerName: "상태", width: 150 },
@@ -30,14 +30,7 @@ const ChargerList = () => {
 
   return (
     <div className="charger_list">
-      <List
-        columns={columns}
-        rows={rows}
-        height={"500px"}
-        page={10}
-        title={"충전기 목록"}
-        charger
-      />
+      <List columns={columns} rows={rows} height={500} page={10} title={"충전기 목록"} charger />
     </div>
   );
 };
