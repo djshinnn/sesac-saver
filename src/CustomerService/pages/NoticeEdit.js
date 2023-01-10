@@ -18,7 +18,7 @@ const NoticeEdit = () => {
 
   return (
     <div className="edit">
-      <Title title={"Notice 등록/변경"} />
+      <Title title={"공지사항 등록/변경"} />
 
       {Data.map((data) => (
         <EditBox
@@ -43,19 +43,19 @@ const NoticeEdit = () => {
 
           <Box sx={{ width: "100%" }}>
             <label htmlFor="select-image">
-              <BasicButton text={"Upload Image"} color={"store"} component="span" />
+              <BasicButton text={"Upload Image"} color={"upload"} component="span" />
             </label>
           </Box>
           {selectedImage && (
-            <Box mt={2} textAlign="center">
+            <Box mt={2} textAlign="left">
               <div className="img">{selectedImage.name}</div>
             </Box>
           )}
           {/* input Img 끝 */}
         </div>
         <div className="buttonBox">
-          <BasicButton text={"삭제"} />
-          <BasicButton text={"저장"} />
+          <BasicButton color={"delete"} text={"삭제"} />
+          <BasicButton color={"store"} text={"저장"} />
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ const StationHistory = () => {
 
   return (
     <div className="station_history">
-      <List columns={columns} rows={newRows} height={700} page={10} title={"충전소 기간별 목록"} />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"충전소 기간별 내역"} />
     </div>
   );
 };

@@ -24,7 +24,7 @@ const CompaniesList = () => {
 
   return (
     <div className="companies_list">
-      <List rows={rows} columns={columns} page={5} height={700} title={"충전 사업자 목록"} />
+      <List rows={rows} columns={columns} page={10} height={700} title={"충전 사업자 목록"} />
     </div>
   );
 };

@@ -13,7 +13,6 @@ const Notice = () => {
   }, [dispatch]);
 
   const notice = useSelector((state) => state.notice.notice);
-  console.log(notice);
 
   const columns = [
     { field: "tag", headerName: "태그", width: 200 },

@@ -15,7 +15,6 @@ const MemberList = () => {
   }, [dispatch]);
 
   const memberList = useSelector((state) => state.memberList.rows);
-  // console.log(memberList);
 
   const columns = [
     { field: "userId", headerName: "회원번호", width: 200 },

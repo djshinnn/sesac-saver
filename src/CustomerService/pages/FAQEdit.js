@@ -41,19 +41,19 @@ const FAQEdit = () => {
 
           <Box sx={{ width: "100%" }}>
             <label htmlFor="select-image">
-              <BasicButton text={"Upload Image"} color={"store"} component="span" />
+              <BasicButton text={"Upload Image"} color={"upload"} component="span" />
             </label>
           </Box>
           {selectedImage && (
-            <Box mt={2} textAlign="center">
-              <div>{selectedImage.name}</div>
+            <Box mt={2} textAlign="left">
+              <div className="img">{selectedImage.name}</div>
             </Box>
           )}
         </div>
         {/* input Img 끝 */}
         <div className="buttonBox">
-          <BasicButton text={"삭제"} />
-          <BasicButton text={"저장"} />
+          <BasicButton color={"delete"} text={"삭제"} />
+          <BasicButton color={"store"} text={"저장"} />
         </div>
       </div>
     </div>

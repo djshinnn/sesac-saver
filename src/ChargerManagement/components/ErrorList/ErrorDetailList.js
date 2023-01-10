@@ -30,7 +30,7 @@ const ErrorDetailList = () => {
 
   return (
     <div className="error_detail__list">
-      <List columns={columns} rows={rows} height={"500px"} page={10} title={"목록"} />
+      <List columns={columns} rows={rows} height={500} page={10} title={"충전기 고장 목록"} />
     </div>
   );
 };

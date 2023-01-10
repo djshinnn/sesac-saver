@@ -10,7 +10,6 @@ const StationHistoryMonthly = () => {
   const dispatch = useDispatch();
 
   const stationHistoryMonthlyData = useSelector((state) => state.stationHistoryMonthly);
-  console.log(stationHistoryMonthlyData);
 
   useEffect(() => {
     dispatch(asyncStationHistoryMonthlyData());
@@ -41,7 +40,7 @@ const StationHistoryMonthly = () => {
 
   return (
     <div className="station_history__monthly">
-      <List columns={columns} rows={newRows} height={700} page={10} title={"충전소 월별 목록"} />
+      <List columns={columns} rows={newRows} height={700} page={10} title={"충전소 월별 내역"} />
     </div>
   );
 };
