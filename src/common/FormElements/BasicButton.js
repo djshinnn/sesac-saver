@@ -26,7 +26,7 @@ const theme = createTheme({
   },
 });
 
-export default function BasicButton({ text, color, component }) {
+export default function BasicButton({ text, color, component, onClick }) {
   return (
     <ThemeProvider theme={theme}>
       <Button
@@ -34,6 +34,7 @@ export default function BasicButton({ text, color, component }) {
         color={color}
         component={component}
         sx={{ fontSize: "1.3rem", fontWeight: "bold" }}
+        onClick={onClick}
       >
         {text}
       </Button>
