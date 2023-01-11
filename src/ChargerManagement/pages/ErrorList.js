@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncErrorList } from "../../store/errorList/errorListSlice";
-
 import ErrorStatus from "../components/ErrorList/ErrorStatus";
 import ErrorDetailList from "../components/ErrorList/ErrorDetailList";
+import { asyncErrorList } from "../../store/errorList/errorListSlice";
 
 const ErrorList = () => {
   const dispatch = useDispatch();

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncStationListData } from "../../store/chargingStation/stationListSlice";
 import ChargerContainer from "../container/ChargerContainer";
 import StationContainer from "./../container/StationContainer";
+import { asyncStationListData } from "../../store/chargingStation/stationListSlice";
 
 const ChargingStation = () => {
   const dispatch = useDispatch();

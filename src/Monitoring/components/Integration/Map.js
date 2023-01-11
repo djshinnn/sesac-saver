@@ -2,12 +2,10 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { v4 } from "uuid";
 
-// reducers
-import { totalChartActions } from "../../../store/integration/totalChartSlice";
-import { dateChartActions } from "../../../store/integration/dateChartSlice";
-
 import { mapChangeHandler } from "../../utils/mapChangeHandler";
 import { mapData } from "../../utils/mapData";
+import { totalChartActions } from "../../../store/integration/totalChartSlice";
+import { dateChartActions } from "../../../store/integration/dateChartSlice";
 
 const Map = () => {
   const dispatch = useDispatch();

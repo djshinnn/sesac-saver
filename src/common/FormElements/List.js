@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import Title from "./Title";
 import { chargingStationActions } from "../../store/chargingStation/stationListSlice";
 import { asyncChargerListData } from "../../store/chargingStation/chargerListSlice";
-import Title from "./Title";
 
 const theme = createTheme({
   components: {

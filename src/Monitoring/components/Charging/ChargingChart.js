@@ -1,8 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Chart as ChartJS } from "chart.js";
-import { Line } from "react-chartjs-2";
 import { Chart } from "react-chartjs-2";
 
 const ChargingChart = () => {

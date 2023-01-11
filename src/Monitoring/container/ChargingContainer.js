@@ -1,4 +1,5 @@
 import React from "react";
+
 import ChargingChart from "../components/Charging/ChargingChart";
 import ChargingState from "../components/Charging/ChargingState";
 import Spec from "../components/Charging/Spec";

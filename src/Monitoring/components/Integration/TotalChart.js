@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
-import { regionCodeHandler } from "../../utils/regionCodeHandler";
 import SubTitle from "../FormElements/SubTitle";
+import { regionCodeHandler } from "../../utils/regionCodeHandler";
 
 const TotalChart = () => {
   const seoulData = useSelector((state) => state.totalChart.seoulAmt);

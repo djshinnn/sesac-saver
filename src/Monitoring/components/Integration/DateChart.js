@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
+import SubTitle from "../FormElements/SubTitle";
 import { regionCodeHandler } from "../../utils/regionCodeHandler";
 import { currencyFormatter } from "../../utils/formatter";
-import SubTitle from "../FormElements/SubTitle";
 
 const DateChart = () => {
   const seoulData = useSelector((state) => state.dateChart.seoulData);
