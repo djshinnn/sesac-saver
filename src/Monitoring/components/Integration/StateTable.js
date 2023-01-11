@@ -22,6 +22,38 @@ const StateTable = () => {
 
   const theme = createTheme({
     components: {
+      // toggle text color
+      MuiButtonBase: {
+        styleOverrides: {
+          root: {
+            color: "#311b92",
+          },
+        },
+      },
+      // toggle text size
+      MuiMenuItem: {
+        styleOverrides: {
+          root: {
+            fontSize: "1.8rem",
+          },
+        },
+      },
+      // filter header
+      MuiFormLabel: {
+        styleOverrides: {
+          root: {
+            fontSize: "2rem",
+          },
+        },
+      },
+      // filter input
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            fontSize: "2rem",
+          },
+        },
+      },
       // table pagination
       MuiTablePagination: {
         styleOverrides: {
@@ -36,6 +68,14 @@ const StateTable = () => {
           },
           displayedRows: {
             fontSize: "1.8rem",
+          },
+        },
+      },
+      MuiSvgIcon: {
+        styleOverrides: {
+          root: {
+            width: "2.5rem",
+            height: "2.5rem",
           },
         },
       },

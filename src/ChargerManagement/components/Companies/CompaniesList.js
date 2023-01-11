@@ -16,10 +16,10 @@ const CompaniesList = () => {
   }));
 
   const columns = [
-    { field: "companyId", headerName: "ID", width: 200 },
+    { field: "companyId", headerName: "ID", width: 210 },
     { field: "companyName", headerName: "충전 사업자", width: 250 },
     { field: "contact", headerName: "연락처", width: 250 },
-    { field: "icon", headerName: "로고 이미지", width: 290 },
+    { field: "icon", headerName: "로고 이미지", width: 295 },
   ];
 
   const selectData = (e) => {

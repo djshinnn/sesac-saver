@@ -33,7 +33,6 @@ const chargerListSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(asyncChargerListData.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.isLoading = false;
         state.result = action.payload.result;
         state.msg = action.payload.msg;

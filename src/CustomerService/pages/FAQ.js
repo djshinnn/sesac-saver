@@ -13,7 +13,6 @@ const FAQ = () => {
   }, [dispatch]);
 
   const faq = useSelector((state) => state.faq.faq);
-  console.log(faq);
 
   const columns = [
     { field: "tag", headerName: "태그", width: 500 },
@@ -28,7 +27,7 @@ const FAQ = () => {
 
   return (
     <div className="faq">
-      <List columns={columns} rows={rows} height={800} page={10} title={"FAQ"} />
+      <List columns={columns} rows={rows} height={700} page={10} title={"자주 묻는 질문(FAQ)"} />
     </div>
   );
 };

@@ -7,7 +7,6 @@ import Edit from "./FormElements/Edit";
 
 const ChargerEdit = () => {
   const chargerEdit = useSelector((state) => state.stationList.chargerEdit);
-  console.log();
 
   const Data = [
     { leftText: "ID", rightText: chargerEdit.chargeId },

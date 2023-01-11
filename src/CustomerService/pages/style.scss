@@ -4,19 +4,26 @@
   margin-top: 3rem;
 
   .imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 40rem;
   }
+
+  .img {
+    width: 500px;
+    margin-left: 1rem;
+  }
+
   .buttonBox {
     width: 10%;
     display: flex;
     justify-content: space-between;
   }
+}
 
-  .notice {
-    margin-top: 3rem;
-  }
-
-  .faq {
-    margin-top: 3rem;
-  }
+.faq,
+.notice,
+.edit {
+  margin-top: 3rem;
 }

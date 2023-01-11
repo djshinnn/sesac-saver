@@ -35,9 +35,8 @@ const theme = createTheme({
           minHeight: "52px",
           padding: "2rem",
         },
-        // sort
-        sortIcon: {
-          fontSize: "2.5rem",
+        selectedRowCount: {
+          fontSize: "1.8rem",
         },
       },
     },
@@ -46,7 +45,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: "#d1c8ec",
-          fontSize: "2.5rem",
+          width: "2.5rem",
+          height: "2.5rem",
         },
       },
     },
