@@ -5,14 +5,20 @@
 
   .imgBox {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     margin-left: 40rem;
   }
 
   .img {
+    position: absolute;
+    // top: 50px;b
+
+    bottom: 7px;
     width: 500px;
     margin-left: 1rem;
+    font-size: 20px;
   }
 
   .buttonBox {
