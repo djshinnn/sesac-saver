@@ -74,7 +74,7 @@ a {
   &__title {
     display: flex;
 
-    padding: 1rem;
+    padding: 1.5rem;
     justify-content: center;
     align-items: center;
     span {
@@ -132,6 +132,7 @@ a {
 
   &__focus {
     background-color: #1e73be;
+    border-radius: 0.5rem;
   }
 }
 
