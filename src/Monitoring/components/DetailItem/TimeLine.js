@@ -29,6 +29,7 @@ const TimeLine = () => {
         borderWidth: 2,
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         data: logData,
+        tension: 0.5,
       },
     ],
   };

@@ -42,6 +42,9 @@ import Sidebar from "./Navigation/pages/Sidebar";
 // 404
 import PageNotFound from "./common/404";
 
+// login
+import LoginButton from "./Login/components/LoginButton";
+
 import "./App.scss";
 
 ChartJS.unregister(ChartDataLabels);
@@ -51,6 +54,10 @@ function App() {
     <Router>
       {/* <Navbar /> */}
       <Sidebar />
+
+      {/* Login Button */}
+      <LoginButton />
+
       <Routes>
         {/* Monitoring */}
         <Route path="/" element={<Integration />} />
