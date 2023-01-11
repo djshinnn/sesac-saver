@@ -37,9 +37,9 @@ const EditPassword = () => {
       <ThemeProvider theme={myPageTheme}>
         <div className="edit_password__input">
           <FormControl variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">현재 비밀번호</InputLabel>
+            <InputLabel htmlFor="current_password">현재 비밀번호</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              id="current_password"
               type={showCurrentPassword ? "text" : "password"}
               endAdornment={
                 <InputAdornment position="end">
@@ -59,9 +59,9 @@ const EditPassword = () => {
           </FormControl>
 
           <FormControl variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">신규 비밀번호</InputLabel>
+            <InputLabel htmlFor="new_password">신규 비밀번호</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              id="new_password"
               type={showNewPassword ? "text" : "password"}
               endAdornment={
                 <InputAdornment position="end">
@@ -81,9 +81,9 @@ const EditPassword = () => {
           </FormControl>
 
           <FormControl variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">신규 비밀번호 확인</InputLabel>
+            <InputLabel htmlFor="check_password">신규 비밀번호 확인</InputLabel>
             <OutlinedInput
-              id="outlined-adornment-password"
+              id="check_password"
               type={showCheckPassword ? "text" : "password"}
               endAdornment={
                 <InputAdornment position="end">
