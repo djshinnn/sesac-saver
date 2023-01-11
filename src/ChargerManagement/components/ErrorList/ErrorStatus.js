@@ -1,18 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
-
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
+import { tableCellClasses } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 
 const ErrorStatus = () => {
   const errorStatusData = useSelector((state) => state.errorList.overall);

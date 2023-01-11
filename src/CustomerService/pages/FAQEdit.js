@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
+import Box from "@mui/material/Box";
 
 import Title from "../../common/FormElements/Title";
 import EditBox from "../../common/FormElements/EditBox";
 import BasicButton from "../../common/FormElements/BasicButton";
-import Box from "@mui/material/Box";
 
 const FAQEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { asyncMemberHistoryData } from "../../store/chargingHistory/memberHistorySlice";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
 import List from "../../common/FormElements/List";
+import { asyncMemberHistoryData } from "../../store/chargingHistory/memberHistorySlice";
 
 const MemberHistory = () => {
   const dispatch = useDispatch();

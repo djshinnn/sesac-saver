@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 import List from "../../../common/FormElements/List";
-import { nanoid } from "@reduxjs/toolkit";
 
 const ErrorDetailList = () => {
   const errorDetailList = useSelector((state) => state.errorList.rows);

@@ -2,10 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
-// 비동기 함수 (데이터 요청)
-import { asyncMemberListData } from "./../../store/memberManagement/memberListSlice";
-
 import List from "../../common/FormElements/List";
+import { asyncMemberListData } from "./../../store/memberManagement/memberListSlice";
 
 const MemberList = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,5 @@
 import React from "react";
+
 import DetailList from "../components/Charging/DetailList";
 import Report from "../components/Charging/Report";
 

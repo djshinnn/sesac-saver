@@ -1,17 +1,10 @@
 import React from "react";
+import { IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Title from "../../common/FormElements/Title";
 import BasicButton from "../../common/FormElements/BasicButton";
-
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const myPageTheme = createTheme({
   typography: {

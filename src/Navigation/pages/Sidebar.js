@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Accordion, AccordionSummary, AccordionDetails, ClickAwayListener } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { sidebarTitleData } from "./SidebarData";
 import { sidebarSubTitleData } from "./SidebarData";

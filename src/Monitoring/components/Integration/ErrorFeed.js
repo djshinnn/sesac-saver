@@ -1,10 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
+import { List, ListItem, ListItemText } from "@mui/material";
 
 const ErrorFeed = () => {
   const errorFeedData = useSelector((state) => state.errorFeed.rows);

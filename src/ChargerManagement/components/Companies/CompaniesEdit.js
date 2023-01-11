@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
 import { useSelector, useDispatch } from "react-redux";
+import { db } from "../../../firebase/firebase";
+import { ref, set } from "firebase/database";
+import { Box, TextField, Stack } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Title from "../../../common/FormElements/Title";
 import BasicButton from "../../../common/FormElements/BasicButton";
-
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { asyncCompaniesListData } from "../../../store/companies/companiesListSlice";
-
-// firebase
-import { db } from "../../../firebase/firebase";
-import { getDatabase, ref, set, child, get, update, remove } from "firebase/database";
-import { v4 } from "uuid";
 
 const CompaniesEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);

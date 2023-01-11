@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
-import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import { asyncSpecChartData } from "../../../store/charging/specChartSlice";
 import SubTitle from "../FormElements/SubTitle";
+import { asyncSpecChartData } from "../../../store/charging/specChartSlice";
 
 const StateTable = () => {
   const navigate = useNavigate();

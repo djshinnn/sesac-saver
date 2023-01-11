@@ -3,34 +3,43 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+// Monitoring
 import Integration from "./Monitoring/pages/Integration";
 import Charging from "./Monitoring/pages/Charging";
 import DetailItem from "./Monitoring/pages/DetailItem";
 
+// ChargerManagement
 import Companies from "./ChargerManagement/pages/Companies";
 import ChargingStation from "./ChargerManagement/pages/ChargingStation";
 import ErrorList from "./ChargerManagement/pages/ErrorList";
 import ErrorRegist from "./ChargerManagement/pages/ErrorRegist";
 
+// ChargingHistory
 import StationHistory from "./ChargingHistory/pages/StationHistory";
 import StationHistoryMonthly from "./ChargingHistory/pages/StationHistoryMonthly";
 import MemberHistory from "./ChargingHistory/pages/MemberHistory";
 import MemberHistoryMonthly from "./ChargingHistory/pages/MemberHistoryMonthly";
 
+// MemberManagement
 import MemberList from "./MemberManagement/pages/MemberList";
 import MemberCardList from "./MemberManagement/pages/MemberCardList";
 import MemberPayList from "./MemberManagement/pages/MemberPayList";
 
+// CustomerService
 import Notice from "./CustomerService/pages/Notice";
 import NoticeEdit from "./CustomerService/pages/NoticeEdit";
 import FAQ from "./CustomerService/pages/FAQ";
 import FAQEdit from "./CustomerService/pages/FAQEdit";
 import PrivatePolicy from "./CustomerService/pages/PrivatePolicy";
 
+// MyPage
 import MyPage from "./MyPage/pages/EditPassword";
 import Login from "./Login/pages/Login";
+
+// Sidebar
 import Sidebar from "./Navigation/pages/Sidebar";
 
+// 404
 import PageNotFound from "./common/404";
 
 import "./App.scss";

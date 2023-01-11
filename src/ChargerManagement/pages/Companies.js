@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { asyncCompaniesListData } from "../../store/companies/companiesListSlice";
 import CompaniesList from "../components/Companies/CompaniesList";
 import CompaniesEdit from "../components/Companies/CompaniesEdit";
+import { asyncCompaniesListData } from "../../store/companies/companiesListSlice";
 
 const Companies = () => {
   const dispatch = useDispatch();
