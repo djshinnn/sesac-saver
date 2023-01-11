@@ -49,7 +49,12 @@ const Edit = ({ leftText, rightText, option, minRows }) => {
         ) : (
           <div className="edit__box">
             <div className="edit__box--left">{leftText}</div>
-            <TextField className="edit__box--right" value={rightText} multiline minRows={minRows} />
+            <TextField
+              className="edit__box--right"
+              placeholder={rightText}
+              multiline
+              minRows={minRows}
+            />
           </div>
         )}
       </ThemeProvider>

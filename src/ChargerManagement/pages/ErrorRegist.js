@@ -11,6 +11,7 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Title from "../../common/FormElements/Title";
+import BasicButton from "../../common/FormElements/BasicButton";
 
 const errorRegistTheme = createTheme({
   typography: {
@@ -150,6 +151,10 @@ const ErrorRegist = () => {
             onChange={innerHandler}
           />
         </ThemeProvider>
+        <div className="error_regist__btn">
+          <BasicButton color="delete" text="취소" />
+          <BasicButton color="store" text="저장" />
+        </div>
       </div>
     </div>
   );

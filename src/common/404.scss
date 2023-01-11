@@ -110,112 +110,32 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
   }
 }
 
-.spin-earth-on-hover {
-  transition: ease 200s !important;
-  transform: rotate(-3600deg) !important;
-}
-
-html,
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font-family: "Dosis", sans-serif;
-  font-weight: 300;
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none; /* Standard syntax */
-}
-
 .bg-purple {
   background: url(http://salehriaz.com/404Page/img/bg_purple.png);
-  background-repeat: repeat-x;
   background-size: cover;
-  background-position: left top;
-  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
-.custom-navbar {
-  padding-top: 15px;
-}
-
-.brand-logo {
-  margin-left: 25px;
-  margin-top: 5px;
-  display: inline-block;
-}
-
-.navbar-links {
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-  text-transform: uppercase;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  /*    overflow: hidden;*/
-  display: flex;
-  align-items: center;
-}
-
-li {
-  float: left;
-  padding: 0px 15px;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 12px;
-
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-
-li a:hover {
-  color: #ffcb39;
-}
-
-.btn-request {
-  padding: 10px 25px;
-  border: 1px solid #ffcb39;
-  border-radius: 100px;
-  font-weight: 400;
-}
-
-.btn-request:hover {
-  background-color: #ffcb39;
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
-}
-
 .btn-go-home {
+  display: block;
   position: relative;
   z-index: 200;
+  width: 300px;
   margin: 15px auto;
-  width: 100px;
-  padding: 10px 15px;
+  padding: 2rem 3rem;
   border: 1px solid #ffcb39;
   border-radius: 100px;
+  font-size: 2rem;
   font-weight: 400;
-  display: block;
-  color: white;
   text-align: center;
   text-decoration: none;
+  color: white;
   letter-spacing: 2px;
-  font-size: 11px;
 
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
@@ -227,12 +147,11 @@ li a:hover {
 .btn-go-home:hover {
   background-color: #ffcb39;
   color: #fff;
-  transform: scale(1.05);
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
 
 .central-body {
-  /*    width: 100%;*/
   padding: 17% 5% 10% 5%;
   text-align: center;
 }
@@ -243,11 +162,11 @@ li a:hover {
 }
 
 .object_rocket {
-  z-index: 95;
   position: absolute;
-  transform: translateX(-50px);
+  z-index: 95;
   top: 75%;
   pointer-events: none;
+  transform: translateX(-50px);
   animation: rocket-movement 200s linear infinite both running;
 }
 
@@ -256,20 +175,13 @@ li a:hover {
   top: 20%;
   left: 15%;
   z-index: 90;
-  /*    animation: spin-earth 100s infinite linear both;*/
+  animation: spin-earth 100s infinite linear both;
 }
 
 .object_moon {
   position: absolute;
   top: 12%;
   left: 25%;
-  /*
-    transform: rotate(0deg);
-    transition: transform ease-in 99999999999s;
-*/
-}
-
-.earth-moon {
 }
 
 .object_astronaut {
@@ -277,8 +189,8 @@ li a:hover {
 }
 
 .box_astronaut {
-  z-index: 110 !important;
   position: absolute;
+  z-index: 110 !important;
   top: 60%;
   right: 20%;
   will-change: transform;
@@ -289,6 +201,7 @@ li a:hover {
   position: relative;
   z-index: 100;
   pointer-events: none;
+  margin-bottom: 2rem;
 }
 
 .stars {

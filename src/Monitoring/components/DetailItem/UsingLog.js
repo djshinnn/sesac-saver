@@ -20,11 +20,11 @@ const UsingLog = () => {
         <Table sx={{ minWidth: 300 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>회원 ID</TableCell>
-              <TableCell style={{ fontSize: "1.5rem" }}>시작</TableCell>
-              <TableCell style={{ fontSize: "1.5rem" }}>종료</TableCell>
-              <TableCell style={{ fontSize: "1.5rem" }}>요금</TableCell>
-              <TableCell style={{ fontSize: "1.5rem" }}>사용량</TableCell>
+              <TableCell style={{ fontSize: "1.6rem", fontWeight: "bold" }}>회원 ID</TableCell>
+              <TableCell style={{ fontSize: "1.6rem", fontWeight: "bold" }}>시작</TableCell>
+              <TableCell style={{ fontSize: "1.6rem", fontWeight: "bold" }}>종료</TableCell>
+              <TableCell style={{ fontSize: "1.6rem", fontWeight: "bold" }}>요금</TableCell>
+              <TableCell style={{ fontSize: "1.6rem", fontWeight: "bold" }}>사용량</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -33,7 +33,7 @@ const UsingLog = () => {
                 key={item.userId}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" style={{ fontSize: "1.5rem" }}>
                   {item.userId}
                 </TableCell>
                 <TableCell style={{ fontSize: "1.5rem" }}>{item.startDate}</TableCell>

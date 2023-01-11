@@ -34,7 +34,6 @@ const CompaniesList = () => {
         page={10}
         height={"630px"}
         title={"충전 사업자 목록"}
-        checkboxSelection
         selectData={selectData}
       />
     </div>
