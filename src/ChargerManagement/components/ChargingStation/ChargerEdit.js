@@ -18,7 +18,7 @@ const ChargerEdit = () => {
   ];
 
   return (
-    <div className="station_edit">
+    <div className="charger_edit">
       <Title title={"충전기"} />
 
       {Data.map((data) => (

@@ -141,12 +141,12 @@ export const sidebarSubTitleData = [
     name: "CustomerService",
     subName: "FAQEdit",
   },
-  {
-    id: v4(),
-    path: "/privatepolicy",
-    subTitle: "개인정보 방침",
-    name: "CustomerService",
-    subName: "PrivatePolicy",
-  },
+  // {
+  //   id: v4(),
+  //   path: "/privatepolicy",
+  //   subTitle: "개인정보 방침",
+  //   name: "CustomerService",
+  //   subName: "PrivatePolicy",
+  // },
   { id: v4(), path: "/mypage", subTitle: "비밀번호 수정", name: "MyPage", subName: "MyPage" },
 ];

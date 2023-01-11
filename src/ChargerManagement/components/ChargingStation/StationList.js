@@ -12,7 +12,7 @@ const StationList = () => {
     { field: "companyName", headerName: "충전 사업자", width: 200 },
     { field: "region", headerName: "권역", width: 150 },
     { field: "stationName", headerName: "충전소명", width: 200 },
-    { field: "address", headerName: "주소", width: 300 },
+    { field: "address", headerName: "주소", width: 320 },
     { field: "contact", headerName: "연락처", width: 200 },
     { field: "runningTime", headerName: "운영 시간", width: 200 },
     { field: "parkingFee", headerName: "주차 요금", width: 200 },
