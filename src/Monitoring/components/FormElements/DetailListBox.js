@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const DetailListBox = ({ data }) => {
   const navigate = useNavigate();
-
-  const chargerId = data.chargerName.split("번")[0];
+  const chargerId = data.chargerId;
 
   return (
     <button
@@ -15,7 +14,7 @@ const DetailListBox = ({ data }) => {
     >
       <h2>{data.chargerName}</h2>
       <div>
-        <div>ChargeId</div>
+        <div>ChargerId</div>
         <div>{data.chargerId}</div>
       </div>
       <div>
