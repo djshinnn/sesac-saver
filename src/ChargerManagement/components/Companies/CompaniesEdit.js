@@ -19,7 +19,7 @@ import { v4 } from "uuid";
 const CompaniesEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  const [textField, setTextField] = useState({});
+  const [textField, setTextField] = useState({ companyName: "", contact: "" });
   const companiesList = useSelector((state) => state.companiesList.rows);
   const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ const CompaniesEdit = () => {
     setTextField((prev) => ({
       ...prev,
       companyId: companiesList.length,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value.trim(),
       icon: "sample1.png",
     }));
   };
@@ -36,9 +36,24 @@ const CompaniesEdit = () => {
   // Read
 
   // Write
-  const writeData = () => {
-    set(ref(db, `companies/rows/${textField.companyId}`), textField);
+  const writeData = async () => {
+    if (
+      !textField.companyName ||
+      !textField.contact ||
+      /^\s*$/.test(textField.companyName || textField.contact)
+    ) {
+      return;
+    }
+
+    await set(ref(db, `companies/rows/${textField.companyId}`), textField);
     dispatch(asyncCompaniesListData());
+    setTextField({ companyName: "", contact: "" });
+  };
+
+  // Remove
+  const removeData = () => {
+    console.log("remove");
+    // remove(ref(db, `companies/rows/`));
   };
 
   // firebase End
@@ -82,6 +97,7 @@ const CompaniesEdit = () => {
             placeholder="입력"
             multiline
             name={"companyName"}
+            value={textField.companyName}
             onChange={onChangeHandler}
           />
           <TextField
@@ -90,6 +106,7 @@ const CompaniesEdit = () => {
             placeholder="입력"
             multiline
             name={"contact"}
+            value={textField.contact}
             onChange={onChangeHandler}
           />
         </ThemeProvider>
@@ -119,7 +136,7 @@ const CompaniesEdit = () => {
         {/* 삭제, 신규, 수정, 저장 버튼  */}
         <Box sx={{ width: "100%", display: "flex", justifyContent: "flex-end" }} mt={3}>
           <Stack spacing={5} direction="row">
-            <BasicButton text={"삭제"} color={"delete"} />
+            <BasicButton text={"삭제"} color={"delete"} onClick={removeData} />
             <BasicButton text={"신규"} color={"new"} />
             <BasicButton text={"수정"} color={"edit"} />
             <BasicButton text={"저장"} color={"store"} onClick={writeData} />

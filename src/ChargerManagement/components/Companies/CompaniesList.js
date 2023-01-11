@@ -22,9 +22,21 @@ const CompaniesList = () => {
     { field: "icon", headerName: "로고 이미지", width: 295 },
   ];
 
+  const selectData = (e) => {
+    console.log(e.row.companyId);
+  };
+
   return (
     <div className="companies_list">
-      <List rows={rows} columns={columns} page={10} height={700} title={"충전 사업자 목록"} />
+      <List
+        rows={rows}
+        columns={columns}
+        page={10}
+        height={"630px"}
+        title={"충전 사업자 목록"}
+        checkboxSelection
+        selectData={selectData}
+      />
     </div>
   );
 };
