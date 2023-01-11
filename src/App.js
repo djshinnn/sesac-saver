@@ -31,6 +31,8 @@ import MyPage from "./MyPage/pages/EditPassword";
 import Login from "./Login/pages/Login";
 import Sidebar from "./Navigation/pages/Sidebar";
 
+import PageNotFound from "./common/404";
+
 import "./App.scss";
 
 ChartJS.unregister(ChartDataLabels);
@@ -73,6 +75,9 @@ function App() {
         {/* MyPage */}
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/login" element={<Login />} />
+
+        {/* 404 */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

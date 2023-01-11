@@ -19,27 +19,29 @@ const ItemSpec = () => {
         <Table sx={{ minWidth: 350 }} aria-label="simple table">
           <TableBody>
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>충전기 모델명</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                충전기 모델명
+              </TableCell>
               <TableCell style={{ fontSize: "1.5rem" }}>{itemSpecData.chargerId}</TableCell>
             </TableRow>
 
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>최대전력</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>최대전력</TableCell>
               <TableCell style={{ fontSize: "1.5rem" }}>{itemSpecData.chargingPower}kW</TableCell>
             </TableRow>
 
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>충전속도</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>충전속도</TableCell>
               <TableCell style={{ fontSize: "1.5rem" }}>{itemSpecData.chargingSpeen}kW/h</TableCell>
             </TableRow>
 
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>충전타입</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>충전타입</TableCell>
               <TableCell style={{ fontSize: "1.5rem" }}>{itemSpecData.chargerType}</TableCell>
             </TableRow>
 
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>설치날짜</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>설치날짜</TableCell>
               <TableCell style={{ fontSize: "1.5rem" }}>{itemSpecData.install}</TableCell>
             </TableRow>
           </TableBody>

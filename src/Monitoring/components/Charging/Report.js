@@ -23,8 +23,8 @@ const Report = () => {
         <Table sx={{ minWidth: 300 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell style={{ fontSize: "1.5rem" }}>생성일자</TableCell>
-              <TableCell style={{ fontSize: "1.5rem" }}>문제</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>생성일자</TableCell>
+              <TableCell style={{ fontSize: "1.5rem", fontWeight: "bold" }}>문제</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

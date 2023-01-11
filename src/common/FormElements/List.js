@@ -102,7 +102,17 @@ const theme = createTheme({
   },
 });
 
-const List = ({ rows, columns, height, page, title, station, charger }) => {
+const List = ({
+  rows,
+  columns,
+  height,
+  page,
+  title,
+  station,
+  charger,
+  checkboxSelection,
+  selectData,
+}) => {
   const dispatch = useDispatch();
 
   const [pageSize, setPageSize] = useState(page);
@@ -115,6 +125,9 @@ const List = ({ rows, columns, height, page, title, station, charger }) => {
 
     // ChargerList onClick 이벤트
     charger && dispatch(chargingStationActions.getChargerEdit(e.row));
+
+    // remove 데이터
+    selectData(e);
   };
 
   return (
@@ -123,6 +136,7 @@ const List = ({ rows, columns, height, page, title, station, charger }) => {
 
       <ThemeProvider theme={theme}>
         <DataGrid
+          checkboxSelection={checkboxSelection}
           rows={rows}
           columns={columns}
           pageSize={pageSize}

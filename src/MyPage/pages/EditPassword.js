@@ -1,6 +1,7 @@
 import React from "react";
 
 import Title from "../../common/FormElements/Title";
+import BasicButton from "../../common/FormElements/BasicButton";
 
 import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -107,6 +108,10 @@ const EditPassword = () => {
               error={false}
             />
           </FormControl>
+          <div className="edit_password__btn">
+            <BasicButton color="delete" text="취소" />
+            <BasicButton color="store" text="저장" />
+          </div>
         </div>
       </ThemeProvider>
     </div>

@@ -5,10 +5,17 @@
 
 .error_regist {
   margin-top: 3rem;
+  position: relative;
 
   &__input {
     @include flexCenter();
     flex-direction: column;
     padding-top: 2rem;
+  }
+
+  &__btn {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
   }
 }
