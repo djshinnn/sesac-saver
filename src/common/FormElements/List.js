@@ -25,7 +25,7 @@ const theme = createTheme({
         row: {
           // Tabe row when Selected
           "&.Mui-selected": {
-            backgroundColor: "#d1c8ec",
+            backgroundColor: "#e3eefa",
           },
         },
         // table cell
@@ -44,7 +44,7 @@ const theme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          color: "#d1c8ec",
+          color: "#a6b9ff",
           width: "2.5rem",
           height: "2.5rem",
         },
