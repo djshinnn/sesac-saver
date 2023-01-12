@@ -17,7 +17,7 @@ const LoginButton = () => {
   return (
     <div style={loginBtnStyle}>
       <Link to="/login">
-        <BasicButton color="store" text="로그인" />
+        <BasicButton color="store" text="로그아웃" />
       </Link>
     </div>
   );
