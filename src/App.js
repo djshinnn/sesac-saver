@@ -1,5 +1,6 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
@@ -45,11 +46,23 @@ import PageNotFound from "./common/404";
 // login
 import LoginButton from "./Login/components/LoginButton";
 
+import { auth } from "./firebase/firebase";
+
 import "./App.scss";
 
 ChartJS.unregister(ChartDataLabels);
 
 function App() {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
+
+  console.log("user", user);
+
   return (
     <Router>
       {/* <Navbar /> */}
@@ -60,7 +73,12 @@ function App() {
 
       <Routes>
         {/* Monitoring */}
-        <Route path="/" element={<Integration />} />
+        {user ? (
+          <Route path="/" element={<Integration />} />
+        ) : (
+          <Route path="/" element={<Login />} />
+        )}
+
         <Route path="/charging/:stationId" element={<Charging />} />
         <Route path="/detailitem/:itemId" element={<DetailItem />} />
 
@@ -90,7 +108,7 @@ function App() {
 
         {/* MyPage */}
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
 
         {/* 404 */}
         <Route path="*" element={<PageNotFound />} />
