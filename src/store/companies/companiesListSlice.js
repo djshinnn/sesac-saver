@@ -21,12 +21,20 @@ const initialState = {
   result: "",
   msg: "",
   rows: [],
+  companyId: [],
 };
 
 const companiesListSlice = createSlice({
   name: "companiesList",
   initialState,
-  reducers: {},
+  reducers: {
+    selectCompanyId(state, action) {
+      let deleteCompanyId = [];
+      deleteCompanyId.push(...state.companyId, action.payload);
+
+      state.companyId = [...deleteCompanyId];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(asyncCompaniesListData.pending, (state, action) => {

@@ -6,7 +6,6 @@ import BasicButton from "../../common/FormElements/BasicButton";
 
 const LoginButton = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
   const loginBtnStyle = {
     position: "absolute",

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { db } from "../../../firebase/firebase";
-import { ref, set } from "firebase/database";
+import { ref, set, get, child, remove } from "firebase/database";
+import { v4 } from "uuid";
 import { Box, TextField, Stack } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -13,23 +14,22 @@ const CompaniesEdit = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [textField, setTextField] = useState({ companyName: "", contact: "" });
-  const companiesList = useSelector((state) => state.companiesList.rows);
+  const selectCompanyId = useSelector((state) => state.companiesList.companyId);
   const dispatch = useDispatch();
 
   const onChangeHandler = (e) => {
     setTextField((prev) => ({
       ...prev,
-      companyId: companiesList.length,
+      companyId: v4(),
       [e.target.name]: e.target.value.trim(),
       icon: "sample1.png",
     }));
   };
 
   // firebase Start
-  // Read
 
-  // Write
-  const writeData = async () => {
+  // Read & Write
+  const writeData = () => {
     if (
       !textField.companyName ||
       !textField.contact ||
@@ -38,19 +38,27 @@ const CompaniesEdit = () => {
       return;
     }
 
-    await set(ref(db, `companies/rows/${textField.companyId}`), textField);
-    dispatch(asyncCompaniesListData());
-    setTextField({ companyName: "", contact: "" });
+    const dbRef = ref(db);
+    get(child(dbRef, "companies/rows"))
+      .then(() => {
+        set(ref(db, `companies/rows/${textField.companyId}`), textField);
+        dispatch(asyncCompaniesListData());
+        setTextField({ companyName: "", contact: "" });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   // Remove
-  const removeData = () => {
-    console.log("remove");
-    // remove(ref(db, `companies/rows/`));
+  const removeData = async () => {
+    selectCompanyId.forEach(async (companyId) => {
+      await remove(ref(db, `companies/rows/${companyId}`));
+      dispatch(asyncCompaniesListData());
+    });
   };
 
   // firebase End
-
   const companiesEditTheme = createTheme({
     typography: {
       fontSize: 18,
