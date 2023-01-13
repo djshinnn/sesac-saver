@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -53,70 +53,76 @@ import "./App.scss";
 ChartJS.unregister(ChartDataLabels);
 
 function App() {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState();
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
+  }, []);
+
+  console.log(user);
+
+  const navigateHandler = () => {
+    if (user === undefined) {
+      return;
+    }
+    !user && navigate("/login");
+  };
+
+  useEffect(() => {
+    navigateHandler();
   }, [user]);
 
   return (
     <React.Fragment>
-      {!user ? (
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-          </Routes>
-        </Router>
-      ) : (
-        <Router>
-          {/* <Navbar /> */}
-          <Sidebar />
+      {/* <Navbar /> */}
+      {user && <Sidebar />}
 
-          {/* Login Button */}
-          <LoginButton />
+      {/* Login Button */}
+      {user && <LoginButton />}
 
-          <Routes>
-            {/* Monitoring */}
-            <Route path="/" element={<Integration />} />
+      <Routes>
+        {/* Monitoring */}
+        <Route path="/" element={<Integration />} />
 
-            <Route path="/charging/:stationId" element={<Charging />} />
-            <Route path="/detailitem/:itemId" element={<DetailItem />} />
+        <Route path="/charging/:stationId" element={<Charging />} />
+        <Route path="/detailitem/:itemId" element={<DetailItem />} />
 
-            {/* ChargerManagement */}
-            <Route path="/companies" element={<Companies />} />
-            <Route path="/chargingstation" element={<ChargingStation />} />
-            <Route path="/errorlist" element={<ErrorList />} />
-            <Route path="/errorregist" element={<ErrorRegist />} />
+        {/* ChargerManagement */}
+        <Route path="/companies" element={<Companies />} />
+        <Route path="/chargingstation" element={<ChargingStation />} />
+        <Route path="/errorlist" element={<ErrorList />} />
+        <Route path="/errorregist" element={<ErrorRegist />} />
 
-            {/* ChargingHistory */}
-            <Route path="/stationhistory" element={<StationHistory />} />
-            <Route path="/stationhistory/monthly" element={<StationHistoryMonthly />} />
-            <Route path="/memberhistory" element={<MemberHistory />} />
-            <Route path="/memberhistory/monthly" element={<MemberHistoryMonthly />} />
+        {/* ChargingHistory */}
+        <Route path="/stationhistory" element={<StationHistory />} />
+        <Route path="/stationhistory/monthly" element={<StationHistoryMonthly />} />
+        <Route path="/memberhistory" element={<MemberHistory />} />
+        <Route path="/memberhistory/monthly" element={<MemberHistoryMonthly />} />
 
-            {/* MemberManageMent */}
-            <Route path="/memberlist" element={<MemberList />} />
-            <Route path="/membercardlist" element={<MemberCardList />} />
-            <Route path="/memberpaylist" element={<MemberPayList />} />
+        {/* MemberManageMent */}
+        <Route path="/memberlist" element={<MemberList />} />
+        <Route path="/membercardlist" element={<MemberCardList />} />
+        <Route path="/memberpaylist" element={<MemberPayList />} />
 
-            {/* CustomerService */}
-            <Route path="/notice" element={<Notice />} />
-            <Route path="/noticeedit" element={<NoticeEdit />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/faqedit" element={<FAQEdit />} />
-            <Route path="/privatepolicy" element={<PrivatePolicy />} />
+        {/* CustomerService */}
+        <Route path="/notice" element={<Notice />} />
+        <Route path="/noticeedit" element={<NoticeEdit />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/faqedit" element={<FAQEdit />} />
+        <Route path="/privatepolicy" element={<PrivatePolicy />} />
 
-            {/* MyPage */}
-            <Route path="/mypage" element={<MyPage />} />
-            <Route path="/login" element={<Login />} />
+        {/* MyPage */}
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/login" element={<Login />} />
 
-            {/* 404 */}
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </Router>
-      )}
+        {/* 404 */}
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </React.Fragment>
   );
 }
