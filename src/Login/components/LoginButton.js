@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
@@ -7,8 +7,11 @@ import { auth } from "../../firebase/firebase";
 import BasicButton from "../../common/FormElements/BasicButton";
 
 const LoginButton = () => {
+  const navigate = useNavigate();
+
   const logout = async () => {
     await signOut(auth);
+    navigate("/login");
   };
 
   const loginBtnStyle = {
