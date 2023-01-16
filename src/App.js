@@ -73,7 +73,7 @@ function App() {
       return;
     }
 
-    user && navigate("/integration");
+    !user && navigate("/");
   };
 
   useEffect(() => {
