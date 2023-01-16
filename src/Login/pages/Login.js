@@ -53,7 +53,7 @@ export default function SignIn() {
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(user);
-      navigate("/");
+      navigate("/integration");
     } catch (error) {
       console.log(error.message);
     }
