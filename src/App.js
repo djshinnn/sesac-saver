@@ -4,6 +4,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Chart as ChartJS } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+// LandingPage
+import LandingPage from "./common/LandingPage";
+
 // Monitoring
 import Integration from "./Monitoring/pages/Integration";
 import Charging from "./Monitoring/pages/Charging";
@@ -66,10 +69,11 @@ function App() {
   console.log(user);
 
   const navigateHandler = () => {
-    if (user === undefined) {
+    if (user === undefined || user === null) {
       return;
     }
-    !user && navigate("/login");
+
+    user && navigate("/integration");
   };
 
   useEffect(() => {
@@ -86,7 +90,7 @@ function App() {
 
       <Routes>
         {/* Monitoring */}
-        <Route path="/" element={<Integration />} />
+        <Route path="/integration" element={<Integration />} />
 
         <Route path="/charging/:stationId" element={<Charging />} />
         <Route path="/detailitem/:itemId" element={<DetailItem />} />
@@ -122,6 +126,9 @@ function App() {
         {/* 404 */}
         <Route path="*" element={<PageNotFound />} />
         <Route path="/login" element={<Login />} />
+
+        {/* LandingPage */}
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </React.Fragment>
   );

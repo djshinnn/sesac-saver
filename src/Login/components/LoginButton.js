@@ -11,20 +11,18 @@ const LoginButton = () => {
 
   const logout = async () => {
     await signOut(auth);
-    navigate("/login");
+    navigate("/");
   };
 
   const loginBtnStyle = {
     position: "absolute",
     top: "2rem",
-    left: "168rem",
+    left: "166rem",
   };
 
   return (
     <div style={loginBtnStyle}>
-      <Link to="/">
-        <BasicButton color="store" text="로그아웃" onClick={logout} />
-      </Link>
+      <BasicButton color="store" text="Logout" onClick={logout} />
     </div>
   );
 };
