@@ -99,12 +99,17 @@ git clone https://github.com/djshinnn/sesac-saver.git
 
 # 구현한 기능 목록
 
+- 랜딩 페이지 구현
 - 스타일링 구현(MUI, SASS)
 - 피그마 레이아웃 구성
-- 서버 데이터 사용(Firebase)
+- 서버 데이터 사용(Firebase Realtime Database)
+- 최신 라우팅 구현 (react-router-dom)
 - react-chartjs-2 모듈로 다양한 차트 구현
 - Redux-toolkit 으로 전역 데이터 상태관리
 - Redux-toolkit thunk로 비동기 데이터 관리
+- 충전소 사업자 목록 생성, 조회, 삭제 구현
+- 로그인, 로그아웃 기능 구현
+- 로그인 상태 여부에 따라 페이지 접근 제한 구현
 
 <br/>
 
