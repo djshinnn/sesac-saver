@@ -47,7 +47,13 @@ export const sidebarTitleData = [
 ];
 
 export const sidebarSubTitleData = [
-  { id: v4(), path: "/", subTitle: "통합 모니터링", name: "Monitoring", subName: "Monitoring" },
+  {
+    id: v4(),
+    path: "/integration",
+    subTitle: "통합 모니터링",
+    name: "Monitoring",
+    subName: "Monitoring",
+  },
   {
     id: v4(),
     path: "/companies",
